@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RogazionistiRE (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "RogazionistiRE (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
