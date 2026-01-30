@@ -1,7 +1,5 @@
-﻿using System;
-using System.Diagnostics;
+﻿using RogazionistiRE.JsonBlueprints;
 using System.IO;
-using Windows.Security.Credentials;
 using Windows.Storage;
 
 namespace RogazionistiRE.Util
@@ -10,61 +8,34 @@ namespace RogazionistiRE.Util
     {
         public const string ApplicationName = "RogazionistiRE";
 
-        public static readonly string appDataPath = Path.Combine(
-            Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), 
-                "AppData", 
-                "Roaming"),
-                ApplicationName);
-
-        public static void initializeApplicationDataFolder() {
-            if (!Directory.Exists(appDataPath)) {
-                createFolder(appDataPath);
-            }
-            Debug.WriteLine(Directory.Exists(appDataPath) ?
-                $"Created application data folder at: {appDataPath}" : 
-                "Some kind of error occurred! Or the folder hasn't been created");
-        }
-
-        public static void createFolder(string folderPath) {
-            if (!Directory.Exists(folderPath)) {
-                Directory.CreateDirectory(folderPath);
-            }
-        }
-
-        public static void createFile(string filePath, string? content) {
-            if (!File.Exists(filePath)) {
-                File.WriteAllText(filePath, content);
-            }
-        }
-
-        public static string readFile(string filePath) {
-            string content;
-            if (File.Exists(filePath)) {
-                return File.ReadAllText(filePath);
-            }
-            else {
-                return null;
-            }
-        }
-
-        public static void deleteFile(string filePath) {
-            if (File.Exists(filePath)) {
-                File.Delete(filePath);
-            }
-        }
-
-        public static void saveLoginData(APIRequests.LoginData loginData) {
+        public static void saveLoginData(LoginData loginData) {
             loginData.saveData();
         }
 
-        public static APIRequests.LoginData getLoginData() {
-            return APIRequests.LoginData.GetCredentialFromLocker();
+        public static void aSave(string key, string content) {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            localSettings.Values[key] = content;
         }
 
-        public static void createLocalHomeWork(DirectoryInfo directoryPath, APIRequests.Homework[] homeWorks) {
+        public static string? aRead(string key) {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            return localSettings.Values[key].ToString();
+        }
+
+        public static string aReadRFalse(string key) {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            if (localSettings.Values[key] == null)
+                return "false";
+            return localSettings.Values[key].ToString();
+        }
+
+        public static LoginData getLoginData() {
+            return LoginData.getCredentialFromLocker();
+        }
+
+        /*public static void createLocalHomeWork(DirectoryInfo directoryPath, APIRequests.Homework[] homeWorks) {
             if (directoryPath == null)
-                directoryPath = new DirectoryInfo(Path.Combine(appDataPath, "homeworks"));
+                //directoryPath = new DirectoryInfo(Path.Combine(appDataPath, "homeworks"));
 
             if (!directoryPath.Exists)
                 directoryPath.Create();
@@ -91,7 +62,7 @@ namespace RogazionistiRE.Util
 
         public static void deleteLocalHomework(DirectoryInfo directoryPath) {
             if (directoryPath == null)
-                directoryPath = new DirectoryInfo(Path.Combine(appDataPath, "homeworks"));
+                // = new DirectoryInfo(Path.Combine(appDataPath, "homeworks"));
             if (!directoryPath.Exists)
                 return;
             else {
@@ -107,7 +78,7 @@ namespace RogazionistiRE.Util
             }
         }
 
-        public static string convertToStringForHomeworkDoneSaves(APIRequests.Homework homework) {
+        /*public static string convertToStringForHomeworkDoneSaves(APIRequests.Homework homework) {
             string id;
 
             string stringT = homework.GetTitle().ToLower();
@@ -119,9 +90,9 @@ namespace RogazionistiRE.Util
             string heatlyID = FileWriter.SanitizeFileNameWithoutFullStop(id);
 
             return heatlyID;
-        }
+        }*/
 
-        public static string SanitizeFileNameWithoutFullStop(string name) {
+        public static string sanitizeFileNameWithoutFullStop(string name) {
             foreach (char c in Path.GetInvalidFileNameChars())
                 name = name.Replace(c, '_');
 

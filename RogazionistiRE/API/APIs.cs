@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -35,21 +36,34 @@ namespace RogazionistiRE.Util {
         public static string getComunicationThreadsAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endComunicationsThreadAPIEndpoint);
         public static string getComunicationUserAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endComunicationsUserAPIEndpoint);
 
-        static async Task PostAsync(string body, string APIEndpoint) {
-            using StringContent jsonContent = new(
+        public static async Task<string> getAsync(string APIEndpoint, string token) {
+            var request = new HttpRequestMessage(HttpMethod.Get, APIEndpoint);
+
+            request.Headers.Add("Authorization", $"JWT {token}");
+
+            using HttpResponseMessage response = await client.SendAsync(request);
+
+            try {
+                response.EnsureSuccessStatusCode();
+            } catch (HttpRequestException ex) {
+                Debug.WriteLine($"Errore nella richiesta GET all'endpoint {APIEndpoint}.\n{ex}");
+            }
+
+            return await response.Content.ReadAsStringAsync();
+        }
+        public static async Task<string> postAsync(string body, string APIEndpoint) {
+            using var jsonContent = new StringContent(
                 body,
                 Encoding.UTF8,
                 "application/json");
 
-            using HttpResponseMessage response = await client.PostAsync(
-                APIEndpoint,
-                jsonContent);
+            using HttpResponseMessage response = await client.PostAsync(APIEndpoint, jsonContent);
 
-            response.EnsureSuccessStatusCode();
-                
-
-            var jsonResponse = await response.Content.ReadAsStringAsync();
-            Console.WriteLine($"{jsonResponse}\n");
+            try { response.EnsureSuccessStatusCode(); }
+            catch (HttpRequestException ex) {
+                Debug.WriteLine($"Errore nella richiesta POST all'endpoint {APIEndpoint}.\n{ex}");
+            }
+            return await response.Content.ReadAsStringAsync();
         }
 
 
@@ -64,7 +78,7 @@ namespace RogazionistiRE.Util {
                 var studente = doc.RootElement.GetProperty("studenti")[0];
 
                 var idStudente = studente.GetProperty("id").ToString();
-                var annoCorrente = studente.GetProperty("anno_corrente").GetString();
+                string annoCorrente = studente.GetProperty("anno_corrente").GetString();
 
                 return (idStudente, annoCorrente);
             } catch (Exception ex) {

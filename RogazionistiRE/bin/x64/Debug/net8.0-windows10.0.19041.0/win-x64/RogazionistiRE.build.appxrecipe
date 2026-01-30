@@ -586,6 +586,21 @@
     <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.57\lib\net8.0\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.common\8.2.1\lib\net6.0\CommunityToolkit.Common.dll">
+      <PackagePath>CommunityToolkit.Common.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.controls.settingscontrols\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Controls.SettingsControls.dll">
+      <PackagePath>CommunityToolkit.WinUI.Controls.SettingsControls.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.extensions\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Extensions.dll">
+      <PackagePath>CommunityToolkit.WinUI.Extensions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.helpers\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Helpers.dll">
+      <PackagePath>CommunityToolkit.WinUI.Helpers.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.triggers\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Triggers.dll">
+      <PackagePath>CommunityToolkit.WinUI.Triggers.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\microsoft.windowsappsdk.ai\1.8.38\lib\net6.0-windows10.0.17763.0\Microsoft.Graphics.Imaging.Projection.dll">
       <PackagePath>Microsoft.Graphics.Imaging.Projection.dll</PackagePath>
     </AppxPackagedFile>
@@ -696,6 +711,18 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.deps.json">
       <PackagePath>RogazionistiRE.deps.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.controls.settingscontrols\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Controls.SettingsControls.pri">
+      <PackagePath>CommunityToolkit.WinUI.Controls.SettingsControls.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.extensions\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Extensions.pri">
+      <PackagePath>CommunityToolkit.WinUI.Extensions.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.helpers\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Helpers.pri">
+      <PackagePath>CommunityToolkit.WinUI.Helpers.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.triggers\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Triggers.pri">
+      <PackagePath>CommunityToolkit.WinUI.Triggers.pri</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>

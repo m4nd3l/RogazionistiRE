@@ -1,19 +1,5 @@
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using RogazionistiRE.Util;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -32,16 +18,47 @@ public sealed partial class Login : Window
         SetTitleBar(LoginTitleBar);
     }
 
-    private void creaCartella(object sender, RoutedEventArgs e) {
-        hello.Width = 2;
+    public Login(string errorMessage) {
+        InitializeComponent();
+        ExtendsContentIntoTitleBar = true;
+        SetTitleBar(LoginTitleBar);
+        errors.Text = errorMessage;
+    }
 
-        FileWriter.initializeApplicationDataFolder();
+    private async void login(object sender, RoutedEventArgs e) {
+        // CREATES THE LOGIN DATA 
+        string username = userNameBox.Text;
+        string psw = pswBox.Password;
+        LoginData loginData = new LoginData(username, psw);
 
-        var fileName1 = Path.Combine(FileWriter.appDataPath, "lmao2.poops");
-        FileWriter.createFile(fileName1, "hello :3 <3");
+        // LOGIN INTO MASTERCOM & ERRORS MANAGEMENT
+        string[] result = await loginData.loginIntoMastercom();
 
-        Debug.WriteLine(File.Exists(fileName1) ? "esisto lmao2.poops!" : "=(");
-        Debug.WriteLine(File.Exists(fileName1) ? fileName1 : "=( wewewe");
+        if (result.Length == 1) {
+            errors.Text = "Errore, username o password non validi.";
+            return;
+        }
 
+        //REMEMBER ME MANAGEMENT
+        if (rememberMe.IsChecked == true
+            && LoginData.GetCredentialFromLocker() == loginData) {
+            Debug.WriteLine("Saving credentials...");
+            Debug.WriteLine($"Already saved credentials: {LoginData.GetCredentialFromLocker()}");
+            return;
+        } else if (rememberMe.IsChecked == true) {
+            Debug.WriteLine("Saving credentials...");
+            loginData.saveData();
+            Debug.WriteLine("Credentials saved!");
+            Debug.WriteLine($"Here are them: { LoginData.GetCredentialFromLocker()}");
+            Debug.WriteLine($"They should like this: {loginData}");
+        } else {
+            Debug.WriteLine("Logged in without saving...");
+            LoginData.deleteData();
+        }
+        Debug.WriteLine("The result of the login is the following...");
+        Debug.WriteLine(result[0] + " \n---\n" + result[1]); // DEBUG
+
+        var page = new Home(result[0], result[1]);
+        this.Content = page;
     }
 }

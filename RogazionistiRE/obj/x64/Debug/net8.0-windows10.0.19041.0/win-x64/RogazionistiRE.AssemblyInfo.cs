@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RogazionistiRE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c0237f3931dc0c1ce6451fc3407f43fd69d88b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("RogazionistiRE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RogazionistiRE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

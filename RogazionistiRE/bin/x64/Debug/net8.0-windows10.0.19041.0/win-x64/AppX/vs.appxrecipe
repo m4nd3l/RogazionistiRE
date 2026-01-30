@@ -29,21 +29,21 @@
     <AppXManifest Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-11-03T18:34:03.014</Modified>
+      <Modified>2025-11-09T16:32:10.536</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.runtimeconfig.json">
       <PackagePath>RogazionistiRE.runtimeconfig.json</PackagePath>
-      <Modified>2025-11-03T18:30:42.938</Modified>
+      <Modified>2025-11-09T16:32:10.095</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>RogazionistiRE.exe</PackagePath>
-      <Modified>2025-11-03T18:34:02.777</Modified>
+      <Modified>2025-11-09T16:32:09.643</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.dll">
       <PackagePath>RogazionistiRE.dll</PackagePath>
-      <Modified>2025-11-03T18:34:02.761</Modified>
+      <Modified>2025-11-09T16:32:09.609</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.21\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -781,6 +781,26 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2024-11-11T17:23:04.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.common\8.2.1\lib\net6.0\CommunityToolkit.Common.dll">
+      <PackagePath>CommunityToolkit.Common.dll</PackagePath>
+      <Modified>2023-07-05T18:52:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.controls.settingscontrols\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Controls.SettingsControls.dll">
+      <PackagePath>CommunityToolkit.WinUI.Controls.SettingsControls.dll</PackagePath>
+      <Modified>2025-04-02T18:14:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.extensions\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Extensions.dll">
+      <PackagePath>CommunityToolkit.WinUI.Extensions.dll</PackagePath>
+      <Modified>2025-04-02T18:14:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.helpers\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Helpers.dll">
+      <PackagePath>CommunityToolkit.WinUI.Helpers.dll</PackagePath>
+      <Modified>2025-04-02T18:14:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.triggers\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Triggers.dll">
+      <PackagePath>CommunityToolkit.WinUI.Triggers.dll</PackagePath>
+      <Modified>2025-04-02T18:14:38.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\microsoft.windowsappsdk.ai\1.8.38\lib\net6.0-windows10.0.17763.0\Microsoft.Graphics.Imaging.Projection.dll">
       <PackagePath>Microsoft.Graphics.Imaging.Projection.dll</PackagePath>
       <Modified>2025-09-15T20:44:42.000</Modified>
@@ -927,7 +947,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.deps.json">
       <PackagePath>RogazionistiRE.deps.json</PackagePath>
-      <Modified>2025-11-03T18:31:40.108</Modified>
+      <Modified>2025-11-09T16:32:10.077</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.controls.settingscontrols\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Controls.SettingsControls.pri">
+      <PackagePath>CommunityToolkit.WinUI.Controls.SettingsControls.pri</PackagePath>
+      <Modified>2025-04-02T18:04:50.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.extensions\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Extensions.pri">
+      <PackagePath>CommunityToolkit.WinUI.Extensions.pri</PackagePath>
+      <Modified>2025-04-02T17:52:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.helpers\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Helpers.pri">
+      <PackagePath>CommunityToolkit.WinUI.Helpers.pri</PackagePath>
+      <Modified>2025-04-02T17:54:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.triggers\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Triggers.pri">
+      <PackagePath>CommunityToolkit.WinUI.Triggers.pri</PackagePath>
+      <Modified>2025-04-02T18:04:32.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -963,7 +999,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-11-03T18:34:02.856</Modified>
+      <Modified>2025-11-09T16:32:10.257</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
