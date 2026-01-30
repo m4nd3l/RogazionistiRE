@@ -8,33 +8,32 @@ using System.Threading.Tasks;
 namespace RogazionistiRE.Util {
     public class APIs {
 
-        public static HttpClient client = new() {
-            BaseAddress = new Uri("https://rogazionisti-pd-sito.registroelettronico.com/api/"),
-        };
+        public static HttpClient client = new() { BaseAddress = new Uri("https://rogazionisti-pd-sito.registroelettronico.com/api/"), };
 
         private static readonly string baseAPIEndpoint = "v3/scuole/rogazionisti-pd/studenti/";
-        private static readonly string login = "v4/utenti/login/";
+        private static readonly string login = "v4/utenti/login-web/";
 
         public const string endLoginStudentInfoAPIEndpoint = "/studente/info/";
         public const string endSubjectsAPIEndpoint = "/materie_nextapi/";
-        public const string endMarksAPIEndpoint = "/voti_plain/";
+        public const string endGradesAPIEndpoint = "/voti_plain/";
         public const string endHomeworkAPIEndpoint = "/compiti_plain/";
         public const string endAgendaAPIEndpoint = "/agenda_plain/";
         public const string endArgumentsAPIEndpoint = "/argomenti_plain/";
         public const string endAnnotationsAPIEndpoint = "/annotazioni_plain/";
         public const string endComunicationsThreadAPIEndpoint = "/thread/";
         public const string endComunicationsUserAPIEndpoint = "/destinatari-utente/";
+        public const string endReportCardAPIEndpoint = "/pagelle_plain/";
 
         public static string getLoginAPIEndpoint() => login;
         public static string getLoginInfoStudentAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endLoginStudentInfoAPIEndpoint);
         public static string getSubjectsAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endSubjectsAPIEndpoint);
-        public static string getMarksAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endMarksAPIEndpoint);
+        public static string getGradesAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endGradesAPIEndpoint);
         public static string getHomeworkAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endHomeworkAPIEndpoint);
         public static string getAgendaAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endAgendaAPIEndpoint);
         public static string getArgumentsAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endArgumentsAPIEndpoint);
         public static string getAnnotationsAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endAnnotationsAPIEndpoint);
         public static string getComunicationThreadsAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endComunicationsThreadAPIEndpoint);
-        public static string getComunicationUserAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endComunicationsUserAPIEndpoint);
+        public static string getReportCardAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endReportCardAPIEndpoint);
 
         public static async Task<string> getAsync(string APIEndpoint, string token) {
             var request = new HttpRequestMessage(HttpMethod.Get, APIEndpoint);
@@ -43,11 +42,8 @@ namespace RogazionistiRE.Util {
 
             using HttpResponseMessage response = await client.SendAsync(request);
 
-            try {
-                response.EnsureSuccessStatusCode();
-            } catch (HttpRequestException ex) {
-                Debug.WriteLine($"Errore nella richiesta GET all'endpoint {APIEndpoint}.\n{ex}");
-            }
+            try { response.EnsureSuccessStatusCode(); } 
+            catch (HttpRequestException ex) { Debug.WriteLine($"Error during the GET request to {APIEndpoint} endpoint.\nMore info:\n{ex}"); }
 
             return await response.Content.ReadAsStringAsync();
         }
@@ -59,10 +55,9 @@ namespace RogazionistiRE.Util {
 
             using HttpResponseMessage response = await client.PostAsync(APIEndpoint, jsonContent);
 
-            try { response.EnsureSuccessStatusCode(); }
-            catch (HttpRequestException ex) {
-                Debug.WriteLine($"Errore nella richiesta POST all'endpoint {APIEndpoint}.\n{ex}");
-            }
+            try { response.EnsureSuccessStatusCode(); } 
+            catch (HttpRequestException ex) { Debug.WriteLine($"Error during the POST request to {APIEndpoint} endpoint.\nMore info:\n{ex}"); }
+            
             return await response.Content.ReadAsStringAsync();
         }
 
@@ -78,7 +73,7 @@ namespace RogazionistiRE.Util {
                 var studente = doc.RootElement.GetProperty("studenti")[0];
 
                 var idStudente = studente.GetProperty("id").ToString();
-                string annoCorrente = studente.GetProperty("anno_corrente").GetString();
+                string annoCorrente = studente.GetProperty("anno_corrente").GetString(); 
 
                 return (idStudente, annoCorrente);
             } catch (Exception ex) {

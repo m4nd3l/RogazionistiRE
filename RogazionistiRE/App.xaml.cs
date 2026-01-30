@@ -8,80 +8,78 @@ using System.Diagnostics;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace RogazionistiRE
+namespace RogazionistiRE;
+
+public partial class App : Application
 {
-    /// <summary>
-    /// Provides application-specific behavior to supplement the default Application class.
-    /// </summary>
-    public partial class App : Application
-    {
-        private static Window? _window;
-        public static bool isLoggedIn;
+    private static Window? _window;
+    private static bool isLoggedIn;
 
-        /// <summary>
-        /// Initializes the singleton application object.  This is the first line of authored code
-        /// executed, and as such is the logical equivalent of main() or WinMain().
-        /// </summary>
-        public App() {
-            InitializeComponent();
-
-            if (FileWriter.aReadRFalse("isLoggedIn").Contains("true")) 
-                isLoggedIn = true;
-            else {
-                FileWriter.aSave("isLoggedIn", "false");
-                isLoggedIn = false;
+    public App() {
+        InitializeComponent();
+        string? isLoggedValue = FileWriter.aReadRFalse("isLoggedIn");
+        if (isLoggedValue == null) {
+            isLoggedIn = false;
+            return;
+        }
+        
+        if (isLoggedValue.Contains("true")) 
+            isLoggedIn = true;
+        else {
+            FileWriter.aSave("isLoggedIn", "false");
+            isLoggedIn = false;
+        }
+        //isLoggedIn = false; // DEBUG MODE
+        Debug.WriteLine("isLoggedIn: " + FileWriter.aReadRFalse("isLoggedIn"));
+    }
+    
+    protected override void OnLaunched(LaunchActivatedEventArgs args) {
+        if (isLoggedIn) {
+            LoginData loginData = LoginData.getCredentialFromLocker();
+            if (loginData == null) {
+                switchToLoginWindow("Couldn't find any login data in the locker.");
+                return;
             }
-            //isLoggedIn = false; // DEBUG MODE
-            Debug.WriteLine("isLoggedIn: " + FileWriter.aReadRFalse("isLoggedIn"));
-        }
+            string[] result = []; //await loginData.loginIntoMastercomSTARTUP();
 
-        /// <summary>
-        /// Invoked when the application is launched.
-        /// </summary>
-        /// <param name="args">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs args) {
-            if (isLoggedIn) {
-                LoginData loginData = LoginData.getCredentialFromLocker();
-                string[] result = [];//await loginData.loginIntoMastercomSTARTUP();
-
-                if (result == null) { 
-                    Debug.WriteLine("Login failed - loginData.loginIntoMastercomSTARTUP() returned: |\"false\"|");
-                    _window = new Login("Login automatico fallito, provare con il login manuale.");
-                } else {
-                    _window = new Login();
-                    var page = new Home(result[0], result[1]);
-                    _window.Content = page;
-                }
-            } else 
+            if (result == null) {
+                switchToLoginWindow("Login automatico fallito, provare con il login manuale.");
+                return;
+            } else {
                 _window = new Login();
-            _window.Activate();
-        }
-
-        public static void setWindow(Window window) {
-            var oldWindow = _window;
-            _window = window;
-            if(oldWindow != null)
-                _window.AppWindow.Move(oldWindow.AppWindow.Position);
-            _window.Activate();
-            if (oldWindow != null && oldWindow != _window)
-                oldWindow.Close();
-        }
-
-        public static void switchPage(Page page) {
-            if (_window != null) {
+                var page = new Home(result[0], result[1]);
                 _window.Content = page;
                 _window.Activate();
             }
-        }
+        } else switchToLoginWindow();
+    }
 
-        public static void switchToLoginWindow() {
-            var oldWindow = _window;
-            _window = new Login();
-            if (oldWindow != null)
-                _window.AppWindow.Move(oldWindow.AppWindow.Position);
+    #region Window Management
+    public static void setWindow(Window window) {
+        var oldWindow = _window;
+        _window = window;
+        if(oldWindow != null)
+            _window.AppWindow.Move(oldWindow.AppWindow.Position);
+        _window.Activate();
+        if (oldWindow != null && oldWindow != _window)
+            oldWindow.Close();
+    }
+    public static void switchPage(Page page) {
+        if (_window != null) {
+            _window.Content = page;
             _window.Activate();
-            if (oldWindow != null && oldWindow != _window)
-                oldWindow.Close();
         }
     }
+    public static void switchToLoginWindow(string error = "") {
+        var oldWindow = _window;
+        if (error != "") Debug.Write($"switchToLoginWindow() - {error}");
+        _window = new Login(error);
+        if (oldWindow != null)
+            _window.AppWindow.Move(oldWindow.AppWindow.Position);
+        _window.Activate();
+        if (oldWindow != null && oldWindow != _window)
+            oldWindow.Close();
+    }
+    #endregion
 }
+
