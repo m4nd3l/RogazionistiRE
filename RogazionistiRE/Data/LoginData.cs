@@ -21,7 +21,7 @@ public class LoginData {
     
     #region Login
     public async Task<LoginResult> loginIntoMastercom() {
-        //TODO
+        //TODO : complete
     }
     #endregion
     
