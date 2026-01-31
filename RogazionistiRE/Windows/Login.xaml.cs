@@ -28,7 +28,7 @@ public sealed partial class Login : Window {
         if (loginData.getUserName().Equals("demo") && loginData.getPassword().Equals("demo")) {
             LoginResultJson? demoResult = loginData.demoLogin();
             rememberMeManagement(loginData);
-            var demoPage = new Home(demoResult, true);
+            var demoPage = new Students(demoResult, true);
             await demoPage.init();
             Content = demoPage;
             return;
@@ -46,7 +46,7 @@ public sealed partial class Login : Window {
         Debug.WriteLine("The result of the login is the following...");
         Debug.WriteLine(result);
         
-        var page = new Home(result);
+        var page = new Students(result);
         await page.init();
         Content = page;
     }

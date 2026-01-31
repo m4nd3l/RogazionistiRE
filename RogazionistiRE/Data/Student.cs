@@ -11,18 +11,18 @@ using System.Threading.Tasks;
 namespace RogazionistiRE.Data;
 
 public class Student {
-    public string                       _token              { get; set; }
-    public StudentJson                  _student            { get; set; }
-    public StudentInfoJson              _info               { get; set; }
-    public List<SubjectJson>            _subject            { get; set; }
-    public List<GradeJson>              _grades             { get; set; }
-    public List<CommitmentJson>         _commitment         { get; set; }
-    public List<HomeworkJson>           _homework           { get; set; }
-    public List<LessonArgumentJson>     _lesson             { get; set; }
-    public List<AnnotationJson>         _annotation         { get; set; }
-    public List<ReportCardJson>         _reportCards        { get; set; }
-    public List<ComunicationThreadJson> _comunicationThread { get; set; }
-    public List<ComunicationUserJson>   _comunicationUser   { get; set; }
+    private string                      ? _token              { get; set; }
+    public  StudentJson                 ? _student            { get; set; }
+    private StudentInfoJson             ? _info               ;
+    private List<SubjectJson>           ? _subject            ;
+    private List<GradeJson>             ? _grades             ;
+    private List<CommitmentJson>        ? _commitment         ;
+    private List<HomeworkJson>          ? _homework           ;
+    private List<LessonArgumentJson>    ? _lesson             ;
+    private List<AnnotationJson>        ? _annotation         ;
+    private List<ReportCardJson>        ? _reportCards        ;
+    private List<ComunicationThreadJson>? _comunicationThread ;
+    private List<ComunicationUserJson>  ? _comunicationUser   ;
     private bool _demo;
 
     private Student(string token, StudentJson student, bool demo) {
@@ -30,21 +30,48 @@ public class Student {
         _student = student;
         _demo    = demo;
     }
-    private async Task init() {
-        if (_demo) {
-            _info               = deserialize<StudentInfoJson>             (DemoJsons.CARLETTUCCINO_INFO_JSON);
-            _subject            = deserialize<List<SubjectJson>>           (DemoJsons.CARLETTUCCINO_SUBJECTS_JSON);
-            _grades             = deserialize<List<GradeJson>>             (DemoJsons.CARLETTUCCINO_GRADES_JSON);
-            _commitment         = deserialize<List<CommitmentJson>>        (DemoJsons.CARLETTUCCINO_AGENDA_JSON);
-            _homework           = deserialize<List<HomeworkJson>>          (DemoJsons.CARLETTUCCINO_HOMEWORK_JSON);
-            _lesson             = deserialize<List<LessonArgumentJson>>    (DemoJsons.CARLETTUCCINO_LESSONS_JSON);
-            _annotation         = deserialize<List<AnnotationJson>>        (DemoJsons.CARLETTUCCINO_ANNOTATIONS_JSON);
-            _reportCards        = deserialize<List<ReportCardJson>>        (DemoJsons.CARLETTUCCINO_REPORT_CARD_JSON);
-            _comunicationThread = deserialize<List<ComunicationThreadJson>>(DemoJsons.CARLETTUCCINO_COMUNICATION_THREAD_JSON);
-            _comunicationUser   = deserialize<List<ComunicationUserJson>>  (DemoJsons.CARLETTUCCINO_COMUNICATION_USER_JSON);
-            return;
-        } 
-        await loadOthers();
+
+    public async Task<StudentInfoJson> Info() {
+        if (_info == null) _info = await getObject<StudentInfoJson>(APIs.getLoginInfoStudentAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_INFO_JSON);
+        return _info;
+    }
+    public async Task<List<SubjectJson>> Subjects() {
+        if (_subject == null) _subject = await getObject<List<SubjectJson>>(APIs.getSubjectsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_SUBJECTS_JSON);
+        return _subject;
+    }
+    public async Task<List<GradeJson>> Grades() {
+        if (_grades == null) _grades = await getObject<List<GradeJson>>(APIs.getLoginInfoStudentAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_GRADES_JSON);
+        return _grades;
+    }
+    public async Task<List<CommitmentJson>> Commitments() {
+        if (_commitment == null) _commitment = await getObject<List<CommitmentJson>>(APIs.getAgendaAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_AGENDA_JSON);
+        return _commitment;
+    }
+    public async Task<List<HomeworkJson>> Homework() {
+        if (_homework == null) _homework = await getObject<List<HomeworkJson>>(APIs.getHomeworkAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_HOMEWORK_JSON);
+        return _homework;
+    }
+    public async Task<List<LessonArgumentJson>> Lessons() {
+        if (_lesson == null) _lesson = await getObject<List<LessonArgumentJson>>(APIs.getArgumentsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_LESSONS_JSON);
+        return _lesson;
+    }
+    public async Task<List<AnnotationJson>> Annotations() {
+        if (_annotation == null) _annotation = await getObject<List<AnnotationJson>>(APIs.getAnnotationsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_ANNOTATIONS_JSON);
+        return _annotation;
+    }
+    public async Task<List<ReportCardJson>> ReportCards() {
+        if (_reportCards == null) _reportCards = await getObject<List<ReportCardJson>>(APIs.getReportCardAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_REPORT_CARD_JSON);
+        return _reportCards;
+    }
+    public async Task<List<ComunicationThreadJson>> ComunicationThread() {
+        if (_comunicationThread == null) _comunicationThread = 
+            await getObject<List<ComunicationThreadJson>>(APIs.getComunicationThreadsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_COMUNICATION_THREAD_JSON);
+        return _comunicationThread;
+    }
+    public async Task<List<ComunicationUserJson>> ComunicationUser() {
+        if (_comunicationUser == null) _comunicationUser = 
+            await getObject<List<ComunicationUserJson>>(APIs.getComunicationsUserAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_COMUNICATION_USER_JSON);
+        return _comunicationUser;
     }
 
     public SubjectJson? getSubject(int subjectID) {
@@ -58,25 +85,17 @@ public class Student {
     public string? getCurrentYearAndClass() {
         YearJson? currentYear = _student.Years.FirstOrDefault(year => year.ID == _student.CurrentYear);
         if (currentYear != null) {
-            string currentYearString = currentYear.ID.Replace("_", "-");
+            string currentYearString = currentYear.ID.Replace("_", "/");
             string currentClass = currentYear.Class;
             return $"{currentYearString}  -  {currentClass}";
         }
-        return _student.CurrentYear.Replace("_", "-");
+        return _student.CurrentYear.Replace("_", "/");
     }
     
     #region LOADING
-    private async Task loadOthers() {
-        _info               = await getRequest<StudentInfoJson>             (APIs.getLoginInfoStudentAPIEndpoint   (_student));
-        _subject            = await getRequest<List<SubjectJson>>           (APIs.getSubjectsAPIEndpoint           (_student));
-        _grades             = await getRequest<List<GradeJson>>             (APIs.getGradesAPIEndpoint             (_student));
-        _commitment         = await getRequest<List<CommitmentJson>>        (APIs.getAgendaAPIEndpoint             (_student));
-        _homework           = await getRequest<List<HomeworkJson>>          (APIs.getHomeworkAPIEndpoint           (_student));
-        _lesson             = await getRequest<List<LessonArgumentJson>>    (APIs.getArgumentsAPIEndpoint          (_student));
-        _annotation         = await getRequest<List<AnnotationJson>>        (APIs.getAnnotationsAPIEndpoint        (_student));
-        _reportCards        = await getRequest<List<ReportCardJson>>        (APIs.getReportCardAPIEndpoint         (_student));
-        _comunicationThread = await getRequest<List<ComunicationThreadJson>>(APIs.getComunicationThreadsAPIEndpoint(_student));
-        _comunicationUser   = await getRequest<List<ComunicationUserJson>>  (APIs.getComunicationsUserAPIEndpoint  (_student));
+    private async Task<T> getObject<T>(string endpoint = "", string jsonIfDemo = "") where T : class, new() {
+        if (_demo) return deserialize<T>(jsonIfDemo);
+        return await getRequest<T>(endpoint);
     }
     private async Task<T> getRequest<T>(string endpoint) where T : class, new() {
         string response = await APIs.getAsync(endpoint, _token);
@@ -102,7 +121,6 @@ public class Student {
     #endregion
     public static async Task<Student> createStudent(string token, StudentJson studentJson, bool demo) { 
         Student student = new Student(token, studentJson, demo); 
-        await student.init(); 
         return student;
     }
     

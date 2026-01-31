@@ -46,7 +46,7 @@ public partial class App : Application
                 return;
             } else {
                 _window = new Login();
-                var page = new Home(result);
+                var page = new Students(result);
                 await page.init();
                 _window.Content = page;
                 _window.Activate();

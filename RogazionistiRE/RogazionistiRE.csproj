@@ -15,6 +15,14 @@
   <ItemGroup>
     <None Remove="Finestre\Home.xaml" />
     <None Remove="Finestre\Login.xaml" />
+    <None Remove="Windows\Agenda.xaml" />
+    <None Remove="Windows\Annotations.xaml" />
+    <None Remove="Windows\Comunications.xaml" />
+    <None Remove="Windows\Grades.xaml" />
+    <None Remove="Windows\Home.xaml" />
+    <None Remove="Windows\ReportCards.xaml" />
+    <None Remove="Windows\Settings.xaml" />
+    <None Remove="Windows\Subjects.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +51,46 @@
     <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.250402" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.6584" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251003001" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Windows\Subjects.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Windows\Grades.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Windows\Comunications.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Windows\ReportCards.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Windows\Agenda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Windows\Annotations.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Windows\Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Windows\Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Finestre\Home.xaml">

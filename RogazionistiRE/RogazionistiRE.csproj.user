@@ -13,5 +13,29 @@
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="Windows\Subjects.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Grades.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Comunications.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\ReportCards.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Agenda.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Annotations.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Settings.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>
