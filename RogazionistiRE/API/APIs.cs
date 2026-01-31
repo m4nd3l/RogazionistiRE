@@ -1,8 +1,9 @@
-﻿using System;
+﻿using RogazionistiRE.JsonBlueprints;
+using RogazionistiRE.JsonBlueprints.SubBlueprints;
+using System;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace RogazionistiRE.Util {
@@ -25,15 +26,16 @@ namespace RogazionistiRE.Util {
         public const string endReportCardAPIEndpoint = "/pagelle_plain/";
 
         public static string getLoginAPIEndpoint() => login;
-        public static string getLoginInfoStudentAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endLoginStudentInfoAPIEndpoint);
-        public static string getSubjectsAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endSubjectsAPIEndpoint);
-        public static string getGradesAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endGradesAPIEndpoint);
-        public static string getHomeworkAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endHomeworkAPIEndpoint);
-        public static string getAgendaAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endAgendaAPIEndpoint);
-        public static string getArgumentsAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endArgumentsAPIEndpoint);
-        public static string getAnnotationsAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endAnnotationsAPIEndpoint);
-        public static string getComunicationThreadsAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endComunicationsThreadAPIEndpoint);
-        public static string getReportCardAPIEndpoint(string loginJsonResult) => buildEndpoint(loginJsonResult, endReportCardAPIEndpoint);
+        public static string getLoginInfoStudentAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endLoginStudentInfoAPIEndpoint);
+        public static string getSubjectsAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endSubjectsAPIEndpoint);
+        public static string getGradesAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endGradesAPIEndpoint);
+        public static string getHomeworkAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endHomeworkAPIEndpoint);
+        public static string getAgendaAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endAgendaAPIEndpoint);
+        public static string getArgumentsAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endArgumentsAPIEndpoint);
+        public static string getAnnotationsAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endAnnotationsAPIEndpoint);
+        public static string getComunicationThreadsAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endComunicationsThreadAPIEndpoint);
+        public static string getComunicationsUserAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endComunicationsUserAPIEndpoint);
+        public static string getReportCardAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endReportCardAPIEndpoint);
 
         public static async Task<string> getAsync(string APIEndpoint, string token) {
             var request = new HttpRequestMessage(HttpMethod.Get, APIEndpoint);
@@ -62,23 +64,13 @@ namespace RogazionistiRE.Util {
         }
 
 
-        private static string buildEndpoint(string loginJsonResult, string endpointEnd) {
-            var (idStudente, annoCorrente) = getStudentIDAndYear(loginJsonResult);
-            return $"{baseAPIEndpoint}{idStudente}/{annoCorrente}{endpointEnd}";
+        private static string buildEndpoint(StudentJson studentJson, string endpointEnd) {
+            var (StudentID, currentYear) = getStudentIDAndYear(studentJson);
+            return $"{baseAPIEndpoint}{StudentID}/{currentYear}{endpointEnd}";
         }
 
-        private static (string idStudente, string annoCorrente) getStudentIDAndYear(string loginJsonResult) {
-            try {
-                using JsonDocument doc = JsonDocument.Parse(loginJsonResult);
-                var studente = doc.RootElement.GetProperty("studenti")[0];
-
-                var idStudente = studente.GetProperty("id").ToString();
-                string annoCorrente = studente.GetProperty("anno_corrente").GetString(); 
-
-                return (idStudente, annoCorrente);
-            } catch (Exception ex) {
-                throw new Exception($"Impossibile ottenere ID studente e anno corrente dal JSON di login.\n{ex}");
-            }
+        private static (int StudentID, string currentYear) getStudentIDAndYear(StudentJson studentJson) {
+            return (studentJson.ID, studentJson.CurrentYear);
         }
     }
 }

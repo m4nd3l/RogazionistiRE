@@ -1,11 +1,14 @@
-﻿using RogazionistiRE.Util;
+﻿using RogazionistiRE.JsonBlueprints;
+using RogazionistiRE.JsonBlueprints.SubBlueprints;
+using RogazionistiRE.Util;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Windows.Security.Credentials;
 
-namespace RogazionistiRE.JsonBlueprints;
+namespace RogazionistiRE.Data;
 
 public class LoginData {
     private string _username    { get; set; }
@@ -20,8 +23,33 @@ public class LoginData {
     public string getPassword() => _password;
     
     #region Login
-    public async Task<LoginResult> loginIntoMastercom() {
-        //TODO : complete
+    public async Task<(LoginResultJson? result, bool succeded)> login() {
+        // Gets the endpoint and creates the body
+        string loginEndpoint = APIs.getLoginAPIEndpoint();
+        var payload = new { mastercom = "rogazionisti-pd", utente = getUserName(), password = getPassword() };
+        string bodyRequest = JsonSerializer.Serialize(payload);
+        // Makes the request and check for errors
+        string jsonResult = await APIs.postAsync(bodyRequest, loginEndpoint);
+        if (jsonResult.ToLower().Contains("error")) {
+            Debug.WriteLine($"Couldn't login.\nMore info:\n{jsonResult}");
+            return (null, false);
+        }
+        // Converts json into a LoginResult object
+        LoginResultJson? result = JsonSerializer.Deserialize<LoginResultJson>(jsonResult);
+        if (result == null) {
+            Debug.WriteLine($"Couldn't serialize result into a LoginResult object.\nJson received:\n{jsonResult}");
+            return (null, false);
+        }
+        return (result, true);
+    }
+
+    public LoginResultJson? demoLogin() {
+        LoginResultJson? result = JsonSerializer.Deserialize<LoginResultJson>(DemoJsons.LOGIN_JSON);
+        if (result == null) {
+            Debug.WriteLine($"Couldn't serialize result into a LoginResult object.\nJson:\n{DemoJsons.LOGIN_JSON}");
+            return null;
+        }
+        return result;
     }
     #endregion
     
@@ -31,7 +59,7 @@ public class LoginData {
 
         // Removes old credentials
         try { vault.Remove(new PasswordCredential(FileWriter.ApplicationName, _username, _password)); } 
-        catch (Exception exception) { Debug.Write($"Raised an exception while saving the login data.\nMore info:\n{exception}"); }
+        catch (Exception exception) { Debug.WriteLine($"Raised an exception while saving the login data.\nMore info:\n{exception}"); }
 
         // Saves new credentials
         vault.Add(new PasswordCredential(FileWriter.ApplicationName, _username, _password));
@@ -47,7 +75,7 @@ public class LoginData {
         // Tries to get the login data
         try { credentialList = vault.FindAllByResource(FileWriter.ApplicationName); } 
         catch (Exception exception) {
-            Debug.Write($"Raised an exception while retrieving the login data.\nMore info:\n{exception}");
+            Debug.WriteLine($"Raised an exception while retrieving the login data.\nMore info:\n{exception}");
             FileWriter.aSave("isLoggedIn", "false");
             return null;
         }
@@ -62,7 +90,7 @@ public class LoginData {
         return new LoginData(username, password);
     }
     
-    public void deleteData() {
+    public static void deleteData() {
         FileWriter.aSave("isLoggedIn", "false");
     }
     

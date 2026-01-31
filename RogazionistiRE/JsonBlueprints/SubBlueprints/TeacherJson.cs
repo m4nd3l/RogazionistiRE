@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace RogazionistiRE.JsonBlueprints;
+namespace RogazionistiRE.JsonBlueprints.SubBlueprints;
 
-public class Teacher {
+public class TeacherJson {
     [JsonPropertyName("id")]                  public int ID              { get; set; }
     [JsonPropertyName("nome")]                public string Name         { get; set; }
     [JsonPropertyName("ordinamento")]         public int Sorting         { get; set; }

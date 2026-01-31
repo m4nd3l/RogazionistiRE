@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints;
 
-public class Homework {
+public class HomeworkJson {
     [JsonPropertyName("id_materia")]   public int      SubjectID   { get; set; }
     [JsonPropertyName("data")]         public DateTime Date        { get; set; }
     [JsonPropertyName("titolo")]       public string   Title       { get; set; }

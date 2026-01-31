@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window
-    x:Class="RogazionistiRE.Finestre.Login"
+    x:Class="RogazionistiRE.Windows.Login"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:RogazionistiRE.Finestre"
+    xmlns:local="using:RogazionistiRE.Windows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -36,8 +36,8 @@
 
             <TextBlock Name="errors" Foreground="Red" Margin="0 0 0 10" />
 
-            <TextBox Name="userNameBox" PlaceholderText="Username" Width="200" Height="32" Grid.Row="1" Margin="0 5"/>
-            <PasswordBox Name="pswBox" PlaceholderText="Password" Width="200" Height="32" Grid.Row="2" Margin="0 5"/>
+            <TextBox Name="usernameBox" PlaceholderText="Username" Width="200" Height="32" Grid.Row="1" Margin="0 5"/>
+            <PasswordBox Name="passwordBox" PlaceholderText="Password" Width="200" Height="32" Grid.Row="2" Margin="0 5"/>
 
             <CheckBox Name="rememberMe" Content="Remember Me" Grid.Row="3" Margin="0 5" HorizontalAlignment="Center"/>
 

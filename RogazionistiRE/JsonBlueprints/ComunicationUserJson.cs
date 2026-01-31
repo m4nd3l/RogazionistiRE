@@ -2,7 +2,7 @@
 
 namespace RogazionistiRE.JsonBlueprints;
     
-public class ComunicationUser {
+public class ComunicationUserJson {
     [JsonPropertyName("id")]          public string ID          { get; set; }
     [JsonPropertyName("id_utente")]   public string UserID      { get; set; }
     [JsonPropertyName("descrizione")] public string Description { get; set; }

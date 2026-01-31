@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace RogazionistiRE.JsonBlueprints;
+namespace RogazionistiRE.JsonBlueprints.SubBlueprints;
 
-public class Attachments {
+public class AttachmentsJson {
     [JsonPropertyName("descrizione")] public string Description { get; set; }
     [JsonPropertyName("allegato")]    public string Attachment  { get; set; }
 }

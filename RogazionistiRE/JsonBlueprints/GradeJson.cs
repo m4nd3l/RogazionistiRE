@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints;
 
-public class Grade { 
+public class GradeJson { 
     [JsonPropertyName("id_voto")]                     public int          GradeID               { get; set; } 
     [JsonPropertyName("id_materia")]                  public int          SubjectID             { get; set; } 
     [JsonPropertyName("data")]                        public DateTime     Date                  { get; set; } 

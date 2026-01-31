@@ -1,8 +1,8 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using RogazionistiRE.Finestre;
-using RogazionistiRE.JsonBlueprints;
+using RogazionistiRE.Data;
 using RogazionistiRE.Util;
+using RogazionistiRE.Windows;
 using System.Diagnostics;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -29,25 +29,25 @@ public partial class App : Application
             FileWriter.aSave("isLoggedIn", "false");
             isLoggedIn = false;
         }
-        //isLoggedIn = false; // DEBUG MODE
         Debug.WriteLine("isLoggedIn: " + FileWriter.aReadRFalse("isLoggedIn"));
     }
     
-    protected override void OnLaunched(LaunchActivatedEventArgs args) {
+    protected override async void OnLaunched(LaunchActivatedEventArgs args) {
         if (isLoggedIn) {
             LoginData loginData = LoginData.getCredentialFromLocker();
             if (loginData == null) {
                 switchToLoginWindow("Couldn't find any login data in the locker.");
                 return;
             }
-            string[] result = []; //await loginData.loginIntoMastercomSTARTUP();
+            var (result, succeded) = await loginData.login();
 
-            if (result == null) {
+            if (result == null || !succeded) {
                 switchToLoginWindow("Login automatico fallito, provare con il login manuale.");
                 return;
             } else {
                 _window = new Login();
-                var page = new Home(result[0], result[1]);
+                var page = new Home(result);
+                await page.init();
                 _window.Content = page;
                 _window.Activate();
             }
@@ -72,7 +72,7 @@ public partial class App : Application
     }
     public static void switchToLoginWindow(string error = "") {
         var oldWindow = _window;
-        if (error != "") Debug.Write($"switchToLoginWindow() - {error}");
+        if (error != "") Debug.WriteLine($"switchToLoginWindow() - {error}");
         _window = new Login(error);
         if (oldWindow != null)
             _window.AppWindow.Move(oldWindow.AppWindow.Position);
@@ -80,6 +80,8 @@ public partial class App : Application
         if (oldWindow != null && oldWindow != _window)
             oldWindow.Close();
     }
+    
+    
     #endregion
 }
 

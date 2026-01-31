@@ -10,12 +10,6 @@
     <None Update="App.xaml">
       <SubType>Designer</SubType>
     </None>
-    <Page Update="Finestre\Home.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Finestre\Login.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>

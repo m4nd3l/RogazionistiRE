@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints ;
 
-public class Annotation {
+public class AnnotationJson {
     [JsonPropertyName("id_materia")]          public int      SubjectID       { get; set; }
     [JsonPropertyName("data")]                public DateTime Data            { get; set; }
     [JsonPropertyName("simbolo")]             public string   Symbol          { get; set; }
