@@ -19,6 +19,7 @@ public class Student {
     private List<CommitmentJson>        ? _commitment         ;
     private List<HomeworkJson>          ? _homework           ;
     private List<LessonArgumentJson>    ? _lesson             ;
+    private List<AbsencesJson>          ? _absences           ;
     private List<AnnotationJson>        ? _annotation         ;
     private List<ReportCardJson>        ? _reportCards        ;
     private List<ComunicationThreadJson>? _comunicationThread ;
@@ -54,6 +55,10 @@ public class Student {
     public async Task<List<LessonArgumentJson>> Lessons() {
         if (_lesson == null) _lesson = await getObject<List<LessonArgumentJson>>(APIs.getArgumentsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_LESSONS_JSON);
         return _lesson;
+    }
+    public async Task<List<AbsencesJson>> Absences() {
+        if (_absences == null) _absences = await getObject<List<AbsencesJson>>(APIs.getAbsencesAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_ABSENCES_JSON);
+        return _absences;
     }
     public async Task<List<AnnotationJson>> Annotations() {
         if (_annotation == null) _annotation = await getObject<List<AnnotationJson>>(APIs.getAnnotationsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_ANNOTATIONS_JSON);

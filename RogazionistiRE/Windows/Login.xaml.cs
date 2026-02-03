@@ -20,6 +20,7 @@ public sealed partial class Login : Window {
     }
 
     private async void login(object sender, RoutedEventArgs e) {
+        loginButton.IsEnabled = false;
         // GETS THE DATA AND CREATES A LOGIN DATA OBJECT
         string username = usernameBox.Text;
         string password = passwordBox.Password;
@@ -28,9 +29,10 @@ public sealed partial class Login : Window {
         if (loginData.getUserName().Equals("demo") && loginData.getPassword().Equals("demo")) {
             LoginResultJson? demoResult = loginData.demoLogin();
             rememberMeManagement(loginData);
-            var demoPage = new Students(demoResult, true);
-            await demoPage.init();
-            Content = demoPage;
+            App._login = demoResult;
+            var page = new Students(demoResult, true);
+            await page.init();
+            App.switchPage(page);
             return;
         }
         
@@ -45,10 +47,11 @@ public sealed partial class Login : Window {
         
         Debug.WriteLine("The result of the login is the following...");
         Debug.WriteLine(result);
-        
-        var page = new Students(result);
-        await page.init();
-        Content = page;
+        App._login = result;
+        var realPage = new Students(result);
+        await realPage.init();
+        App.switchPage(realPage);
+        loginButton.IsEnabled = true;
     }
 
     private void rememberMeManagement(LoginData loginData) {

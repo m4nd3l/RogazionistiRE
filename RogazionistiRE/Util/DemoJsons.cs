@@ -3416,5 +3416,54 @@ public class DemoJsons {
 	}
 ]
 """;
+    public static string CARLETTUCCINO_ABSENCES_JSON = """
+[
+	{
+		"id": 1076748,
+		"novita": false,
+		"data": "2025-12-11T00:00:00+01:00",
+		"simbolo": "A",
+		"titolo": "Assenza del 11-12-2025",
+		"colore_simbolo": "#00CC00",
+		"sottotitolo": null,
+		"giustificabile": false,
+		"giustificata": "SI",
+		"dettaglio": null,
+		"tipo_assenza": "assenza",
+		"motivazione": "",
+		"prenotazione": false
+	},
+	{
+		"id": 1076614,
+		"novita": false,
+		"data": "2025-12-05T00:00:00+01:00",
+		"simbolo": "U",
+		"titolo": "Uscita anticipata del 05-12-2025 ore 12:11",
+		"colore_simbolo": "#00CC00",
+		"sottotitolo": null,
+		"giustificabile": false,
+		"giustificata": "SI",
+		"dettaglio": null,
+		"tipo_assenza": "assenza",
+		"motivazione": "",
+		"prenotazione": false
+	},
+	{
+		"id": 1076131,
+		"novita": false,
+		"data": "2025-11-24T00:00:00+01:00",
+		"simbolo": "A",
+		"titolo": "Assenza del 24-11-2025",
+		"colore_simbolo": "#00CC00",
+		"sottotitolo": null,
+		"giustificabile": false,
+		"giustificata": "SI",
+		"dettaglio": null,
+		"tipo_assenza": "assenza",
+		"motivazione": "",
+		"prenotazione": false
+	}
+]
+""";
     #endregion
 }

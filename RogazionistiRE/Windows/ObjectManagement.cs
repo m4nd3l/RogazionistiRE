@@ -1,23 +1,23 @@
 ﻿using RogazionistiRE.Data;
 using RogazionistiRE.JsonBlueprints;
 using RogazionistiRE.JsonBlueprints.SubBlueprints;
-using RogazionistiRE.Util;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace RogazionistiRE.Windows;
 
-public class StudentsManagement {
+public class ObjectManagement {
     public static bool _demo;
-    public static LoginResultJson _resultJson;
+    public static LoginResultJson? _resultJson = null;
     public static ObservableCollection<Student> _students = new ObservableCollection<Student>();
     private static int currentStudentIndex;
     
     public static async Task load() {
+        if (_students.Count != 0) return;
         foreach (StudentJson student in _resultJson.Students) {
-            _students.Add(await Student.createStudent(_resultJson.Token, student, _demo));
+            Student obj = await Student.createStudent(_resultJson.Token, student, _demo);
+            if (_students.Contains(obj)) continue;
+            _students.Add(obj);
         }
     }
 
@@ -27,6 +27,10 @@ public class StudentsManagement {
 
     public static Student getCurrentStudent() {
         return _students[currentStudentIndex];
+    }
+
+    public static void resetCurrentStudent() {
+        currentStudentIndex = -1;
     }
 }
 

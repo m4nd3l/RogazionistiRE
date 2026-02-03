@@ -1,6 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using RogazionistiRE.Data;
+using RogazionistiRE.JsonBlueprints;
 using RogazionistiRE.Util;
 using RogazionistiRE.Windows;
 using System.Diagnostics;
@@ -12,45 +13,45 @@ namespace RogazionistiRE;
 
 public partial class App : Application
 {
-    private static Window? _window;
-    private static bool isLoggedIn;
+    private static Window?           _window;
+    public  static LoginResultJson?  _login;
+    private static bool              _isLoggedIn;
 
     public App() {
         InitializeComponent();
         string? isLoggedValue = FileWriter.aReadRFalse("isLoggedIn");
         if (isLoggedValue == null) {
-            isLoggedIn = false;
+            _isLoggedIn = false;
             return;
         }
         
         if (isLoggedValue.Contains("true")) 
-            isLoggedIn = true;
+            _isLoggedIn = true;
         else {
             FileWriter.aSave("isLoggedIn", "false");
-            isLoggedIn = false;
+            _isLoggedIn = false;
         }
         Debug.WriteLine("isLoggedIn: " + FileWriter.aReadRFalse("isLoggedIn"));
     }
     
     protected override async void OnLaunched(LaunchActivatedEventArgs args) {
-        if (isLoggedIn) {
+        if (_isLoggedIn) {
             LoginData loginData = LoginData.getCredentialFromLocker();
             if (loginData == null) {
                 switchToLoginWindow("Couldn't find any login data in the locker.");
                 return;
             }
             var (result, succeded) = await loginData.login();
-
+            _login = result;
             if (result == null || !succeded) {
                 switchToLoginWindow("Login automatico fallito, provare con il login manuale.");
                 return;
-            } else {
-                _window = new Login();
-                var page = new Students(result);
-                await page.init();
-                _window.Content = page;
-                _window.Activate();
             }
+            _window = new Login();
+            var page = new Students(result);
+            await page.init();
+            _window.Content = page;
+            _window.Activate();
         } else switchToLoginWindow();
     }
 
@@ -70,6 +71,7 @@ public partial class App : Application
             _window.Activate();
         }
     }
+    
     public static void switchToLoginWindow(string error = "") {
         var oldWindow = _window;
         if (error != "") Debug.WriteLine($"switchToLoginWindow() - {error}");

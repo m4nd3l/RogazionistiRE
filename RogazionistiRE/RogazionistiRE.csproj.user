@@ -13,6 +13,12 @@
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="Windows\Absences.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Overview.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\Subjects.xaml">
       <SubType>Designer</SubType>
     </Page>

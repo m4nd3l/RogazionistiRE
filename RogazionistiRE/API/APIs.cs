@@ -24,6 +24,7 @@ namespace RogazionistiRE.Util {
         public const string endComunicationsThreadAPIEndpoint = "/thread/";
         public const string endComunicationsUserAPIEndpoint = "/destinatari-utente/";
         public const string endReportCardAPIEndpoint = "/pagelle_plain/";
+        public const string endAbsencesAPIEndpoint = "/assenze_plain/";
 
         public static string getLoginAPIEndpoint() => login;
         public static string getLoginInfoStudentAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endLoginStudentInfoAPIEndpoint);
@@ -36,6 +37,7 @@ namespace RogazionistiRE.Util {
         public static string getComunicationThreadsAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endComunicationsThreadAPIEndpoint);
         public static string getComunicationsUserAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endComunicationsUserAPIEndpoint);
         public static string getReportCardAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endReportCardAPIEndpoint);
+        public static string getAbsencesAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endAbsencesAPIEndpoint);
 
         public static async Task<string> getAsync(string APIEndpoint, string token) {
             var request = new HttpRequestMessage(HttpMethod.Get, APIEndpoint);
