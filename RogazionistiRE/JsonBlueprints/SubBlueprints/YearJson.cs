@@ -8,22 +8,5 @@ public class YearJson {
     [JsonPropertyName("indirizzo")]   public string   Address   { get; set; }
     [JsonPropertyName("descrizione")] public string   Description { get; set; }
     [JsonPropertyName("servizi")]     public ServicesJson ServicesJson     { get; set; }
-
-    public YearJson() { }
-
-    public YearJson(
-            string id, 
-            string @class, 
-            string address, 
-            string description, 
-            ServicesJson servicesJson
-        ) {
-        ID           = id;
-        Class        = @class;
-        Address      = address;
-        Description  = description;
-        ServicesJson = servicesJson;
-    }
-
 }
 

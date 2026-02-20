@@ -40,6 +40,10 @@ public class LoginData {
             Debug.WriteLine($"Couldn't serialize result into a LoginResult object.\nJson received:\n{jsonResult}");
             return (null, false);
         }
+        if (result.allNull()) {
+            Debug.WriteLine($"Couldn't serialize result into a LoginResult object.\nJson received:\n{jsonResult}");
+            return (null, false);
+        }
         return (result, true);
     }
 

@@ -12,29 +12,5 @@ public class SchoolJson {
     [JsonPropertyName("logo")]         public object? Logo         { get; set; }
     [JsonPropertyName("comune")]       public string  Municipality { get; set; }
     [JsonPropertyName("tipo")]         public string  Type         { get; set; }
-
-    public SchoolJson() { }
-    public SchoolJson(
-        string mastercomId,
-        string name,
-        string notebookUrl,
-        string registryUrl,
-        string schoolUrl,
-        string province,
-        object? logo,
-        string municipality,
-        string type
-        ) {
-        MastercomID  = mastercomId;
-        Name         = name;
-        NotebookURL  = notebookUrl;
-        RegistryURL  = registryUrl;
-        SchoolURL    = schoolUrl;
-        Province     = province;
-        Logo         = logo;
-        Municipality = municipality;
-        Type         = type;
-    }
-
 }
 

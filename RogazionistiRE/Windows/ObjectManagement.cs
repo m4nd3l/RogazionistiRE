@@ -15,7 +15,7 @@ public class ObjectManagement {
     public static async Task load() {
         if (_students.Count != 0) return;
         foreach (StudentJson student in _resultJson.Students) {
-            Student obj = await Student.createStudent(_resultJson.Token, student, _demo);
+            Student obj = await Student.createStudent(_resultJson.Token, student);
             if (_students.Contains(obj)) continue;
             _students.Add(obj);
         }

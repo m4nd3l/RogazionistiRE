@@ -131,7 +131,8 @@ public class DemoJsons {
 	"indirizzo": "MY INDIRIZZO BLAH BLAH"
 }
 """;
-    public static string CARLETTUCCINO_SUBJECTS_JSON = """
+
+	public static string CARLETTUCCINO_SUBJECTS_JSON = """
 [
 	{
 		"id": 1000071,

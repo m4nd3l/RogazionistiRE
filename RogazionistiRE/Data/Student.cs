@@ -1,9 +1,11 @@
 ﻿using RogazionistiRE.JsonBlueprints;
 using RogazionistiRE.JsonBlueprints.SubBlueprints;
 using RogazionistiRE.Util;
+using RogazionistiRE.Windows;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -12,7 +14,7 @@ namespace RogazionistiRE.Data;
 
 public class Student {
     private string                      ? _token              { get; set; }
-    public  StudentJson                 ? _student            { get; set; }
+    public  StudentJson                   _student            { get; set; }
     private StudentInfoJson             ? _info               ;
     private List<SubjectJson>           ? _subject            ;
     private List<GradeJson>             ? _grades             ;
@@ -24,14 +26,50 @@ public class Student {
     private List<ReportCardJson>        ? _reportCards        ;
     private List<ComunicationThreadJson>? _comunicationThread ;
     private List<ComunicationUserJson>  ? _comunicationUser   ;
-    private bool _demo;
 
-    private Student(string token, StudentJson student, bool demo) {
+    private Student(string token, StudentJson student) {
         _token   = token;
         _student = student;
-        _demo    = demo;
     }
 
+    public string getName() {
+        return _student.Name;
+    }
+    public string getFormattedName() {
+        if (string.IsNullOrWhiteSpace(_student.Name))
+            return _student.Name;
+
+        var parts = _student.Name
+            .Trim()
+            .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        var textInfo = CultureInfo.CurrentCulture.TextInfo;
+
+        for (int i = 0; i < parts.Length; i++) {
+            parts[i] = textInfo.ToTitleCase(parts[i].ToLower());
+        }
+
+        return string.Join(" ", parts);
+    }
+    public YearJson? getCurrentYear() {
+        return _student.Years.FirstOrDefault(year => year.ID == _student.CurrentYear);
+    }
+    public string? getClass() {
+        YearJson? currentYear = getCurrentYear();
+        if (currentYear != null) return currentYear.Class;
+        return null;
+    }
+    public string? getCurrentYearAndClass() {
+        YearJson? currentYear = getCurrentYear();
+        if (currentYear != null) {
+            string currentYearString = currentYear.ID.Replace("_", "/");
+            string currentClass = currentYear.Class;
+            return $"{currentYearString}  -  {currentClass}";
+        }
+        return _student.CurrentYear.Replace("_", "/");
+    }
+    
+    #region Getters
     public async Task<StudentInfoJson> Info() {
         if (_info == null) _info = await getObject<StudentInfoJson>(APIs.getLoginInfoStudentAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_INFO_JSON);
         return _info;
@@ -86,20 +124,11 @@ public class Student {
     public List<HomeworkJson>? getHomework(DateTime day) {
         return _homework.Where(homework => homework.Date >= day).ToList();
     }
-
-    public string? getCurrentYearAndClass() {
-        YearJson? currentYear = _student.Years.FirstOrDefault(year => year.ID == _student.CurrentYear);
-        if (currentYear != null) {
-            string currentYearString = currentYear.ID.Replace("_", "/");
-            string currentClass = currentYear.Class;
-            return $"{currentYearString}  -  {currentClass}";
-        }
-        return _student.CurrentYear.Replace("_", "/");
-    }
+    #endregion
     
     #region LOADING
     private async Task<T> getObject<T>(string endpoint = "", string jsonIfDemo = "") where T : class, new() {
-        if (_demo) return deserialize<T>(jsonIfDemo);
+        if (ObjectManagement._demo) return deserialize<T>(jsonIfDemo);
         return await getRequest<T>(endpoint);
     }
     private async Task<T> getRequest<T>(string endpoint) where T : class, new() {
@@ -124,8 +153,8 @@ public class Student {
         return result;
     }
     #endregion
-    public static async Task<Student> createStudent(string token, StudentJson studentJson, bool demo) { 
-        Student student = new Student(token, studentJson, demo); 
+    public static async Task<Student> createStudent(string token, StudentJson studentJson) { 
+        Student student = new Student(token, studentJson); 
         return student;
     }
     

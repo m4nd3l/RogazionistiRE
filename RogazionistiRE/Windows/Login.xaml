@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TitleBar x:Name="LoginTitleBar" Title="RogazionistiRE - Login">
+        <TitleBar x:Name="LoginTitleBar">
             <TitleBar.IconSource>
                 <FontIconSource Glyph="&#xE8F1;"/>
             </TitleBar.IconSource>

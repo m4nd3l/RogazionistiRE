@@ -17,7 +17,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
-    <RegisteredManifestChecksum>C4A5A17E216A49D41F61D5DC79F530698A8F9640107CCA9D8F5B18DBD0E50453</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>F7C731B5053E9121D44C81FA9C6CAF9DD548993C6BE276B3F4DB8EC718B1B85A</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>0965e75e-7c07-4e60-96e9-6b779fcf0604_1.0.0.0_x64__x9gtccprhf47r</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0965e75e-7c07-4e60-96e9-6b779fcf0604_x9gtccprhf47r!App</RegisteredUserModeAppID>
     <RegisteredPackageID>0965e75e-7c07-4e60-96e9-6b779fcf0604</RegisteredPackageID>
@@ -29,21 +29,21 @@
     <AppXManifest Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-02-02T19:55:24.180</Modified>
+      <Modified>2026-02-20T16:20:44.592</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.runtimeconfig.json">
       <PackagePath>RogazionistiRE.runtimeconfig.json</PackagePath>
-      <Modified>2026-01-31T20:38:43.888</Modified>
+      <Modified>2026-02-20T15:13:38.850</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>RogazionistiRE.exe</PackagePath>
-      <Modified>2026-02-02T19:55:23.432</Modified>
+      <Modified>2026-02-20T16:20:44.112</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.dll">
       <PackagePath>RogazionistiRE.dll</PackagePath>
-      <Modified>2026-02-02T19:55:23.423</Modified>
+      <Modified>2026-02-20T16:20:44.107</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.23\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -947,7 +947,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.deps.json">
       <PackagePath>RogazionistiRE.deps.json</PackagePath>
-      <Modified>2026-02-02T15:16:45.081</Modified>
+      <Modified>2026-02-20T15:13:38.806</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\.nuget\packages\communitytoolkit.winui.controls.settingscontrols\8.2.250402\lib\net8.0-windows10.0.19041\CommunityToolkit.WinUI.Controls.SettingsControls.pri">
       <PackagePath>CommunityToolkit.WinUI.Controls.SettingsControls.pri</PackagePath>
@@ -999,7 +999,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2026-02-02T19:55:23.898</Modified>
+      <Modified>2026-02-20T16:14:31.613</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

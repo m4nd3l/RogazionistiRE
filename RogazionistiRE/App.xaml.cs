@@ -2,6 +2,7 @@
 using Microsoft.UI.Xaml.Controls;
 using RogazionistiRE.Data;
 using RogazionistiRE.JsonBlueprints;
+using RogazionistiRE.Language;
 using RogazionistiRE.Util;
 using RogazionistiRE.Windows;
 using System.Diagnostics;
@@ -31,20 +32,20 @@ public partial class App : Application
             FileWriter.aSave("isLoggedIn", "false");
             _isLoggedIn = false;
         }
-        Debug.WriteLine("isLoggedIn: " + FileWriter.aReadRFalse("isLoggedIn"));
     }
     
     protected override async void OnLaunched(LaunchActivatedEventArgs args) {
+        LanguageManager.initialize();
         if (_isLoggedIn) {
             LoginData loginData = LoginData.getCredentialFromLocker();
             if (loginData == null) {
-                switchToLoginWindow("Couldn't find any login data in the locker.");
+                switchToLoginWindow(LanguageManager.getTranslation(LanguageKeys.ErrorAutoCredsNotFound_LoginPage));
                 return;
             }
             var (result, succeded) = await loginData.login();
             _login = result;
             if (result == null || !succeded) {
-                switchToLoginWindow("Login automatico fallito, provare con il login manuale.");
+                switchToLoginWindow(LanguageManager.getTranslation(LanguageKeys.ErrorAutoCreds_LoginPage));
                 return;
             }
             _window = new Login();

@@ -19,6 +19,7 @@
     <None Remove="Windows\Agenda.xaml" />
     <None Remove="Windows\Annotations.xaml" />
     <None Remove="Windows\Comunications.xaml" />
+    <None Remove="Windows\ContentDialogs\MoreInfoStudentContentDialog.xaml" />
     <None Remove="Windows\Grades.xaml" />
     <None Remove="Windows\Home.xaml" />
     <None Remove="Windows\Overview.xaml" />
@@ -111,6 +112,11 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Finestre\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Windows\ContentDialogs\MoreInfoStudentContentDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

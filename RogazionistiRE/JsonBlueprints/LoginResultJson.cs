@@ -14,28 +14,16 @@ public class LoginResultJson {
     [JsonPropertyName("language")]        public object?           Language       { get; set; }
     [JsonPropertyName("url_scuola")]      public string            SchoolURL      { get; set; }
 
-    public LoginResultJson() { }
-
-    public LoginResultJson(
-        string token, 
-        string mastercomToken, 
-        string mastercomId, 
-        string name, 
-        string surname, 
-        int userId, 
-        List<StudentJson> students, 
-        object? language, 
-        string schoolUrl
-        ) {
-        Token          = token;
-        MastercomToken = mastercomToken;
-        MastercomId    = mastercomId;
-        Name           = name;
-        Surname        = surname;
-        UserID         = userId;
-        Students       = students;
-        Language       = language;
-        SchoolURL      = schoolUrl;
+    public bool allNull() {
+        return Token == null && 
+               MastercomToken == null && 
+               MastercomId == null && 
+               Name == null && 
+               Surname == null && 
+               Students == null && 
+               Language == null && 
+               SchoolURL == null &&
+               UserID == 0;
     }
 }
 

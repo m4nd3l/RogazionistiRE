@@ -16,32 +16,5 @@ public class StudentJson {
     [JsonPropertyName("locale")]             public string     Country           { get; set; }
     [JsonPropertyName("valuta")]             public string     Currency          { get; set; }
     [JsonPropertyName("versione_messenger")] public string     MessengerVersion  { get; set; }
-
-    public StudentJson() { }
-    public StudentJson(
-        int id, 
-        string schoolId, 
-        string name, 
-        string photo, 
-        string currentYear, 
-        List<YearJson> years, 
-        SchoolJson schoolJson,
-        ServicesJson servicesJson, 
-        string country, 
-        string currency, 
-        string messengerVersion
-        ) {
-        ID               = id;
-        SchoolID         = schoolId;
-        Name             = name;
-        Photo            = photo;
-        CurrentYear      = currentYear;
-        Years            = years;
-        SchoolJson       = schoolJson;
-        ServicesJson     = servicesJson;
-        Country          = country;
-        Currency         = currency;
-        MessengerVersion = messengerVersion;
-    }
 }
 

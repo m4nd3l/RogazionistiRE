@@ -1,6 +1,7 @@
 using Microsoft.UI.Xaml;
 using RogazionistiRE.Data;
 using RogazionistiRE.JsonBlueprints;
+using RogazionistiRE.Language;
 using System.Diagnostics;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -16,7 +17,12 @@ public sealed partial class Login : Window {
         InitializeComponent();
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(LoginTitleBar);
-        errors.Text = errorMessage;
+        errors.Text                 = errorMessage;
+        LoginTitleBar.Title         = LanguageManager.getTitle(LanguageKeys.Login_LoginPage);
+        usernameBox.PlaceholderText = LanguageManager.getTranslation(LanguageKeys.Username_LoginPage);
+        passwordBox.PlaceholderText = LanguageManager.getTranslation(LanguageKeys.Password_LoginPage);
+        rememberMe.Content          = LanguageManager.getTranslation(LanguageKeys.RememberMe_LoginPage);
+        loginButton.Content = LanguageManager.getTranslation(LanguageKeys.Login_LoginPage);
     }
 
     private async void login(object sender, RoutedEventArgs e) {
@@ -25,6 +31,14 @@ public sealed partial class Login : Window {
         string username = usernameBox.Text;
         string password = passwordBox.Password;
         LoginData loginData = new LoginData(username, password);
+        
+        // CHECKS IF ONE OR BOTH OF THE FIELDS ARE EMPTY
+        if (username == "" || password == "") {
+            errors.Text           = LanguageManager.getTranslation(LanguageKeys.ErrorFields_LoginPage);
+            loginButton.IsEnabled = true;
+            return;
+        }
+        
         // DEMO MODE
         if (loginData.getUserName().Equals("demo") && loginData.getPassword().Equals("demo")) {
             LoginResultJson? demoResult = loginData.demoLogin();
@@ -39,14 +53,13 @@ public sealed partial class Login : Window {
         var (result, succeded) = await loginData.login();
 
         if (!succeded || result == null) {
-            errors.Text = "Errore, username o password non validi.";
+            errors.Text           = LanguageManager.getTranslation(LanguageKeys.ErrorCreds_LoginPage);
+            loginButton.IsEnabled = true;
             return;
         }
 
         rememberMeManagement(loginData);
         
-        Debug.WriteLine("The result of the login is the following...");
-        Debug.WriteLine(result);
         App._login = result;
         var realPage = new Students(result);
         await realPage.init();
