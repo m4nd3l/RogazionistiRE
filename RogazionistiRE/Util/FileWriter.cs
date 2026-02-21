@@ -4,13 +4,8 @@ using Windows.Storage;
 
 namespace RogazionistiRE.Util;
 
-class FileWriter
-{
+class FileWriter {
     public const string ApplicationName = "RogazionistiRE";
-
-    public static void saveLoginData(LoginData loginData) {
-        loginData.saveData();
-    }
 
     public static void aSave(string key, string content) {
         ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
@@ -27,19 +22,5 @@ class FileWriter
         if (localSettings.Values[key] == null)
             return "false";
         return localSettings.Values[key].ToString();
-    }
-
-    public static LoginData? getLoginData() {
-        return LoginData.getCredentialFromLocker();
-    }
-    
-    public static string sanitizeFileNameWithoutFullStop(string name) {
-        foreach (char c in Path.GetInvalidFileNameChars())
-            name = name.Replace(c, '_');
-
-        foreach (char c in new char[] { '.' })
-            name = name.Replace(c, '_');
-
-        return name;
     }
 }

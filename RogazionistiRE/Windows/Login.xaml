@@ -16,6 +16,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -24,25 +25,84 @@
                 <FontIconSource Glyph="&#xE8F1;"/>
             </TitleBar.IconSource>
         </TitleBar>
+        
+        <!-- Card centrale -->
+        <Grid Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+              Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+              BorderThickness="1" 
+              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+              CornerRadius="{StaticResource OverlayCornerRadius}"
+              Padding="0">
 
-        <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- Righe e colonne principali -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/> <!-- TITLE -->
+                <RowDefinition Height="Auto"/> <!-- Username -->
+                <RowDefinition Height="Auto"/> <!-- Password -->
+                <RowDefinition Height="Auto"/> <!-- Remember Me -->
+                <RowDefinition Height="Auto"/> <!-- Error -->
+                <RowDefinition Height="Auto"/> <!-- Login -->
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/> <!-- Colonna centrale contenuti -->
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
 
-            <TextBlock Name="errors" Foreground="Red" Margin="0 0 0 10" />
+            <!-- Titolo -->
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0"
+                       Name="Title" FontSize="50"/>
 
-            <TextBox Name="usernameBox" PlaceholderText="Username" Width="200" Height="32" Grid.Row="1" Margin="0 5"/>
-            <PasswordBox Name="passwordBox" PlaceholderText="Password" Width="200" Height="32" Grid.Row="2" Margin="0 5"/>
+            <!-- Username -->
+            <Grid Grid.Row="1" Grid.Column="1" Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0"
+                         Name="Username"
+                         PlaceholderText="Username"/>
+            </Grid>
 
-            <CheckBox Name="rememberMe" Content="Remember Me" Grid.Row="3" Margin="0 5" HorizontalAlignment="Center"/>
+            <!-- Password + bottone mostra/nascondi -->
+            <Grid Grid.Row="2" Grid.Column="1" Margin="0,12,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/> <!-- Password -->
+                    <ColumnDefinition Width="Auto"/> <!-- Bottone -->
+                </Grid.ColumnDefinitions>
 
-            <Button Name="loginButton" Content="Login" Width="120" Height="32" Grid.Row="4" Margin="0 10" Click="login"/>
+                <PasswordBox Grid.Column="0"
+                             Name="Password"
+                             PlaceholderText="Password"
+                             IsPasswordRevealButtonEnabled="False"/>
+
+                <Button Grid.Column="1"
+                        Margin="8,0,0,0"
+                        Name="ShowPassword"
+                        Click="showOrHidePassword">
+                    <FontIcon x:Name="ShowPasswordGlyph" Glyph="&#xED1A;"/>
+                </Button>
+            </Grid>
+
+            <!-- Remember Me -->
+            <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Margin="15,12,0,0"
+                      Name="RememberMe" Content="Remember Me"/>
+
+            <!-- Login -->
+            <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Margin="0,12,0,0"
+                    Name="LoginButton" Content="Login" Click="login"/>
+
+            <!-- Errori -->
+            <TextBlock Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Margin="0,5,0,12"
+                       Name="Errors" FontSize="20" Foreground="Red" Text=""/>
+            
+            <ProgressRing Grid.Row="4" Grid.Column="1" Margin="140, 0, 0, 0"
+                          IsActive="True"
+                          Visibility="Collapsed"
+                          Name="Progress"
+                          Width="40"
+                          Height="40"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"/>
         </Grid>
     </Grid>
 </Window>
-

@@ -1,4 +1,6 @@
+using CommunityToolkit.WinUI;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using RogazionistiRE.Data;
 using RogazionistiRE.JsonBlueprints;
 using RogazionistiRE.Language;
@@ -17,27 +19,40 @@ public sealed partial class Login : Window {
         InitializeComponent();
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(LoginTitleBar);
-        errors.Text                 = errorMessage;
+        Title.Text                  = LanguageManager.getTranslation(LanguageKeys.RogazionistiRE_Winbar);
+        Errors.Text                 = errorMessage;
         LoginTitleBar.Title         = LanguageManager.getTitle(LanguageKeys.Login_LoginPage);
-        usernameBox.PlaceholderText = LanguageManager.getTranslation(LanguageKeys.Username_LoginPage);
-        passwordBox.PlaceholderText = LanguageManager.getTranslation(LanguageKeys.Password_LoginPage);
-        rememberMe.Content          = LanguageManager.getTranslation(LanguageKeys.RememberMe_LoginPage);
-        loginButton.Content = LanguageManager.getTranslation(LanguageKeys.Login_LoginPage);
+        Username.PlaceholderText    = LanguageManager.getTranslation(LanguageKeys.Username_LoginPage);
+        Password.PlaceholderText    = LanguageManager.getTranslation(LanguageKeys.Password_LoginPage);
+        RememberMe.Content          = LanguageManager.getTranslation(LanguageKeys.RememberMe_LoginPage);
+        LoginButton.Content         = LanguageManager.getTranslation(LanguageKeys.Login_LoginPage);
     }
 
+    private void showOrHidePassword(object sender, RoutedEventArgs e) {
+        if (Password.PasswordRevealMode == PasswordRevealMode.Hidden) {
+            Password.PasswordRevealMode = PasswordRevealMode.Visible;
+            ShowPasswordGlyph.Glyph     = "";
+        } else {
+            Password.PasswordRevealMode = PasswordRevealMode.Hidden;
+            ShowPasswordGlyph.Glyph     = "";
+        }
+    }
+    
     private async void login(object sender, RoutedEventArgs e) {
-        loginButton.IsEnabled = false;
+        LoginButton.IsEnabled = false;
         // GETS THE DATA AND CREATES A LOGIN DATA OBJECT
-        string username = usernameBox.Text;
-        string password = passwordBox.Password;
+        string username = Username.Text;
+        string password = Password.Password;
         LoginData loginData = new LoginData(username, password);
         
         // CHECKS IF ONE OR BOTH OF THE FIELDS ARE EMPTY
         if (username == "" || password == "") {
-            errors.Text           = LanguageManager.getTranslation(LanguageKeys.ErrorFields_LoginPage);
-            loginButton.IsEnabled = true;
+            Errors.Text           = LanguageManager.getTranslation(LanguageKeys.ErrorFields_LoginPage);
+            LoginButton.IsEnabled = true;
             return;
         }
+        
+        startOverlay();
         
         // DEMO MODE
         if (loginData.getUserName().Equals("demo") && loginData.getPassword().Equals("demo")) {
@@ -47,14 +62,15 @@ public sealed partial class Login : Window {
             var page = new Students(demoResult, true);
             await page.init();
             App.switchPage(page);
+            stopOverlay();
             return;
         }
-        
         var (result, succeded) = await loginData.login();
 
         if (!succeded || result == null) {
-            errors.Text           = LanguageManager.getTranslation(LanguageKeys.ErrorCreds_LoginPage);
-            loginButton.IsEnabled = true;
+            Errors.Text           = LanguageManager.getTranslation(LanguageKeys.ErrorCreds_LoginPage);
+            stopOverlay();
+            LoginButton.IsEnabled = true;
             return;
         }
 
@@ -64,18 +80,17 @@ public sealed partial class Login : Window {
         var realPage = new Students(result);
         await realPage.init();
         App.switchPage(realPage);
-        loginButton.IsEnabled = true;
+        LoginButton.IsEnabled = true;
+        stopOverlay();
     }
-
     private void rememberMeManagement(LoginData loginData) {
-        //REMEMBER ME MANAGEMENT
-        if (rememberMe.IsChecked == true && 
+        if (RememberMe.IsChecked == true && 
             LoginData.getCredentialFromLocker() == loginData) {
             Debug.WriteLine("Saving credentials...");
             Debug.WriteLine($"Already saved credentials: {LoginData.getCredentialFromLocker()}");
             return;
         }
-        if (rememberMe.IsChecked == true) {
+        if (RememberMe.IsChecked == true) {
             Debug.WriteLine("Saving credentials...");
             loginData.saveData();
             Debug.WriteLine("Credentials saved!");
@@ -85,5 +100,11 @@ public sealed partial class Login : Window {
             Debug.WriteLine("Logged in without saving...");
             LoginData.deleteData();
         }
+    }
+    private void startOverlay() {
+        Progress.Visibility = Visibility.Visible;
+    }
+    private void stopOverlay() {
+        Progress.Visibility = Visibility.Collapsed;
     }
 }
