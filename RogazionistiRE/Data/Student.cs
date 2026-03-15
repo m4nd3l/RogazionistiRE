@@ -22,7 +22,8 @@ public class Student {
     private List<HomeworkJson>          ? _homework           ;
     private List<LessonArgumentJson>    ? _lesson             ;
     private List<AbsencesJson>          ? _absences           ;
-    private List<AnnotationJson>        ? _annotation         ;
+    private List<AnnotationJson>        ? _annotations        ;
+    private List<NotesJson>             ? _notes              ;
     private List<ReportCardJson>        ? _reportCards        ;
     private List<ComunicationThreadJson>? _comunicationThread ;
     private List<ComunicationUserJson>  ? _comunicationUser   ;
@@ -79,10 +80,10 @@ public class Student {
         return _subject;
     }
     public async Task<List<GradeJson>> Grades() {
-        if (_grades == null) _grades = await getObject<List<GradeJson>>(APIs.getLoginInfoStudentAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_GRADES_JSON);
+        if (_grades == null) _grades = await getObject<List<GradeJson>>(APIs.getGradesAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_GRADES_JSON);
         return _grades;
     }
-    public async Task<List<CommitmentJson>> Commitments() {
+    public async Task<List<CommitmentJson>> Agenda() {
         if (_commitment == null) _commitment = await getObject<List<CommitmentJson>>(APIs.getAgendaAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_AGENDA_JSON);
         return _commitment;
     }
@@ -99,8 +100,13 @@ public class Student {
         return _absences;
     }
     public async Task<List<AnnotationJson>> Annotations() {
-        if (_annotation == null) _annotation = await getObject<List<AnnotationJson>>(APIs.getAnnotationsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_ANNOTATIONS_JSON);
-        return _annotation;
+        if (_annotations == null) _annotations = await getObject<List<AnnotationJson>>(APIs.getAnnotationsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_ANNOTATIONS_JSON);
+        return _annotations;
+    }
+    
+    public async Task<List<NotesJson>> Notes() {
+        if (_notes == null) _notes = await getObject<List<NotesJson>>(APIs.getNotesAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_NOTES_JSON);
+        return _notes;
     }
     public async Task<List<ReportCardJson>> ReportCards() {
         if (_reportCards == null) _reportCards = await getObject<List<ReportCardJson>>(APIs.getReportCardAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_REPORT_CARD_JSON);
@@ -117,11 +123,11 @@ public class Student {
         return _comunicationUser;
     }
 
-    public SubjectJson? getSubject(int subjectID) {
+    public SubjectJson getSubject(int subjectID) {
         return _subject.FirstOrDefault(subject => subject.ID == subjectID);
     }
 
-    public List<HomeworkJson>? getHomework(DateTime day) {
+    public List<HomeworkJson> getHomework(DateTime day) {
         return _homework.Where(homework => homework.Date >= day).ToList();
     }
     #endregion

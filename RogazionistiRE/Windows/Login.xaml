@@ -10,99 +10,149 @@
     Title="Login">
 
     <Window.SystemBackdrop>
-        <MicaBackdrop/>
+        <MicaBackdrop Kind="Base"/>
     </Window.SystemBackdrop>
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <TitleBar x:Name="LoginTitleBar">
-            <TitleBar.IconSource>
-                <FontIconSource Glyph="&#xE8F1;"/>
-            </TitleBar.IconSource>
-        </TitleBar>
-        
-        <!-- Card centrale -->
-        <Grid Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
-              Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-              BorderThickness="1" 
-              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
-              CornerRadius="{StaticResource OverlayCornerRadius}"
-              Padding="0">
-
-            <!-- Righe e colonne principali -->
+        <Grid x:Name="RootContent">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/> <!-- TITLE -->
-                <RowDefinition Height="Auto"/> <!-- Username -->
-                <RowDefinition Height="Auto"/> <!-- Password -->
-                <RowDefinition Height="Auto"/> <!-- Remember Me -->
-                <RowDefinition Height="Auto"/> <!-- Error -->
-                <RowDefinition Height="Auto"/> <!-- Login -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="*"/> <!-- Colonna centrale contenuti -->
-                <ColumnDefinition Width="40"/>
-            </Grid.ColumnDefinitions>
 
-            <!-- Titolo -->
-            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Margin="0,20,0,0"
-                       Name="Title" FontSize="50"/>
+            <TitleBar x:Name="LoginTitleBar">
+                <TitleBar.IconSource>
+                    <FontIconSource Glyph="&#xE8F1;"/>
+                </TitleBar.IconSource>
+            </TitleBar>
 
-            <!-- Username -->
-            <Grid Grid.Row="1" Grid.Column="1" Margin="0,12,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBox Grid.Column="0"
-                         Name="Username"
-                         PlaceholderText="Username"/>
-            </Grid>
+            <StackPanel Grid.Row="1" 
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Center" 
+                        Spacing="12"
+                        Width="400"
+                        Padding="32"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                        BorderThickness="1" 
+                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                        CornerRadius="8">
 
-            <!-- Password + bottone mostra/nascondi -->
-            <Grid Grid.Row="2" Grid.Column="1" Margin="0,12,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/> <!-- Password -->
-                    <ColumnDefinition Width="Auto"/> <!-- Bottone -->
-                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="Title" 
+                           Text="Welcome"
+                           FontSize="32" 
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center" 
+                           Margin="0,0,0,0"/>
 
-                <PasswordBox Grid.Column="0"
-                             Name="Password"
-                             PlaceholderText="Password"
-                             IsPasswordRevealButtonEnabled="False"/>
+                <TextBlock x:Name="Signin" 
+                           Text="Please sign in to continue" 
+                           HorizontalAlignment="Center" 
+                           FontSize="14"
+                           Foreground="{ThemeResource SystemControlPageTextBaseMediumBrush}"
+                           Margin="0,0,0,10"/>
 
-                <Button Grid.Column="1"
-                        Margin="8,0,0,0"
-                        Name="ShowPassword"
-                        Click="showOrHidePassword">
-                    <FontIcon x:Name="ShowPasswordGlyph" Glyph="&#xED1A;"/>
-                </Button>
-            </Grid>
+                <TextBox x:Name="Username" 
+                         PlaceholderText="Username" 
+                         FontSize="14"
+                         Height="40"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Left"/>
 
-            <!-- Remember Me -->
-            <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Margin="15,12,0,0"
-                      Name="RememberMe" Content="Remember Me"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <PasswordBox x:Name="Password" 
+                                 PlaceholderText="Password" 
+                                 FontSize="14"
+                                 Height="40"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 IsPasswordRevealButtonEnabled="False"/>
+                    <Button x:Name="ShowPassword" 
+                            Click="showOrHidePassword" 
+                            VerticalAlignment="Stretch"
+                            Margin="8,0,0,0"
+                            Grid.Column="1"
+                            Width="40">
+                        <FontIcon x:Name="ShowPasswordGlyph" Glyph="&#xED1A;" FontSize="14"/>
+                    </Button>
+                </Grid>
 
-            <!-- Login -->
-            <Button Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Margin="0,12,0,0"
-                    Name="LoginButton" Content="Login" Click="login"/>
+                <CheckBox x:Name="RememberMe" 
+                          Content="Remember me" 
+                          FontSize="14"
+                          Margin="0,2,0,0"/>
 
-            <!-- Errori -->
-            <TextBlock Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" Margin="0,5,0,12"
-                       Name="Errors" FontSize="20" Foreground="Red" Text=""/>
+                <Grid Margin="0,10,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="LoginButton" 
+                            Content="Login" 
+                            FontSize="15"
+                            FontWeight="SemiBold"
+                            Height="44"
+                            Style="{StaticResource AccentButtonStyle}"
+                            HorizontalAlignment="Stretch"
+                            Click="login"/>
+                    <Button x:Name="ChangeLanguage" 
+                            Click="changeLanguage" 
+                            Margin="8,0,0,0"
+                            Width="44"
+                            Height="44"
+                            Grid.Column="1">
+                        <FontIcon Glyph="&#xE774;" FontSize="16"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="ProgressOverlay" 
+              Visibility="Collapsed"
+              Opacity="0"
+              Canvas.ZIndex="100">
             
-            <ProgressRing Grid.Row="4" Grid.Column="1" Margin="140, 0, 0, 0"
-                          IsActive="True"
-                          Visibility="Collapsed"
-                          Name="Progress"
-                          Width="40"
-                          Height="40"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"/>
+            <Grid.Resources>
+                <Storyboard x:Name="FadeInOverlay">
+                    <DoubleAnimation Storyboard.TargetName="ProgressOverlay"
+                                     Storyboard.TargetProperty="Opacity"
+                                     From="0.0" To="1.0" Duration="0:0:0.25"/>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProgressOverlay"
+                                                   Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="Visible"/>
+                    </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+
+                <Storyboard x:Name="FadeOutOverlay">
+                    <DoubleAnimation Storyboard.TargetName="ProgressOverlay"
+                                     Storyboard.TargetProperty="Opacity"
+                                     From="1.0" To="0.0" Duration="0:0:0.25"/>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProgressOverlay"
+                                                   Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame KeyTime="0:0:0.25" Value="Collapsed"/>
+                    </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+            </Grid.Resources>
+
+            <Rectangle>
+                <Rectangle.Fill>
+                    <AcrylicBrush AlwaysUseFallback="False" 
+                                  TintOpacity="0.6" 
+                                  TintColor="{ThemeResource SystemAltHighColor}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="16">
+                <ProgressRing x:Name="ProgressRing" IsActive="True" Width="64" Height="64"/>
+                <TextBlock x:Name="Auth" 
+                           Text="Authenticating..." 
+                           FontSize="16"
+                           FontWeight="SemiBold"
+                           HorizontalAlignment="Center"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

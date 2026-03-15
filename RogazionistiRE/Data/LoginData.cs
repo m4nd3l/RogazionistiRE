@@ -1,9 +1,12 @@
-﻿using RogazionistiRE.JsonBlueprints;
+﻿using Microsoft.Windows.AppNotifications;
+using Microsoft.Windows.AppNotifications.Builder;
+using RogazionistiRE.JsonBlueprints;
 using RogazionistiRE.JsonBlueprints.SubBlueprints;
 using RogazionistiRE.Util;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Windows.Security.Credentials;
@@ -59,42 +62,40 @@ public class LoginData {
     
     #region Credential Saving System
     public void saveData() {
+        clearAllAppCredentials();
         var vault = new PasswordVault();
 
-        // Removes old credentials
-        try { vault.Remove(new PasswordCredential(FileWriter.ApplicationName, _username, _password)); } 
-        catch (Exception exception) { Debug.WriteLine($"Raised an exception while saving the login data.\nMore info:\n{exception}"); }
+        try {
+            var existing = vault.Retrieve(FileWriter.ApplicationName, _username);
+            if (existing != null) vault.Remove(existing);
+        } catch { /* Credential doesn't exist, ignore */ }
 
-        // Saves new credentials
         vault.Add(new PasswordCredential(FileWriter.ApplicationName, _username, _password));
-        // Sets the value for "isLoggedIn" saved in disk variable to true
         FileWriter.aSave("isLoggedIn", "true");
     }
     
     public static LoginData? getCredentialFromLocker() {
         var vault = new PasswordVault();
-
-        IReadOnlyList<PasswordCredential> credentialList;
-
-        // Tries to get the login data
-        try { credentialList = vault.FindAllByResource(FileWriter.ApplicationName); } 
-        catch (Exception exception) {
-            Debug.WriteLine($"Raised an exception while retrieving the login data.\nMore info:\n{exception}");
+    
+        try {
+            var credentialList = vault.FindAllByResource(FileWriter.ApplicationName);
+        
+            if (credentialList.Count > 0) {
+                var mostRecent = credentialList.Last(); 
+            
+                mostRecent.RetrievePassword();
+                return new LoginData(mostRecent.UserName, mostRecent.Password);
+            }
+        } catch (Exception exception) {
+            notify("Error!", $"Raised an exception while retrieving the login data.\nMore info:\n{exception}"); 
             FileWriter.aSave("isLoggedIn", "false");
-            return null;
         }
 
-        // Retrieves the data
-        credentialList[0].RetrievePassword();
-
-        // Gets the username and password
-        string username = credentialList[0].UserName;
-        string password = credentialList[0].Password;
-
-        return new LoginData(username, password);
+        return null;
     }
     
     public static void deleteData() {
+        clearAllAppCredentials();
         FileWriter.aSave("isLoggedIn", "false");
     }
     
@@ -106,10 +107,39 @@ public class LoginData {
             return credentialList.Count > 0;
         } catch { return false; }
     }
+    
+    public static void clearAllAppCredentials()
+    {
+        var vault = new PasswordVault();
+        try
+        {
+            // 1. Get every credential associated with your App Name
+            var credentialList = vault.FindAllByResource(FileWriter.ApplicationName);
+
+            // 2. Loop through and remove every single one
+            foreach (var credential in credentialList)
+            {
+                vault.Remove(credential);
+                Debug.WriteLine($"Deleted credential for user: {credential.UserName}");
+            }
+        
+            // 3. Reset your login flag so the app knows it's empty
+            FileWriter.aSave("isLoggedIn", "false");
+            Debug.WriteLine("Vault successfully cleared.");
+        } catch { }
+    }
     #endregion
 
     public override string ToString() {
         return $"Username: {_username}, Password: {_password}";
+    }
+
+    private static void notify(string title, string msg) {
+        AppNotification notification = new AppNotificationBuilder()
+            .AddText(title)
+            .AddText(msg)
+            .BuildNotification();
+        AppNotificationManager.Default.Show(notification);
     }
 
 }

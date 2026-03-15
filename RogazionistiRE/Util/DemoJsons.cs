@@ -131,7 +131,6 @@ public class DemoJsons {
 	"indirizzo": "MY INDIRIZZO BLAH BLAH"
 }
 """;
-
 	public static string CARLETTUCCINO_SUBJECTS_JSON = """
 [
 	{
@@ -1894,6 +1893,29 @@ public class DemoJsons {
 		"titolo": "SCIENZE",
 		"sottotitolo": "SCENZE",
 		"dettaglio": ""
+	}
+]
+""";
+    public static string CARLETTUCCINO_NOTES_JSON = """
+[
+	{
+		"id": 1234,
+		"novita": true,
+		"data": "2000-01-10T11:11:00+01:00",
+		"titolo": "The student launched himself through the window and broke the glass and her girlfriend's heart. She had an heart attack and died from her injuries.",
+		"sottotitolo": "ONE TEACHER",
+		"presa_visione": true,
+		"dettaglio": null,
+		"colore_simbolo": "#FF0000",
+		"simbolo": "N",
+		"tag": {
+			"codice": "nota_disciplinare",
+			"descrizione": "Nota disciplinare",
+			"ordinamento": "0"
+		},
+		"data_presa_visione": 0,
+		"data_presa_visione_tradotta": "",
+		"url_contenuto": "url.com/hahahhah/note/1234"
 	}
 ]
 """;

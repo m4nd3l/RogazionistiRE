@@ -8,7 +8,14 @@ public class Languages {
     
     "app.winbar.prefix": "RogazionistiRE ",
     
+    "error.error.text": "Errore", 
+    
+    "loggingin.notifications.text": "Accesso in corso...",
+    
     "title.login_page.text": "Login",
+    "welcome.login_page.text": "Benvenuto",
+    "signin.login_page.text": "Fai il login per continuare",
+    "authenticating.login_page.text": "Autenticando...",
     "username.login_page.field_placeholder": "Nome utente",
     "password.login_page.field_placeholder": "Password",
     "remember_me.login_page.checkbox_text": "Ricordami",
@@ -17,11 +24,14 @@ public class Languages {
     "error_invalid_credentials.login_page.text": "Errore, username o password non validi.",
     "error_invalid_auto_credentials.login_page.text": "Le credenziali salvate non sono corrette, provare con il login manuale.",
     "error_auto_credentials_not_found.login_page.text": "Non sono state trovate credenziali salvate.",
+    "pick_a_language.login_page.text": "Seleziona una lingua",
+    "change_language.login_page.text": "Cambia lingua",
+    "error.login_page.text": "Errore",
     
     "title.students_page.text": "Studenti",
     "settings.students_page.button_text": "Impostazioni",
     "logout.students_page.button_text": "Esci",
-    "welcome.students_page.text": "Benvenuto/a [%PARENT_NAME%]! Ecco i tuoi studenti.",
+    "welcome.students_page.text": "Benvenuto [%PARENT_NAME%]! Ecco i tuoi studenti.",
     
     "home.student_page.button_text": "Home",
     "grades.student_page.button_text": "Voti",

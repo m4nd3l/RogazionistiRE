@@ -2,7 +2,14 @@
 public class LanguageKeys {
 
     public static readonly LanguageKeys RogazionistiRE_Winbar = new LanguageKeys("app.winbar.prefix");
+    
+    public static readonly LanguageKeys Error_Errors = new LanguageKeys("error.error.text");
+    
+    public static readonly LanguageKeys LoggingIn_Notification = new LanguageKeys("loggingin.notifications.text");
 
+    public static readonly LanguageKeys Welcome_LoginPage = new LanguageKeys("welcome.login_page.text");
+    public static readonly LanguageKeys Signin_LoginPage = new LanguageKeys("signin.login_page.text");
+    public static readonly LanguageKeys Authenticating_LoginPage = new LanguageKeys("authenticating.login_page.text");
     public static readonly LanguageKeys Username_LoginPage = new LanguageKeys("username.login_page.field_placeholder");
     public static readonly LanguageKeys Password_LoginPage = new LanguageKeys("password.login_page.field_placeholder");
     public static readonly LanguageKeys RememberMe_LoginPage = new LanguageKeys("remember_me.login_page.checkbox_text");
@@ -11,6 +18,9 @@ public class LanguageKeys {
     public static readonly LanguageKeys ErrorCreds_LoginPage = new LanguageKeys("error_invalid_credentials.login_page.text");
     public static readonly LanguageKeys ErrorAutoCreds_LoginPage = new LanguageKeys("error_invalid_auto_credentials.login_page.text");
     public static readonly LanguageKeys ErrorAutoCredsNotFound_LoginPage = new LanguageKeys("error_auto_credentials_not_found.login_page.text");
+    public static readonly LanguageKeys PickALanguage_LoginPage = new LanguageKeys("pick_a_language.login_page.text");
+    public static readonly LanguageKeys ChangeLanguage_LoginPage = new LanguageKeys("change_language.login_page.text");
+    public static readonly LanguageKeys Error_LoginPage = new LanguageKeys("error.login_page.text");
 
     public static readonly LanguageKeys Students_StudentsPage = new LanguageKeys("title.students_page.text");
     public static readonly LanguageKeys Settings_StudentsPage = new LanguageKeys("settings.students_page.button_text");

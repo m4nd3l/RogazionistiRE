@@ -29,4 +29,5 @@ public class LanguageManager {
     public static string getTranslation(LanguageKeys key) { return languages[selectedLanguage].getTranslation(key); }
     public static string getTitle(LanguageKeys page) { return $"{getTranslation(LanguageKeys.RogazionistiRE_Winbar)} - {getTranslation(page)}"; }
     public static void selectLanguage(int selectedLanguageID) { selectedLanguage = selectedLanguageID; }
+    public static int getSelectedIndex() {return selectedLanguage; }
 }

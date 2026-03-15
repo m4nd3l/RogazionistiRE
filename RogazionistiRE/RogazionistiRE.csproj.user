@@ -13,6 +13,9 @@
     <None Update="Package.appxmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Page Update="Windows\ContentDialogs\ChangeLanguageContentDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\ContentDialogs\MoreInfoStudentContentDialog.xaml">
       <SubType>Designer</SubType>
     </Page>

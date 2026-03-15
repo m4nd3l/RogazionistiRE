@@ -21,6 +21,7 @@ namespace RogazionistiRE.Util {
         public const string endAgendaAPIEndpoint = "/agenda_plain/";
         public const string endArgumentsAPIEndpoint = "/argomenti_plain/";
         public const string endAnnotationsAPIEndpoint = "/annotazioni_plain/";
+        public const string endNotesAPIEndpoint = "/note_plain//";
         public const string endComunicationsThreadAPIEndpoint = "/thread/";
         public const string endComunicationsUserAPIEndpoint = "/destinatari-utente/";
         public const string endReportCardAPIEndpoint = "/pagelle_plain/";
@@ -34,6 +35,7 @@ namespace RogazionistiRE.Util {
         public static string getAgendaAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endAgendaAPIEndpoint);
         public static string getArgumentsAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endArgumentsAPIEndpoint);
         public static string getAnnotationsAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endAnnotationsAPIEndpoint);
+        public static string getNotesAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endNotesAPIEndpoint);
         public static string getComunicationThreadsAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endComunicationsThreadAPIEndpoint);
         public static string getComunicationsUserAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endComunicationsUserAPIEndpoint);
         public static string getReportCardAPIEndpoint(StudentJson studentJson) => buildEndpoint(studentJson, endReportCardAPIEndpoint);
