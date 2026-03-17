@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page x:ConnectionId='1'
+    x:Class="RogazionistiRE.Windows.Students"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:RogazionistiRE.Data"
+    xmlns:animatedVisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="StudentItemTemplate"                          >
+            <ItemContainer x:ConnectionId='3' Margin="0">
+                <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                      BorderThickness="1" 
+                      BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                      CornerRadius="8"
+                      MinWidth="380">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6"/> <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/> </Grid.ColumnDefinitions>
+
+                    <Rectangle Fill="{ThemeResource SystemAccentColor}" 
+                               RadiusX="4" RadiusY="4" 
+                               Margin="0,8" VerticalAlignment="Stretch"/>
+
+                    <StackPanel Grid.Column="1" Padding="16,12">
+                        <TextBlock x:ConnectionId='4'                               
+                                   FontSize="22" 
+                                   FontWeight="SemiBold"
+                                   TextTrimming="CharacterEllipsis"/>
+                        
+                        <TextBlock x:ConnectionId='5'                                         
+                                   Style="{StaticResource CaptionTextBlockStyle}"
+                                   FontSize="14"
+                                   Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                    </StackPanel>
+
+                    <FontIcon Grid.Column="2" 
+                              Glyph="&#xE76C;" 
+                              FontSize="12" 
+                              Margin="0,0,16,0"
+                              Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                              VerticalAlignment="Center"/>
+                </Grid>
+            </ItemContainer>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <RowDefinition Height="Auto"/> <RowDefinition Height="*"/>    </Grid.RowDefinitions>
+
+        <TitleBar x:ConnectionId='6' Name="TitleBar">
+            <TitleBar.IconSource>
+                <FontIconSource Glyph="&#xE8F1;"/>
+            </TitleBar.IconSource>
+        </TitleBar>
+        
+        <Grid Grid.Row="1" Padding="24,12,24,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Spacing="4">
+                <TextBlock x:ConnectionId='12' Name="Title" 
+                           Style="{ThemeResource TitleLargeTextBlockStyle}"
+                           FontSize="32" 
+                           FontWeight="Bold"/>
+                <TextBlock x:ConnectionId='13' Name="Welcome" 
+                           Style="{ThemeResource BodyTextBlockStyle}" 
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+            </StackPanel>
+
+            <CommandBar Grid.Column="1" 
+                        Background="Transparent" 
+                        DefaultLabelPosition="Right"
+                        VerticalAlignment="Center">
+                <AppBarElementContainer VerticalAlignment="Center">
+                    <AutoSuggestBox x:ConnectionId='11' x:Name="Search"
+                                                                              
+                                    PlaceholderText="Search students..." 
+                                    QueryIcon="Find" 
+                                    Width="250"
+                                    Margin="0,0,12,0"
+                                    VerticalAlignment="Center"/>
+                </AppBarElementContainer>
+
+                <AppBarButton x:ConnectionId='8' x:Name="SettingsButton" 
+                                               
+                                                                      
+                                                                 >
+                    <AnimatedIcon x:ConnectionId='10' x:Name="SettingsIcon" Height="20" Width="20">
+                        <AnimatedIcon.Source>
+                            <animatedVisuals:AnimatedSettingsVisualSource/>
+                        </AnimatedIcon.Source>
+                        <AnimatedIcon.FallbackIconSource>
+                            <SymbolIconSource Symbol="Setting"/>
+                        </AnimatedIcon.FallbackIconSource>
+                    </AnimatedIcon>
+                </AppBarButton>
+                
+                <AppBarSeparator/>
+
+                <AppBarButton x:ConnectionId='9' Name="LogoutButton"                Label="Logout">
+                    <FontIcon Glyph="&#xF3B1;" />
+                </AppBarButton>
+            </CommandBar>
+        </Grid>
+
+        <ItemsView x:ConnectionId='7'                                          
+                   Grid.Row="2"
+                   Padding="24"
+                   ItemTemplate="{StaticResource StudentItemTemplate}"
+                   SelectionMode="None"
+                   IsItemInvokedEnabled="True"
+                                               >
+
+            <ItemsView.Layout>
+                <UniformGridLayout MinItemWidth="380"
+                                   MinColumnSpacing="16"
+                                   MinRowSpacing="16"
+                                   ItemsJustification="Start"/>
+            </ItemsView.Layout>
+        </ItemsView>
+    </Grid>
+</Page>
+

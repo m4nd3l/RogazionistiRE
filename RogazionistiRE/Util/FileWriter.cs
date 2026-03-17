@@ -17,7 +17,7 @@ class FileWriter {
         return localSettings.Values[key].ToString();
     }
 
-    public static string? aReadRFalse(string key) {
+    public static string aReadRFalse(string key) {
         ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
         if (localSettings.Values[key] == null)
             return "false";

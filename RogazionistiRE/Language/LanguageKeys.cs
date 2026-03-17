@@ -5,6 +5,8 @@ public class LanguageKeys {
     
     public static readonly LanguageKeys Error_Errors = new LanguageKeys("error.error.text");
     
+    public static readonly LanguageKeys Loading_General = new LanguageKeys("loading.general.text");
+    
     public static readonly LanguageKeys LoggingIn_Notification = new LanguageKeys("loggingin.notifications.text");
 
     public static readonly LanguageKeys Welcome_LoginPage = new LanguageKeys("welcome.login_page.text");
@@ -23,6 +25,7 @@ public class LanguageKeys {
     public static readonly LanguageKeys Error_LoginPage = new LanguageKeys("error.login_page.text");
 
     public static readonly LanguageKeys Students_StudentsPage = new LanguageKeys("title.students_page.text");
+    public static readonly LanguageKeys SearchStudents_StudentsPage = new LanguageKeys("search.students_page.field_placeholder");
     public static readonly LanguageKeys Settings_StudentsPage = new LanguageKeys("settings.students_page.button_text");
     public static readonly LanguageKeys Logout_StudentsPage = new LanguageKeys("logout.students_page.button_text");
     public static readonly LanguageKeys Welcome_StudentsPage = new LanguageKeys("welcome.students_page.text");

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="RogazionistiRE.Windows.Subjects"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RogazionistiRE.Windows"
+    xmlns:data="using:RogazionistiRE.Util"
+    xmlns:subData="using:RogazionistiRE.JsonBlueprints.SubBlueprints"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="SubjectItemTemplate" x:DataType="data:ObservableSubject">
+            <ItemContainer CornerRadius="{StaticResource OverlayCornerRadius}">
+                
+                <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                      BorderThickness="1" 
+                      BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                      CornerRadius="{StaticResource OverlayCornerRadius}">
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Text="{x:Bind SubjectName}" 
+                               Margin="12,12,12,8"
+                               TextWrapping="Wrap"
+                               TextTrimming="WordEllipsis"
+                               TextAlignment="Center"
+                               Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                    
+                    <Border Grid.Row="1"
+                            Padding="8"
+                            Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                            CornerRadius="0,0,4,4">
+                        
+                        <ItemsView ItemsSource="{x:Bind Teachers}" 
+                                   SelectionMode="None"
+                                   IsItemInvokedEnabled="False">
+                            <ItemsView.Layout>
+                                <LinedFlowLayout ItemsJustification="Center" 
+                                                 LineSpacing="8" 
+                                                 MinItemSpacing="8"/>
+                            </ItemsView.Layout>
+                            
+                            <ItemsView.ItemTemplate>
+                                <DataTemplate x:DataType="subData:TeacherJson">
+                                    <ItemContainer>
+                                        <Border Background="{ThemeResource AccentFillColorDefaultBrush}"
+                                                CornerRadius="6"
+                                                Padding="12,4">
+                                            <TextBlock Text="{x:Bind Name}" 
+                                                       Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"
+                                                       TextTrimming="CharacterEllipsis"
+                                                       TextWrapping="NoWrap"
+                                                       FontSize="12"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ItemContainer>
+                                </DataTemplate>
+                            </ItemsView.ItemTemplate>
+                        </ItemsView>
+                    </Border>
+                </Grid>
+            </ItemContainer>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <ScrollViewer>
+        <Grid>
+            <ItemsView ItemsSource="{x:Bind SubjectsCollection}" 
+                       HorizontalAlignment="Center"
+                       Padding="16"
+                       ItemTemplate="{StaticResource SubjectItemTemplate}"
+                       SelectionMode="None"
+                       IsItemInvokedEnabled="False">
+                <ItemsView.Layout>
+                    <StackLayout Orientation="Vertical" Spacing="12"/>
+                </ItemsView.Layout>
+            </ItemsView>
+        </Grid>
+    </ScrollViewer>
+</Page>

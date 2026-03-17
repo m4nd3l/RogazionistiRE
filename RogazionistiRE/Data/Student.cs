@@ -4,6 +4,7 @@ using RogazionistiRE.Util;
 using RogazionistiRE.Windows;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
@@ -19,7 +20,7 @@ public class Student {
     private List<SubjectJson>           ? _subject            ;
     private List<GradeJson>             ? _grades             ;
     private List<CommitmentJson>        ? _commitment         ;
-    private List<HomeworkJson>          ? _homework           ;
+    private List<ObservableHomework>    ? _homework           ;
     private List<LessonArgumentJson>    ? _lesson             ;
     private List<AbsencesJson>          ? _absences           ;
     private List<AnnotationJson>        ? _annotations        ;
@@ -76,7 +77,7 @@ public class Student {
         return _info;
     }
     public async Task<List<SubjectJson>> Subjects() {
-        if (_subject == null) _subject = await getObject<List<SubjectJson>>(APIs.getSubjectsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_SUBJECTS_JSON);
+        if (_subject != null) _subject = await getObject<List<SubjectJson>>(APIs.getSubjectsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_SUBJECTS_JSON);
         return _subject;
     }
     public async Task<List<GradeJson>> Grades() {
@@ -88,7 +89,8 @@ public class Student {
         return _commitment;
     }
     public async Task<List<HomeworkJson>> Homework() {
-        if (_homework == null) _homework = await getObject<List<HomeworkJson>>(APIs.getHomeworkAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_HOMEWORK_JSON);
+        if (_homework != null) return _homework;
+        var listJson = await getObject<List<HomeworkJson>>(APIs.getHomeworkAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_HOMEWORK_JSON);
         return _homework;
     }
     public async Task<List<LessonArgumentJson>> Lessons() {
@@ -128,7 +130,7 @@ public class Student {
     }
 
     public List<HomeworkJson> getHomework(DateTime day) {
-        return _homework.Where(homework => homework.Date >= day).ToList();
+        return new List<HomeworkJson>(_homework.Where(homework => homework.Date >= day).ToList());
     }
     #endregion
     

@@ -9,6 +9,8 @@ public class Languages {
     "app.winbar.prefix": "RogazionistiRE ",
     
     "error.error.text": "Errore", 
+
+    "loading.general.text": "Caricamento in corso...", 
     
     "loggingin.notifications.text": "Accesso in corso...",
     
@@ -29,6 +31,7 @@ public class Languages {
     "error.login_page.text": "Errore",
     
     "title.students_page.text": "Studenti",
+    "search.students_page.field_placeholder": "Cerca studenti...",
     "settings.students_page.button_text": "Impostazioni",
     "logout.students_page.button_text": "Esci",
     "welcome.students_page.text": "Benvenuto [%PARENT_NAME%]! Ecco i tuoi studenti.",

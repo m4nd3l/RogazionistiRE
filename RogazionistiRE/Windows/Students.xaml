@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="RogazionistiRE.Windows.Students"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:RogazionistiRE.Data"
+    xmlns:animatedVisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="StudentItemTemplate" x:DataType="data:Student">
+            <ItemContainer Margin="0">
+                <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                      BorderThickness="1" 
+                      BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                      CornerRadius="8"
+                      MinWidth="380">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6"/> <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/> </Grid.ColumnDefinitions>
+
+                    <Rectangle Fill="{ThemeResource SystemAccentColor}" 
+                               RadiusX="4" RadiusY="4" 
+                               Margin="0,8" VerticalAlignment="Stretch"/>
+
+                    <StackPanel Grid.Column="1" Padding="16,12">
+                        <TextBlock Text="{x:Bind _student.Name}" 
+                                   FontSize="22" 
+                                   FontWeight="SemiBold"
+                                   TextTrimming="CharacterEllipsis"/>
+                        
+                        <TextBlock Text="{x:Bind getCurrentYearAndClass()}"
+                                   Style="{StaticResource CaptionTextBlockStyle}"
+                                   FontSize="14"
+                                   Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                    </StackPanel>
+
+                    <FontIcon Grid.Column="2" 
+                              Glyph="&#xE76C;" 
+                              FontSize="12" 
+                              Margin="0,0,16,0"
+                              Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                              VerticalAlignment="Center"/>
+                </Grid>
+            </ItemContainer>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <RowDefinition Height="Auto"/> <RowDefinition Height="*"/>    </Grid.RowDefinitions>
+
+        <TitleBar Name="TitleBar">
+            <TitleBar.IconSource>
+                <FontIconSource Glyph="&#xE8F1;"/>
+            </TitleBar.IconSource>
+        </TitleBar>
+        
+        <Grid Grid.Row="1" Padding="24,12,24,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Spacing="4">
+                <TextBlock Name="Title" 
+                           Style="{ThemeResource TitleLargeTextBlockStyle}"
+                           FontSize="32" 
+                           FontWeight="Bold"/>
+                <TextBlock Name="Welcome" 
+                           Style="{ThemeResource BodyTextBlockStyle}" 
+                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+            </StackPanel>
+
+            <CommandBar Grid.Column="1" 
+                        Background="Transparent" 
+                        DefaultLabelPosition="Right"
+                        VerticalAlignment="Center">
+                <AppBarElementContainer VerticalAlignment="Center">
+                    <AutoSuggestBox x:Name="Search"
+                                    TextChanged="StudentSearchBox_TextChanged"
+                                    PlaceholderText="Search students..." 
+                                    QueryIcon="Find" 
+                                    Width="250"
+                                    Margin="0,0,12,0"
+                                    VerticalAlignment="Center"/>
+                </AppBarElementContainer>
+
+                <AppBarButton x:Name="SettingsButton" 
+                              Click="Settings" 
+                              PointerEntered="SettingsPointerEntered" 
+                              PointerExited="ButtonPointerExited">
+                    <AnimatedIcon x:Name="SettingsIcon" Height="20" Width="20">
+                        <AnimatedIcon.Source>
+                            <animatedVisuals:AnimatedSettingsVisualSource/>
+                        </AnimatedIcon.Source>
+                        <AnimatedIcon.FallbackIconSource>
+                            <SymbolIconSource Symbol="Setting"/>
+                        </AnimatedIcon.FallbackIconSource>
+                    </AnimatedIcon>
+                </AppBarButton>
+                
+                <AppBarSeparator/>
+
+                <AppBarButton Name="LogoutButton" Click="logout" Label="Logout">
+                    <FontIcon Glyph="&#xF3B1;" />
+                </AppBarButton>
+            </CommandBar>
+        </Grid>
+
+        <ItemsView ItemsSource="{x:Bind DisplayedStudents}" 
+                   Grid.Row="2"
+                   Padding="24"
+                   ItemTemplate="{StaticResource StudentItemTemplate}"
+                   SelectionMode="None"
+                   IsItemInvokedEnabled="True"
+                   ItemInvoked="studentPressed">
+
+            <ItemsView.Layout>
+                <UniformGridLayout MinItemWidth="380"
+                                   MinColumnSpacing="16"
+                                   MinRowSpacing="16"
+                                   ItemsJustification="Start"/>
+            </ItemsView.Layout>
+        </ItemsView>
+    </Grid>
+</Page>
