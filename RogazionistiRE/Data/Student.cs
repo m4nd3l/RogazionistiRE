@@ -22,7 +22,7 @@ public class Student {
     private StudentInfoJson                             ? _info               ;
     private ObservableCollection<SubjectJson>           ? _subject            ;
     private ObservableCollection<GradeJson>             ? _grades             ;
-    private ObservableCollection<AgendaJson>        ? _commitment         ;
+    private ObservableCollection<AgendaJson>        ? _events         ;
     private ObservableCollection<ObservableHomework>    ? _homework           ;
     private ObservableCollection<LessonJson>    ? _lesson             ;
     private ObservableCollection<AbsencesJson>          ? _absences           ;
@@ -106,46 +106,50 @@ public class Student {
         if (_grades == null) _grades = 
             new ObservableCollection<GradeJson>(await getObject<List<GradeJson>>(APIs.getGradesAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_GRADES_JSON));
         if (date == null) return _grades;
-        return new ObservableCollection<GradeJson>(_grades.Where(x => x.Date.Date == DateTime.Today).ToList());
+        return new ObservableCollection<GradeJson>(_grades.Where(x => x.Date.Date == date.Value.Date).ToList());
     }
     public async Task<ObservableCollection<AgendaJson>> Agenda(DateTime? date = null) {
-        if (_commitment == null) _commitment = 
+        if (_events == null) _events = 
             new ObservableCollection<AgendaJson>(await getObject<List<AgendaJson>>(APIs.getAgendaAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_AGENDA_JSON));
-        if (date == null) return _commitment;
-        return new ObservableCollection<AgendaJson>(_commitment.Where(x => x.Date.Date == DateTime.Today).ToList());
+        if (date == null) return _events;
+        return new ObservableCollection<AgendaJson>(_events.Where(x => x.Date.Date == date.Value.Date).ToList());
     }
     public async Task<ObservableCollection<ObservableHomework>> Homework(DateTime? date = null) {
-        if (_homework != null) return _homework;
-        string oldJson = FileWriter.aReadRFalse(_id);
-        var oldOnes = oldJson != "false" ? JsonSerializer.Deserialize<List<ObservableHomework>>(oldJson) : null;
-        var newOnes = await getObject<List<HomeworkJson>>(APIs.getHomeworkAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_HOMEWORK_JSON);
-        _homework = ObservableHomework.merge(oldOnes, newOnes);
+        if (_homework == null) {
+            string oldJson = FileWriter.aReadRFalse(_id);
+            var oldOnes = oldJson != "false" ? JsonSerializer.Deserialize<List<ObservableHomework>>(oldJson) : null;
+            var newOnes = await getObject<List<HomeworkJson>>(APIs.getHomeworkAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_HOMEWORK_JSON);
+            _homework = ObservableHomework.merge(oldOnes, newOnes);
+        }
+        
         if (date == null) return _homework;
-        return new ObservableCollection<ObservableHomework>(_homework.Where(x => x.Date.Date == DateTime.Today).ToList());
+
+        var filtered = _homework.Where(x => x.Date.Date == date.Value.Date).ToList();
+        return new ObservableCollection<ObservableHomework>(filtered);
     }
     public async Task<ObservableCollection<LessonJson>> Lessons(DateTime? date = null) {
         if (_lesson == null) _lesson = 
             new ObservableCollection<LessonJson>(await getObject<List<LessonJson>>(APIs.getArgumentsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_LESSONS_JSON));
         if (date == null) return _lesson;
-        return new ObservableCollection<LessonJson>(_lesson.Where(x => x.Date.Date == DateTime.Today).ToList());
+        return new ObservableCollection<LessonJson>(_lesson.Where(x => x.Date.Date == date.Value.Date).ToList());
     }
     public async Task<ObservableCollection<AbsencesJson>> Absences(DateTime? date = null) {
         if (_absences == null) _absences = 
             new ObservableCollection<AbsencesJson>(await getObject<List<AbsencesJson>>(APIs.getAbsencesAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_ABSENCES_JSON));
         if (date == null) return _absences;
-        return new ObservableCollection<AbsencesJson>(_absences.Where(x => x.Date.Date == DateTime.Today).ToList());
+        return new ObservableCollection<AbsencesJson>(_absences.Where(x => x.Date.Date == date.Value.Date).ToList());
     }
     public async Task<ObservableCollection<AnnotationJson>> Annotations(DateTime? date = null) {
         if (_annotations == null) _annotations = 
             new ObservableCollection<AnnotationJson>(await getObject<List<AnnotationJson>>(APIs.getAnnotationsAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_ANNOTATIONS_JSON));
         if (date == null) return _annotations;
-        return new ObservableCollection<AnnotationJson>(_annotations.Where(x => x.Date.Date == DateTime.Today).ToList());
+        return new ObservableCollection<AnnotationJson>(_annotations.Where(x => x.Date.Date == date.Value.Date).ToList());
     }
     public async Task<ObservableCollection<NotesJson>> Notes(DateTime? date = null) {
         if (_notes == null) _notes = 
             new ObservableCollection<NotesJson>(await getObject<List<NotesJson>>(APIs.getNotesAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_NOTES_JSON));
         if (date == null) return _notes;
-        return new ObservableCollection<NotesJson>(_notes.Where(x => x.Date.Date == DateTime.Today).ToList());
+        return new ObservableCollection<NotesJson>(_notes.Where(x => x.Date.Date == date.Value.Date).ToList());
     }
     public async Task<ObservableCollection<ReportCardJson>> ReportCards() {
         if (_reportCards == null) _reportCards = 

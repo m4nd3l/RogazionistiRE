@@ -82,14 +82,6 @@ namespace RogazionistiRE.Windows {
             UpdateCollection(GradesCollection, GradesCheckbox.IsChecked == false ? null : await newGrades);
             UpdateCollection(NotesCollection, NotesCheckbox.IsChecked == false ? null : await newNotes);
             UpdateCollection(AnnotationsCollection, NotesCheckbox.IsChecked == false ? null : await newAnnotations);
-
-            Debug.WriteLine("REFRESHED: " + DateSelector.Date.Value.Date);
-            Debug.WriteLine("LESSONS: " + LessonsCollection.Count + " CHECKBOX: " + LessonsCheckbox.IsChecked);
-            Debug.WriteLine("AGENDA: " + LessonsCollection.Count);
-            Debug.WriteLine("HOMEWORK: " + LessonsCollection.Count);
-            Debug.WriteLine("GRADES: " + LessonsCollection.Count + " CHECKBOX: " + GradesCheckbox.IsChecked);
-            Debug.WriteLine("NOTES: " + LessonsCollection.Count + " CHECKBOX: " + NotesCheckbox.IsChecked);
-            Debug.WriteLine("ANNOTATIONS: " + LessonsCollection.Count + " CHECKBOX: " + NotesCheckbox.IsChecked);
         }
         
         private void UpdateCollection<T>(ObservableCollection<T> collection, IEnumerable<T>? newItems) {
