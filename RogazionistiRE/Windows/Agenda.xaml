@@ -6,9 +6,629 @@
     xmlns:local="using:RogazionistiRE.Windows"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:RogazionistiRE.JsonBlueprints"
+    xmlns:obsData="using:RogazionistiRE.Data"
     mc:Ignorable="d">
 
-    <Grid>
+    <Page.Resources>
+        <SolidColorBrush x:Key="CommandBarBackground"             Color="Transparent" />
+        <SolidColorBrush x:Key="CommandBarBackgroundOpen"         Color="Transparent" />
+        <SolidColorBrush x:Key="CommandBarBorderBrushOpen"        Color="Transparent" />
+        <SolidColorBrush x:Key="CommandBarBackgroundPointerOver"  Color="Transparent" />
+        <SolidColorBrush x:Key="CommandBarBackgroundPressed"      Color="Transparent" />
+        <Thickness       x:Key="CommandBarBorderThicknessOpen">0</Thickness>
+        
+        <DataTemplate x:Key="LessonItemTemplate" x:DataType="data:LessonJson">
+            <ItemContainer CornerRadius="{StaticResource OverlayCornerRadius}">
+                
+                <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                      BorderThickness="1" 
+                      BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                      CornerRadius="{StaticResource OverlayCornerRadius}">
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{x:Bind Title}" 
+                                   Margin="2, 12, 12, 12"
+                                   TextWrapping="Wrap"
+                                   TextTrimming="WordEllipsis"
+                                   VerticalAlignment="Center"
+                                   Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                    
+                        <TextBlock Grid.Column="2" Text="{x:Bind DateFormatted}" 
+                                   Margin="2, 12, 12, 15"
+                                   TextWrapping="Wrap"
+                                   TextTrimming="WordEllipsis"
+                                   FontSize="15"
+                                   VerticalAlignment="Bottom"
+                                   Foreground="DarkGray"
+                                   Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                    </Grid>
 
+                    
+                    <Border Grid.Row="1"
+                            Padding="8"
+                            Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                            CornerRadius="0,0,4,4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{x:Bind Detail}" 
+                                   Margin="12,12,12,8"
+                                   TextWrapping="Wrap"
+                                   TextTrimming="WordEllipsis"
+                                   FontSize="15"
+                                   Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            <TextBlock Grid.Row="1" Text="{x:Bind LessonTranslated}" 
+                                   Margin="12, 0, 12, 5"
+                                   TextWrapping="Wrap"
+                                   TextTrimming="WordEllipsis"
+                                   FontSize="13"
+                                   VerticalAlignment="Bottom"
+                                   Foreground="DarkGray"
+                                   Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ItemContainer>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="HomeworkItemTemplate" x:DataType="obsData:ObservableHomework">
+            <ItemContainer CornerRadius="{StaticResource OverlayCornerRadius}">
+
+                <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+              BorderThickness="1" 
+              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+              CornerRadius="{StaticResource OverlayCornerRadius}">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="1" Text="{x:Bind Subtitle}" 
+                           Margin="2, 12, 12, 12"
+                           TextWrapping="Wrap"
+                           TextTrimming="WordEllipsis"
+                           VerticalAlignment="Center"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+
+                        <TextBlock Grid.Column="3" Text="{x:Bind DateFormatted}" 
+                           Margin="2, 12, 12, 15"
+                           TextWrapping="Wrap"
+                           TextTrimming="WordEllipsis"
+                           FontSize="15"
+                           VerticalAlignment="Bottom"
+                           Foreground="DarkGray"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        
+                        <ToggleSwitch Grid.Column="5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"
+                                      OffContent="{x:Bind NotDoneTranslated}" OnContent="{x:Bind DoneTranslated}" IsOn="{x:Bind Done}"/>
+                    </Grid>
+
+
+                    <Border Grid.Row="1"
+                            Padding="8"
+                            Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                            CornerRadius="0,0,4,4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{x:Bind Title}" 
+                                       Margin="12,12,12,8"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       FontSize="15"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            <TextBlock Grid.Row="1" Text="{x:Bind HomeworkTranslated}" 
+                                       Margin="12, 12, 12, 15"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       FontSize="13"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="DarkGray"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ItemContainer>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="AgendaItemTemplate" x:DataType="data:AgendaJson">
+            <ItemContainer CornerRadius="{StaticResource OverlayCornerRadius}">
+
+                <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+              BorderThickness="1" 
+              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+              CornerRadius="{StaticResource OverlayCornerRadius}">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{x:Bind Title}" 
+                           Margin="2, 12, 12, 12"
+                           TextWrapping="Wrap"
+                           TextTrimming="WordEllipsis"
+                           VerticalAlignment="Center"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+
+                        <TextBlock Grid.Column="2" Text="{x:Bind DateFormatted}" 
+                           Margin="2, 12, 12, 15"
+                           TextWrapping="Wrap"
+                           TextTrimming="WordEllipsis"
+                           FontSize="15"
+                           VerticalAlignment="Bottom"
+                           Foreground="DarkGray"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                    </Grid>
+
+
+                    <Border Grid.Row="1"
+                            Padding="8"
+                            Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                            CornerRadius="0,0,4,4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{x:Bind Subtitle}" 
+                                       Margin="{x:Bind MarginIfText}"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       FontSize="15"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            <TextBlock Grid.Row="1" Text="{x:Bind EventTranslated}" 
+                                       Margin="12, 12, 12, 15"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       FontSize="13"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="DarkGray"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ItemContainer>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="NotesItemTemplate" x:DataType="data:NotesJson">
+            <ItemContainer CornerRadius="{StaticResource OverlayCornerRadius}">
+                
+                <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                      BorderThickness="1" 
+                      BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                      CornerRadius="{StaticResource OverlayCornerRadius}">
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Width="100" Height="40">
+                            <Ellipse Fill="{x:Bind SymbolColor}" Height="35" Width="35"/>
+                            <TextBlock Text="{x:Bind Symbol}" 
+                                       VerticalAlignment="Center" 
+                                       HorizontalAlignment="Center" 
+                                       Foreground="White"/>
+                        </Grid>
+                        <TextBlock Grid.Column="2" Text="{x:Bind Subtitle}" 
+                                   Margin="2, 12, 12, 12"
+                                   TextWrapping="Wrap"
+                                   TextTrimming="WordEllipsis"
+                                   VerticalAlignment="Center"
+                                   Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                    
+                        <TextBlock Grid.Column="4" Text="{x:Bind DateFormatted}" 
+                                   Margin="2, 12, 12, 15"
+                                   TextWrapping="Wrap"
+                                   TextTrimming="WordEllipsis"
+                                   FontSize="15"
+                                   VerticalAlignment="Bottom"
+                                   Foreground="DarkGray"
+                                   Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                    </Grid>
+
+                    
+                    <Border Grid.Row="1"
+                            Padding="8"
+                            Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                            CornerRadius="0,0,4,4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{x:Bind Title}" 
+                                   Margin="12,12,12,8"
+                                   TextWrapping="Wrap"
+                                   TextTrimming="WordEllipsis"
+                                   FontSize="15"
+                                   Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            <TextBlock Grid.Row="1" Text="{x:Bind Tag.Description}" 
+                                   Margin="12, 0, 12, 5"
+                                   TextWrapping="Wrap"
+                                   TextTrimming="WordEllipsis"
+                                   FontSize="13"
+                                   VerticalAlignment="Bottom"
+                                   Foreground="DarkGray"
+                                   Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ItemContainer>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="AnnotationsItemTemplate" x:DataType="data:AnnotationJson">
+            <ItemContainer CornerRadius="{StaticResource OverlayCornerRadius}">
+
+                <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+              BorderThickness="1" 
+              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+              CornerRadius="{StaticResource OverlayCornerRadius}">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Width="100" Height="40">
+                            <Ellipse Fill="{x:Bind SymbolColor}" Height="35" Width="35"/>
+                            <TextBlock Text="{x:Bind Symbol}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center" 
+                               Foreground="White"/>
+                        </Grid>
+                        <TextBlock Grid.Column="2" Text="{x:Bind Subtitle}" 
+                           Margin="2, 12, 12, 12"
+                           TextWrapping="Wrap"
+                           TextTrimming="WordEllipsis"
+                           VerticalAlignment="Center"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+
+                        <TextBlock Grid.Column="4" Text="{x:Bind DateFormatted}" 
+                           Margin="2, 12, 12, 15"
+                           TextWrapping="Wrap"
+                           TextTrimming="WordEllipsis"
+                           FontSize="15"
+                           VerticalAlignment="Bottom"
+                           Foreground="DarkGray"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        
+                        <Border Grid.Column="6"  Background="{ThemeResource AccentFillColorDefaultBrush}"
+                                CornerRadius="6"
+                                Height="30"
+                                Padding="12,4">
+                            <TextBlock Text="{x:Bind Title}" 
+                                       Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"
+                                       TextTrimming="CharacterEllipsis"
+                                       TextWrapping="NoWrap"
+                                       FontSize="12"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+
+
+                    <Border Grid.Row="1"
+                            Padding="8"
+                            Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                            CornerRadius="0,0,4,4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{x:Bind Detail}" 
+                                       Margin="{x:Bind MarginIfText}"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       FontSize="15"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            <TextBlock Grid.Row="1" Text="{x:Bind SymbolDescription}" 
+                                       Margin="12, 12, 12, 15"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       FontSize="13"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="DarkGray"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ItemContainer>
+        </DataTemplate>
+        
+        <DataTemplate x:Key="GradesItemTemplate" x:DataType="data:GradeJson">
+            <ItemContainer CornerRadius="{StaticResource OverlayCornerRadius}">
+
+                <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+              BorderThickness="1" 
+              BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+              CornerRadius="{StaticResource OverlayCornerRadius}">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="6"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Width="100" Height="40">
+                            <Ellipse Fill="{x:Bind SymbolColor}" Height="35" Width="35"/>
+                            <TextBlock Text="{x:Bind Symbol}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Center" 
+                               Foreground="White"/>
+                        </Grid>
+                        <TextBlock Grid.Column="2" Text="{x:Bind Title}" 
+                           Margin="2, 12, 12, 12"
+                           TextWrapping="Wrap"
+                           TextTrimming="WordEllipsis"
+                           VerticalAlignment="Center"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+
+                        <TextBlock Grid.Column="4" Text="{x:Bind DateFormatted}" 
+                           Margin="2, 12, 12, 15"
+                           TextWrapping="Wrap"
+                           TextTrimming="WordEllipsis"
+                           FontSize="15"
+                           VerticalAlignment="Bottom"
+                           Foreground="DarkGray"
+                           Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        
+                        <Border Grid.Column="6"  Background="{ThemeResource AccentFillColorDefaultBrush}"
+                                CornerRadius="6"
+                                Height="30"
+                                Padding="12,4">
+                            <TextBlock Text="{x:Bind Subtitle}" 
+                                       Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"
+                                       TextTrimming="CharacterEllipsis"
+                                       TextWrapping="NoWrap"
+                                       FontSize="12"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+
+
+                    <Border Grid.Row="1"
+                            Padding="8"
+                            Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                            CornerRadius="0,0,4,4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{x:Bind Detail}" 
+                                       Margin="{x:Bind MarginIfText}"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       FontSize="15"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                            <TextBlock Grid.Row="1" Text="{x:Bind GradeTranslated}" 
+                                       Margin="12, 12, 12, 15"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       FontSize="13"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="DarkGray"
+                                       Style="{ThemeResource SubtitleTextBlockStyle}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </ItemContainer>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <CommandBar Background="Transparent"
+                    DefaultLabelPosition="Collapsed"
+                    OverflowButtonVisibility="Collapsed"
+                    IsOpen="True"
+                    IsSticky="True"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Center">
+
+            <CommandBar.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="UseSystemFocusVisuals" Value="False" />
+                </Style>
+            </CommandBar.Resources>
+
+            <CommandBar.Content>
+                <TextBlock Name="TitleDate" 
+                           Margin="64,0,16,0" 
+                           VerticalAlignment="Center" 
+                           FontSize="22" 
+                           FontWeight="Bold"/>
+            </CommandBar.Content> 
+
+            <AppBarElementContainer VerticalAlignment="Center">
+                <Button Click="PreviousDate_Click" 
+                        Content="&#xE72B;" 
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="16"
+                        Padding="8"
+                        CornerRadius="5"
+                        VerticalAlignment="Center"
+                        Name="Previous"/>
+            </AppBarElementContainer>
+
+            <AppBarElementContainer VerticalAlignment="Center">
+                <CalendarDatePicker x:Name="DateSelector"
+                                    Margin="8,0"
+                                    VerticalAlignment="Center"
+                                    DateChanged="DateChanged"/>
+            </AppBarElementContainer> 
+
+            <AppBarElementContainer VerticalAlignment="Center">
+                <Button Click="NextDate_Click" 
+                        Content="&#xE72A;" 
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="16"
+                        Padding="8"
+                        CornerRadius="5"
+                        VerticalAlignment="Center"
+                        Name="Next"/>
+            </AppBarElementContainer>
+            
+            <AppBarElementContainer VerticalAlignment="Center">
+                <Button Click="Today_Click" 
+                        Margin="8, 0"
+                        Content="&#xE8F5;" 
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="16"
+                        Padding="8"
+                        CornerRadius="5"
+                        VerticalAlignment="Center"
+                        Name="Today"/>
+            </AppBarElementContainer>
+
+            <AppBarSeparator VerticalAlignment="Center"/>
+
+            <AppBarElementContainer VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="10,0" VerticalAlignment="Center">
+                    <CheckBox Content="Lessons" Name="LessonsCheckbox" Margin="0,0,10,0" VerticalAlignment="Center" IsChecked="True" Click="Checkbox_Click"/>
+                    <CheckBox Content="Grades"  Name="GradesCheckbox"  Margin="0,0,10,0" VerticalAlignment="Center" IsChecked="True" Click="Checkbox_Click"/>
+                    <CheckBox Content="Notes"   Name="NotesCheckbox"   Margin="0,0,10,0" VerticalAlignment="Center" IsChecked="True" Click="Checkbox_Click"/>
+                </StackPanel>
+            </AppBarElementContainer>
+        </CommandBar>
+        <ScrollViewer Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ItemsView Grid.Row="0" ItemsSource="{x:Bind LessonsCollection}" 
+                           HorizontalAlignment="Center"
+                           MaxWidth="800"  Width="800"     Padding="16"
+                           ItemTemplate="{StaticResource LessonItemTemplate}"
+                           SelectionMode="None"
+                           IsItemInvokedEnabled="False">
+                    <ItemsView.Layout>
+                        <StackLayout Orientation="Vertical" Spacing="12"/>
+                    </ItemsView.Layout>
+                </ItemsView>
+                <ItemsView Grid.Row="1" ItemsSource="{x:Bind GradesCollection}" 
+                           HorizontalAlignment="Center"
+                           MaxWidth="800"  Width="800" Padding="16"
+                           ItemTemplate="{StaticResource GradesItemTemplate}"
+                           SelectionMode="None"
+                           IsItemInvokedEnabled="False">
+                    <ItemsView.Layout>
+                        <StackLayout Orientation="Vertical" Spacing="12"/>
+                    </ItemsView.Layout>
+                </ItemsView>
+                <ItemsView Grid.Row="2" ItemsSource="{x:Bind NotesCollection}" 
+                           HorizontalAlignment="Center"
+                           MaxWidth="800"  Width="800" Padding="16"
+                           ItemTemplate="{StaticResource NotesItemTemplate}"
+                           SelectionMode="None"
+                           IsItemInvokedEnabled="False">
+                    <ItemsView.Layout>
+                        <StackLayout Orientation="Vertical" Spacing="12"/>
+                    </ItemsView.Layout>
+                </ItemsView>
+                <ItemsView Grid.Row="3" ItemsSource="{x:Bind AnnotationsCollection}" 
+                           HorizontalAlignment="Center"
+                           MaxWidth="800"  Width="800" Padding="16"
+                           ItemTemplate="{StaticResource AnnotationsItemTemplate}"
+                           SelectionMode="None"
+                           IsItemInvokedEnabled="False">
+                    <ItemsView.Layout>
+                        <StackLayout Orientation="Vertical" Spacing="12"/>
+                    </ItemsView.Layout>
+                </ItemsView>
+                <ItemsView Grid.Row="4" ItemsSource="{x:Bind AgendaCollection}" 
+                           HorizontalAlignment="Center"
+                           MaxWidth="800"  Width="800" Padding="16"
+                           ItemTemplate="{StaticResource AgendaItemTemplate}"
+                           SelectionMode="None"
+                           IsItemInvokedEnabled="False">
+                    <ItemsView.Layout>
+                        <StackLayout Orientation="Vertical" Spacing="12"/>
+                    </ItemsView.Layout>
+                </ItemsView>
+                <ItemsView Grid.Row="5" ItemsSource="{x:Bind HomeworkCollection}" 
+                           HorizontalAlignment="Center"
+                           MaxWidth="800"  Width="800" Padding="16"
+                           ItemTemplate="{StaticResource HomeworkItemTemplate}"
+                           SelectionMode="None"
+                           IsItemInvokedEnabled="False">
+                    <ItemsView.Layout>
+                        <StackLayout Orientation="Vertical" Spacing="12"/>
+                    </ItemsView.Layout>
+                </ItemsView>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>

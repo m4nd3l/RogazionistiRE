@@ -40,6 +40,14 @@ public class LanguageKeys {
     public static readonly LanguageKeys Subjects_StudentPage = new LanguageKeys("subjects.student_page.button_text");
     public static readonly LanguageKeys MoreInfo_StudentPage = new LanguageKeys("more_info.student_page.button_text");
 
+    public static readonly LanguageKeys Lesson_AgendaPage = new LanguageKeys("lesson.agenda_page.text");
+    public static readonly LanguageKeys Homework_AgendaPage = new LanguageKeys("homework.agenda_page.text");
+    public static readonly LanguageKeys Event_AgendaPage = new LanguageKeys("event.agenda_page.text");
+    public static readonly LanguageKeys Grade_AgendaPage = new LanguageKeys("grade.agenda_page.text");
+    public static readonly LanguageKeys Done_AgendaPage = new LanguageKeys("done.agenda_page.text");
+    public static readonly LanguageKeys Notes_AgendaPage = new LanguageKeys("notes.agenda_page.text");
+    public static readonly LanguageKeys NotDone_AgendaPage = new LanguageKeys("notdone.agenda_page.text");
+    
     public static readonly LanguageKeys Name_MoreInfoPage = new LanguageKeys("name.more_info_page.text");
     public static readonly LanguageKeys CurrentYear_MoreInfoPage = new LanguageKeys("current_year.more_info_page.text");
     public static readonly LanguageKeys Province_MoreInfoPage = new LanguageKeys("province.more_info_page.text");

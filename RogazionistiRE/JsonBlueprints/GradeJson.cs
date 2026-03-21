@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RogazionistiRE.Language;
+using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -28,5 +29,8 @@ public class GradeJson {
     [JsonPropertyName("presa_visione")]               public bool         Seen                  { get; set; } 
     [JsonPropertyName("is_voto")]                     public bool         IsGrade               { get; set; } 
     [JsonPropertyName("is_competenza")]               public bool         IsCompetence          { get; set; }
+    public string DateFormatted => Date.ToString("dd/HH/yyyy hh:mm");
+    public string MarginIfText => Detail == "" ? "0" : "12,12,12,8";
+    public string GradeTranslated => LanguageManager.getTranslation(LanguageKeys.Grade_AgendaPage);
 }
 

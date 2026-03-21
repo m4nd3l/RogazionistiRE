@@ -8,10 +8,11 @@
     xmlns:subData="using:RogazionistiRE.JsonBlueprints.SubBlueprints"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:jsonBlueprints="using:RogazionistiRE.JsonBlueprints"
     mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Key="SubjectItemTemplate" x:DataType="data:ObservableSubject">
+        <DataTemplate x:Key="SubjectItemTemplate" x:DataType="jsonBlueprints:SubjectJson">
             <ItemContainer CornerRadius="{StaticResource OverlayCornerRadius}">
                 
                 <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
@@ -36,7 +37,7 @@
                             Background="{ThemeResource SubtleFillColorSecondaryBrush}"
                             CornerRadius="0,0,4,4">
                         
-                        <ItemsView ItemsSource="{x:Bind Teachers}" 
+                        <ItemsView ItemsSource="{x:Bind ObTeachers}" 
                                    SelectionMode="None"
                                    IsItemInvokedEnabled="False">
                             <ItemsView.Layout>

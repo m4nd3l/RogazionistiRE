@@ -73,8 +73,9 @@ public partial class App : Application
         } else switchToLoginWindow();
     }
 
-    private static void onNoNFinalWindowClose(object sender, WindowEventArgs args) {
+    private static async void onNoNFinalWindowClose(object sender, WindowEventArgs args) {
         FileWriter.aSave("langIndex", $"{LanguageManager.getSelectedIndex()}");
+        ObjectManagement.close();
     }
 
     #region Window Management

@@ -61,9 +61,12 @@ namespace RogazionistiRE.Windows {
                     break;
                 
                 case "Agenda":
+                    await ObjectManagement.getCurrentStudent().Lessons();
                     await ObjectManagement.getCurrentStudent().Agenda();
                     await ObjectManagement.getCurrentStudent().Homework();
-                    await ObjectManagement.getCurrentStudent().Lessons();
+                    await ObjectManagement.getCurrentStudent().Grades();
+                    await ObjectManagement.getCurrentStudent().Notes();
+                    await ObjectManagement.getCurrentStudent().Annotations();
                     Title.Text = LanguageManager.getTranslation(LanguageKeys.Agenda_StudentPage);
                     ContentFrame.Navigate(typeof(Agenda));
                     break;
@@ -100,6 +103,7 @@ namespace RogazionistiRE.Windows {
                     break;
                 
                 case "Info":
+                    stop();
                     await ObjectManagement.getCurrentStudent().Notes();
                     await ObjectManagement.getCurrentStudent().Grades();
                     MoreInfoStudentContentDialog dialog = new MoreInfoStudentContentDialog() { XamlRoot = XamlRoot, };

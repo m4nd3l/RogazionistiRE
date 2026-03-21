@@ -1,5 +1,6 @@
 ﻿using RogazionistiRE.JsonBlueprints;
 using RogazionistiRE.JsonBlueprints.SubBlueprints;
+using RogazionistiRE.Language;
 using RogazionistiRE.Util;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,16 @@ public class ObservableHomework {
         Done        = done;
     }
     
-    public static ObservableCollection<ObservableHomework> merge(List<ObservableHomework> current, List<HomeworkJson> newOnes) {
+    public string DateFormatted      => Date.ToString("dd/HH/yyyy hh:mm");
+    public string HomeworkTranslated => LanguageManager.getTranslation(LanguageKeys.Homework_AgendaPage);
+    public string DoneTranslated     => LanguageManager.getTranslation(LanguageKeys.Done_AgendaPage);
+    public string NotDoneTranslated => LanguageManager.getTranslation(LanguageKeys.NotDone_AgendaPage);
+    public static ObservableCollection<ObservableHomework> merge(List<ObservableHomework>? current, List<HomeworkJson> newOnes) {
+        if (current == null) {
+            var newList =  new ObservableCollection<ObservableHomework>();
+            foreach (var item in newOnes) { newList.Add(new ObservableHomework(item)); }
+            return newList;
+        }
         var merged = new List<ObservableHomework>(current);
         var existingKeys = new HashSet<string>(current.Select(h => $"{h.Date:yyyyMMdd}_{h.SubjectID}_{h.Title}"));
         foreach (var homework in newOnes) {
@@ -51,31 +61,5 @@ public class ObservableHomework {
         var hmList = new List<ObservableHomework>(homework);
         string serialized = JsonSerializer.Serialize(hmList);
         FileWriter.aSave(studentID, serialized);
-    }
-
-    public bool Equals(HomeworkJson other) {
-        return 
-            SubjectID == other.SubjectID &&
-            Date.Equals(other.Date) &&
-            Title == other.Title &&
-            Subtitle == other.Subtitle &&
-            Detail == other.Detail &&
-            New == other.New &&
-            Description == other.Description &&
-            Module == other.Module &&
-            Assignment == other.Assignment;
-    }
-    public bool Equals(ObservableHomework other) {
-        return 
-            SubjectID == other.SubjectID &&
-            Date.Equals(other.Date) &&
-            Title == other.Title &&
-            Subtitle == other.Subtitle &&
-            Detail == other.Detail &&
-            New == other.New &&
-            Description == other.Description &&
-            Module == other.Module &&
-            Assignment == other.Assignment &&
-            Done == other.Done;
     }
 }

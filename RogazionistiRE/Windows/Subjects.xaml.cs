@@ -30,7 +30,7 @@ namespace RogazionistiRE.Windows {
     
     public sealed partial class Subjects : Page {
 
-        public ObservableCollection<ObservableSubject> SubjectsCollection { get; set; } = new ObservableCollection<ObservableSubject>();
+        public ObservableCollection<SubjectJson> SubjectsCollection { get; set; } = new ObservableCollection<SubjectJson>();
 
         public Subjects() {
             InitializeComponent();
@@ -38,10 +38,7 @@ namespace RogazionistiRE.Windows {
         }
 
         private async void OnLoaded(object sender, RoutedEventArgs e) {
-            SubjectsCollection.Clear();
-            var subjects = ObservableSubject.fromJsonTemplate(await ObjectManagement.getCurrentStudent().Subjects());
-            foreach (var subject in subjects) 
-                SubjectsCollection.Add(subject);
+            SubjectsCollection = await ObjectManagement.getCurrentStudent().Subjects();
         }
     }
 }

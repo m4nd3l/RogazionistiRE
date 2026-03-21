@@ -11,4 +11,6 @@ public class SubjectJson {
     [JsonPropertyName("nome_materia_sito")] public string            SubjectName { get; set; }
     [JsonPropertyName("ordinamento")]       public int               Sorting     { get; set; }
     [JsonPropertyName("professori")]        public List<TeacherJson> Teachers    { get; set; }
+    
+    public ObservableCollection<TeacherJson> ObTeachers => new ObservableCollection<TeacherJson>(Teachers);
 }

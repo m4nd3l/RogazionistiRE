@@ -19,6 +19,7 @@ C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Rele
 C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.dll
 C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.pdb
 C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\resources.pri
+C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml
 C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\Microsoft.Web.WebView2.Core.dll
 C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\CommunityToolkit.Common.dll
 C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\CommunityToolkit.WinUI.Controls.SettingsControls.dll
@@ -337,3 +338,6 @@ C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Rele
 C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\qualifiers.txt
 C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\qualifiers.txt.intermediate
 C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\MultipleQualifiersPerDimensionFound.txt
+C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\RogazionistiRE.genpublishdeps.cache
+C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\ProjectArchitectures.txt
+C:\Users\m4nd3l\Documents\Dati\CSharp\RogazionistiRE\RogazionistiRE\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\.winmd_cache\$Microsoft.Web.WebView2.Core.winmd_638789222360000000.json

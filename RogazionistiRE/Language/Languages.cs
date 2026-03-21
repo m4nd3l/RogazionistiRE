@@ -46,6 +46,14 @@ public class Languages {
     "subjects.student_page.button_text": "Materie",
     "more_info.student_page.button_text": "Altre Informazioni",
 
+    "lesson.agenda_page.text": "Lezione",
+    "homework.agenda_page.text": "Compito",
+    "event.agenda_page.text": "Evento",
+    "notes.agenda_page.text": "Note",
+    "grade.agenda_page.text": "Voto",
+    "done.agenda_page.text": "Fatto",
+    "notdone.agenda_page.text": "Non fatto",
+
     "name.more_info_page.text": "Nome",
     "current_year.more_info_page.text": "Anno Corrente",
     "province.more_info_page.text": "Provincia",

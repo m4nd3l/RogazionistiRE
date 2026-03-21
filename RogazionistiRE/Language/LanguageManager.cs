@@ -1,6 +1,7 @@
 ﻿using Microsoft.Windows.AppNotifications;
 using Microsoft.Windows.AppNotifications.Builder;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace RogazionistiRE.Language;
@@ -11,9 +12,9 @@ public class LanguageManager {
 
     public static void initialize() {
         LanguageJson IT = JsonSerializer.Deserialize<LanguageJson>(Languages.IT);
-        LanguageJson EN = JsonSerializer.Deserialize<LanguageJson>(Languages.IT); // TODO : CHANGE TO EN
-        LanguageJson ES = JsonSerializer.Deserialize<LanguageJson>(Languages.IT); // TODO : CHANGE TO ES
-        LanguageJson JP = JsonSerializer.Deserialize<LanguageJson>(Languages.IT); // TODO : CHANGE TO JP
+        LanguageJson EN = JsonSerializer.Deserialize<LanguageJson>(Languages.IT); // TODO : CHANGE TO EN. NAME: English
+        LanguageJson ES = JsonSerializer.Deserialize<LanguageJson>(Languages.IT); // TODO : CHANGE TO ES. NAME: NAME: Español
+        LanguageJson JP = JsonSerializer.Deserialize<LanguageJson>(Languages.IT); // TODO : CHANGE TO JP. NAME: 日本語
         if (EN == null || IT == null || ES == null || JP == null) {
             AppNotification notification = new AppNotificationBuilder()
                 .AddText("Error")
@@ -29,5 +30,14 @@ public class LanguageManager {
     public static string getTranslation(LanguageKeys key) { return languages[selectedLanguage].getTranslation(key); }
     public static string getTitle(LanguageKeys page) { return $"{getTranslation(LanguageKeys.RogazionistiRE_Winbar)} - {getTranslation(page)}"; }
     public static void selectLanguage(int selectedLanguageID) { selectedLanguage = selectedLanguageID; }
-    public static int getSelectedIndex() {return selectedLanguage; }
+    public static int getSelectedIndex() { return selectedLanguage; }
+    public static string getCultureID() {
+        return languages[selectedLanguage].Name switch {
+            "Italiano" => "it-IT",
+            "English"  => "en-US",
+            "Español"  => "es-ES",
+            "日本語"      => "ja-JP",
+            _          => "en-US"
+        };
+    }
 }

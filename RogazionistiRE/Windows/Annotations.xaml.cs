@@ -31,15 +31,8 @@ namespace RogazionistiRE.Windows {
         }
 
         private async void OnLoaded(object sender, RoutedEventArgs e) {
-            NotesCollection.Clear();
-            var notes = await ObjectManagement.getCurrentStudent().Notes();
-            foreach (var note in notes) 
-                NotesCollection.Add(note);
-            
-            AnnotationsCollection.Clear();
-            var annotations = await ObjectManagement.getCurrentStudent().Annotations();
-            foreach (var annotation in annotations) 
-                AnnotationsCollection.Add(annotation);
+            NotesCollection = await ObjectManagement.getCurrentStudent().Notes();
+            AnnotationsCollection = await ObjectManagement.getCurrentStudent().Annotations();
         }
     }
 }
