@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RogazionistiRE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bb15dc268dba32b9a4933ceb59b577e497e2f74")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99bb791439b18084ea179b9e91fd5cccdb09c6ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("RogazionistiRE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RogazionistiRE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

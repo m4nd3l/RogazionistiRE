@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace RogazionistiRE.Data;
 
@@ -22,6 +23,8 @@ public class ObservableHomework {
     public string   Assignment  { get; set; }
     
     public bool     Done        { get; set; }
+    
+    public ObservableHomework() {}
 
     public ObservableHomework(HomeworkJson json, bool done = false) {
         SubjectID   = json.SubjectID;
@@ -57,9 +60,23 @@ public class ObservableHomework {
         return new ObservableCollection<ObservableHomework>(merged);
     }
 
-    public static void save(ObservableCollection<ObservableHomework> homework, string studentID) {
+    public static async Task save(ObservableCollection<ObservableHomework> homework, string studentID) {
         var hmList = new List<ObservableHomework>(homework);
         string serialized = JsonSerializer.Serialize(hmList);
-        FileWriter.aSave(studentID, serialized);
+        await FileWriter.saveJsonToFileAsync(studentID,serialized);
+    }
+    
+    public override bool Equals(object? objec) {
+        if (objec is ObservableHomework other) 
+            return SubjectID == other.SubjectID &&
+                   Date.Equals(other.Date) &&
+                   Title == other.Title &&
+                   Subtitle == other.Subtitle &&
+                   Detail == other.Detail &&
+                   New == other.New &&
+                   Description == other.Description &&
+                   Module == other.Module &&
+                   Assignment == other.Assignment;
+        return false;
     }
 }

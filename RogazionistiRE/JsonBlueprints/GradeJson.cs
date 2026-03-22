@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints;
 
-public class GradeJson { 
+public class GradeJson : Blueprint{ 
     [JsonPropertyName("id_voto")]                     public int          GradeID               { get; set; } 
     [JsonPropertyName("id_materia")]                  public int          SubjectID             { get; set; } 
     [JsonPropertyName("data")]                        public DateTime     Date                  { get; set; } 
@@ -32,5 +32,12 @@ public class GradeJson {
     public string DateFormatted => Date.ToString("dd/HH/yyyy hh:mm");
     public string MarginIfText => Detail == "" ? "0" : "12,12,12,8";
     public string GradeTranslated => LanguageManager.getTranslation(LanguageKeys.Grade_AgendaPage);
+    
+    public override void format() {
+        Title              = formatSTR(Title);
+        Subtitle           = formatSTR(Subtitle);
+        Detail             = formatSTR(Detail);
+        TranslatedSeenDate = formatSTR(TranslatedSeenDate);
+    }
 }
 

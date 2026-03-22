@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints.SubBlueprints;
 
-public class TeacherJson {
+public class TeacherJson : Blueprint {
     [JsonPropertyName("id")]                  public int ID              { get; set; }
     [JsonPropertyName("nome")]                public string Name         { get; set; }
     [JsonPropertyName("ordinamento")]         public int Sorting         { get; set; }
@@ -19,6 +19,11 @@ public class TeacherJson {
                teacher.ViewInterviews == ViewInterviews;
     }
 
+    public override void format() {
+        Name       = formatSTR(Name);
+        Title      = formatSTR(Title);
+    }
+    
     public override int GetHashCode() {
         return HashCode.Combine(ID, Name, Sorting, Title, ViewInterviews);
     }

@@ -47,6 +47,7 @@ public class LanguageKeys {
     public static readonly LanguageKeys Done_AgendaPage = new LanguageKeys("done.agenda_page.text");
     public static readonly LanguageKeys Notes_AgendaPage = new LanguageKeys("notes.agenda_page.text");
     public static readonly LanguageKeys NotDone_AgendaPage = new LanguageKeys("notdone.agenda_page.text");
+    public static readonly LanguageKeys NoHomework_AgendaPage = new LanguageKeys("nohomework.agenda_page.text");
     
     public static readonly LanguageKeys Name_MoreInfoPage = new LanguageKeys("name.more_info_page.text");
     public static readonly LanguageKeys CurrentYear_MoreInfoPage = new LanguageKeys("current_year.more_info_page.text");

@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints;
     
-public class ComunicationThreadJson {
+public class ComunicationThreadJson : Blueprint{
     [JsonPropertyName("id")]                      public string     ID                    { get; set; }
     [JsonPropertyName("id_materia")]              public int        SubjectID             { get; set; }
     [JsonPropertyName("novita")]                  public bool       New                   { get; set; }
@@ -22,4 +22,11 @@ public class ComunicationThreadJson {
     [JsonPropertyName("destinatari_concatenati")] public string     ConcatenatedRecipient { get; set; }
     [JsonPropertyName("conferma_lettura")]        public bool       ConfirmReading        { get; set; }
     [JsonPropertyName("id_messaggio")]            public int        MessageID             { get; set; }
+    
+    public override void format() {
+        Title                 = formatSTR(Title);
+        Subtitle              = formatSTR(Subtitle);
+        MessageType           = formatSTR(MessageType);
+        ConcatenatedRecipient = formatSTR(ConcatenatedRecipient);
+    }
 }

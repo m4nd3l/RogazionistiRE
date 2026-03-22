@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints;
 
-public class NotesJson {
+public class NotesJson : Blueprint{
     [JsonPropertyName("id")]                          public int      ID                { get; set; }
     [JsonPropertyName("novita")]                      public bool     New               { get; set; }
     [JsonPropertyName("data")]                        public DateTime Date              { get; set; }
@@ -20,4 +20,10 @@ public class NotesJson {
     [JsonPropertyName("url_contenuto")]               public string   ContentURL        { get; set; }
     
     public string DateFormatted  => Date.ToString("dd/HH/yyyy hh:mm");
+    
+    public override void format() {
+        Title             = formatSTR(Title);
+        Subtitle          = formatSTR(Subtitle);
+        TraslatedSeenDate = formatSTR(TraslatedSeenDate);
+    }
 }

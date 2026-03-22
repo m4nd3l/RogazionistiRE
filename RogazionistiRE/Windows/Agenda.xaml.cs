@@ -63,6 +63,19 @@ namespace RogazionistiRE.Windows {
             await refresh();
         }
         
+        private async void DoneCheckbox_Toggled(object sender, RoutedEventArgs e) {
+            if (sender is ToggleSwitch toggle && toggle.FocusState != FocusState.Unfocused) {
+                if (toggle.DataContext is ObservableHomework homework) {
+                    int index = ObjectManagement.getCurrentStudent().getHomeworkIndex(homework);
+            
+                    if (index != -1) {
+                        ObjectManagement.getCurrentStudent().updateHomeworkStatus(index, toggle.IsOn);
+                        await ObjectManagement.getCurrentStudent().save(); 
+                    }
+                }
+            }
+        }
+        
         private async Task refresh() {
             string format = "dd MMMM yyyy";
             TitleDate.Text = DateSelector.Date.Value.Date.ToString(format, new CultureInfo(LanguageManager.getCultureID()));
@@ -82,6 +95,15 @@ namespace RogazionistiRE.Windows {
             UpdateCollection(GradesCollection, GradesCheckbox.IsChecked == false ? null : await newGrades);
             UpdateCollection(NotesCollection, NotesCheckbox.IsChecked == false ? null : await newNotes);
             UpdateCollection(AnnotationsCollection, NotesCheckbox.IsChecked == false ? null : await newAnnotations);
+            
+            NoHomework.Text = "";
+            
+            if (LessonsCollection.Count == 0 &&
+                AgendaCollection.Count == 0 &&
+                HomeworkCollection.Count == 0 &&
+                GradesCollection.Count == 0 &&
+                NotesCollection.Count == 0 &&
+                AnnotationsCollection.Count == 0) NoHomework.Text = LanguageManager.getTranslation(LanguageKeys.NoHomework_AgendaPage);
         }
         
         private void UpdateCollection<T>(ObservableCollection<T> collection, IEnumerable<T>? newItems) {

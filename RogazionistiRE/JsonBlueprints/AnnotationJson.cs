@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints ;
 
-public class AnnotationJson {
+public class AnnotationJson : Blueprint{
     [JsonPropertyName("id_materia")]          public int      SubjectID         { get; set; }
     [JsonPropertyName("data")]                public DateTime Date              { get; set; }
     [JsonPropertyName("simbolo")]             public string   Symbol            { get; set; }
@@ -16,4 +16,10 @@ public class AnnotationJson {
     
     public string DateFormatted => Date.ToString("dd/HH/yyyy hh:mm");
     public string MarginIfText  => Detail == "" ? "0" : "12,12,12,8";
+    
+    public override void format() {
+        Title                 = formatSTR(Title);
+        Subtitle              = formatSTR(Subtitle);
+        Detail                = formatSTR(Detail);
+    }
 }

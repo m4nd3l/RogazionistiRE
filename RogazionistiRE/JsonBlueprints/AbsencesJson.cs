@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints;
 
-public class AbsencesJson {
+public class AbsencesJson : Blueprint{
         [JsonPropertyName("id")]
         public int ID { get; set; }
 
@@ -42,5 +42,11 @@ public class AbsencesJson {
 
         [JsonPropertyName("prenotazione")]
         public bool Reservation { get; set; }
+        
+        public override void format() {
+                Title      = formatSTR(Title);
+                Reason     = formatSTR(Reason);
+                Justified  = formatSTR(Justified);
+        }
 }
 

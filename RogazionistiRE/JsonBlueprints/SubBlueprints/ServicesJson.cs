@@ -2,7 +2,7 @@
 
 namespace RogazionistiRE.JsonBlueprints.SubBlueprints;
 
-public class ServicesJson {
+public class ServicesJson : Blueprint{
     [JsonPropertyName("agenda")]               public bool Agenda                { get; set; }
     [JsonPropertyName("alternanza")]           public bool WorkBasedLearning     { get; set; }
     [JsonPropertyName("annotazioni")]          public bool Annotations           { get; set; }
@@ -39,5 +39,7 @@ public class ServicesJson {
     [JsonPropertyName("videomeeting")]         public bool VideoMeetings         { get; set; }
     [JsonPropertyName("note_tutor")]           public bool TutorNotes            { get; set; }
     [JsonPropertyName("colloqui")]             public bool Meetings              { get; set; }
+    
+    public override void format() { }
 }
 

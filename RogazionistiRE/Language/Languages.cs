@@ -53,6 +53,7 @@ public class Languages {
     "grade.agenda_page.text": "Voto",
     "done.agenda_page.text": "Fatto",
     "notdone.agenda_page.text": "Non fatto",
+    "nohomework.agenda_page.text": "Non ci sono eventi per questa giornata",
 
     "name.more_info_page.text": "Nome",
     "current_year.more_info_page.text": "Anno Corrente",

@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints;
 
-public class LessonJson {
+public class LessonJson : Blueprint{
     [JsonPropertyName("id_materia")]  public int      SubjectID        { get; set; }
     [JsonPropertyName("data")]        public DateTime Date             { get; set; }
     [JsonPropertyName("titolo")]      public string   Title            { get; set; }
@@ -14,4 +14,10 @@ public class LessonJson {
     [JsonPropertyName("modulo")]      public string   Module           { get; set; }
     public string DateFormatted    => Date.ToString("dd/HH/yyyy hh:mm");
     public string LessonTranslated => LanguageManager.getTranslation(LanguageKeys.Lesson_AgendaPage);
+    public override void format() {
+        Title    = formatSTR(Title);
+        Subtitle = formatSTR(Subtitle);
+        Detail   = formatSTR(Detail);
+        Module   = formatSTR(Module);
+    }
 }

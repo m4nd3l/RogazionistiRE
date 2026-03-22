@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints;
-public class LoginResultJson {
+public class LoginResultJson : Blueprint{
     [JsonPropertyName("token")]           public string            Token          { get; set; }
     [JsonPropertyName("mastercom_token")] public string            MastercomToken { get; set; }
     [JsonPropertyName("mastercom_id")]    public string            MastercomId    { get; set; }
@@ -25,5 +25,7 @@ public class LoginResultJson {
                SchoolURL == null &&
                UserID == 0;
     }
+    
+    public override void format() { }
 }
 

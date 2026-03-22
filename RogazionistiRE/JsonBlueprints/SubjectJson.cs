@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace RogazionistiRE.JsonBlueprints;
 
-public class SubjectJson {
+public class SubjectJson : Blueprint {
     [JsonPropertyName("id")]                public int               ID          { get; set; }
     [JsonPropertyName("descrizione")]       public string            Description { get; set; }
     [JsonPropertyName("nome_materia_sito")] public string            SubjectName { get; set; }
@@ -13,4 +13,9 @@ public class SubjectJson {
     [JsonPropertyName("professori")]        public List<TeacherJson> Teachers    { get; set; }
     
     public ObservableCollection<TeacherJson> ObTeachers => new ObservableCollection<TeacherJson>(Teachers);
+
+    public override void format() {
+        Description = formatSTR(Description);
+        SubjectName = formatSTR(SubjectName);
+    }
 }

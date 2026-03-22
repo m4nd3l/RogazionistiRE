@@ -60,7 +60,7 @@ public class Student {
 
     public async Task save() {
         await Homework();
-        FileWriter.aSave(_id, JsonSerializer.Serialize(new List<ObservableHomework>(_homework)));
+        await ObservableHomework.save(_homework, _id);
     }
     
     public string getName() {
@@ -90,6 +90,15 @@ public class Student {
         }
         return _student.CurrentYear.Replace("_", "/");
     }
+
+    public void updateHomeworkStatus(int index, bool status) {
+        if (index >= 0 && index < _homework.Count) _homework[index].Done = status;
+    }
+    
+    public int getHomeworkIndex(ObservableHomework target) {
+        if (_homework == null) return -1;
+        return _homework.ToList().FindIndex(hw => hw.Equals(target));
+    }
     
     #region GETTERS
     public async Task<StudentInfoJson> Info() {
@@ -116,7 +125,7 @@ public class Student {
     }
     public async Task<ObservableCollection<ObservableHomework>> Homework(DateTime? date = null) {
         if (_homework == null) {
-            string oldJson = FileWriter.aReadRFalse(_id);
+            string oldJson = FileWriter.readJsonFromFileAsync(_id);
             var oldOnes = oldJson != "false" ? JsonSerializer.Deserialize<List<ObservableHomework>>(oldJson) : null;
             var newOnes = await getObject<List<HomeworkJson>>(APIs.getHomeworkAPIEndpoint(_student), DemoJsons.CARLETTUCCINO_HOMEWORK_JSON);
             _homework = ObservableHomework.merge(oldOnes, newOnes);

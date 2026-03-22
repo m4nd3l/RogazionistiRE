@@ -2,7 +2,7 @@
 
 namespace RogazionistiRE.JsonBlueprints.SubBlueprints;
 
-public class SchoolJson {
+public class SchoolJson : Blueprint{
     [JsonPropertyName("mastercom_id")] public string  MastercomID  { get; set; }
     [JsonPropertyName("nome")]         public string  Name         { get; set; }
     [JsonPropertyName("url_quaderno")] public string  NotebookURL  { get; set; }
@@ -12,5 +12,12 @@ public class SchoolJson {
     [JsonPropertyName("logo")]         public object? Logo         { get; set; }
     [JsonPropertyName("comune")]       public string  Municipality { get; set; }
     [JsonPropertyName("tipo")]         public string  Type         { get; set; }
+    
+    public override void format() {
+        Name         = formatSTR(Name);
+        Province     = formatSTR(Province);
+        Municipality = formatSTR(Municipality);
+        Type         = formatSTR(Type);
+    }
 }
 
