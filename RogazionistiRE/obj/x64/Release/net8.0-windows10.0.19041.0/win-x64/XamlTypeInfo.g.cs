@@ -226,7 +226,7 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[120];
+            _typeNameTable = new string[121];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -259,96 +259,97 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
             _typeNameTable[29] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.LessonJson>";
             _typeNameTable[30] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.LessonJson>";
             _typeNameTable[31] = "RogazionistiRE.JsonBlueprints.LessonJson";
-            _typeNameTable[32] = "System.DateTime";
-            _typeNameTable[33] = "String";
-            _typeNameTable[34] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.AgendaJson>";
-            _typeNameTable[35] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AgendaJson>";
-            _typeNameTable[36] = "RogazionistiRE.JsonBlueprints.AgendaJson";
-            _typeNameTable[37] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.Data.ObservableHomework>";
-            _typeNameTable[38] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.ObservableHomework>";
-            _typeNameTable[39] = "RogazionistiRE.Data.ObservableHomework";
-            _typeNameTable[40] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.GradeJson>";
-            _typeNameTable[41] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.GradeJson>";
-            _typeNameTable[42] = "RogazionistiRE.JsonBlueprints.GradeJson";
-            _typeNameTable[43] = "System.Collections.Generic.List`1<Object>";
-            _typeNameTable[44] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.NotesJson>";
-            _typeNameTable[45] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.NotesJson>";
-            _typeNameTable[46] = "RogazionistiRE.JsonBlueprints.NotesJson";
-            _typeNameTable[47] = "RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson";
-            _typeNameTable[48] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.AnnotationJson>";
-            _typeNameTable[49] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AnnotationJson>";
-            _typeNameTable[50] = "RogazionistiRE.JsonBlueprints.AnnotationJson";
-            _typeNameTable[51] = "RogazionistiRE.Windows.Annotations";
-            _typeNameTable[52] = "RogazionistiRE.Windows.Comunications";
-            _typeNameTable[53] = "RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog";
-            _typeNameTable[54] = "Microsoft.UI.Xaml.Controls.ContentDialog";
-            _typeNameTable[55] = "Microsoft.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[56] = "RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog";
-            _typeNameTable[57] = "RogazionistiRE.Windows.Grades";
-            _typeNameTable[58] = "Microsoft.UI.Xaml.Controls.TitleBar";
-            _typeNameTable[59] = "Microsoft.UI.Xaml.Controls.IconSource";
-            _typeNameTable[60] = "Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings";
-            _typeNameTable[61] = "Microsoft.UI.Xaml.Controls.NavigationView";
-            _typeNameTable[62] = "System.Collections.Generic.IList`1<Object>";
-            _typeNameTable[63] = "Microsoft.UI.Xaml.Controls.AutoSuggestBox";
-            _typeNameTable[64] = "Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode";
-            _typeNameTable[65] = "Microsoft.UI.Xaml.DataTemplate";
-            _typeNameTable[66] = "Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible";
-            _typeNameTable[67] = "Microsoft.UI.Xaml.Style";
-            _typeNameTable[68] = "Microsoft.UI.Xaml.Controls.StyleSelector";
-            _typeNameTable[69] = "Microsoft.UI.Xaml.Controls.DataTemplateSelector";
-            _typeNameTable[70] = "Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode";
-            _typeNameTable[71] = "Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode";
-            _typeNameTable[72] = "Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus";
-            _typeNameTable[73] = "Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled";
-            _typeNameTable[74] = "Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings";
-            _typeNameTable[75] = "Microsoft.UI.Xaml.Controls.NavigationViewItem";
-            _typeNameTable[76] = "Microsoft.UI.Xaml.Controls.NavigationViewItemBase";
-            _typeNameTable[77] = "Microsoft.UI.Xaml.Controls.IconElement";
-            _typeNameTable[78] = "Microsoft.UI.Xaml.Controls.InfoBadge";
-            _typeNameTable[79] = "Microsoft.UI.Xaml.Controls.ProgressRing";
-            _typeNameTable[80] = "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings";
-            _typeNameTable[81] = "Microsoft.UI.Xaml.Media.AcrylicBrush";
-            _typeNameTable[82] = "Microsoft.UI.Xaml.Media.XamlCompositionBrushBase";
-            _typeNameTable[83] = "Windows.UI.Color";
-            _typeNameTable[84] = "System.Nullable`1<Double>";
-            _typeNameTable[85] = "TimeSpan";
-            _typeNameTable[86] = "RogazionistiRE.Windows.Home";
-            _typeNameTable[87] = "Microsoft.UI.Xaml.Media.MicaBackdrop";
-            _typeNameTable[88] = "Microsoft.UI.Xaml.Media.SystemBackdrop";
-            _typeNameTable[89] = "Microsoft.UI.Composition.SystemBackdrops.MicaKind";
-            _typeNameTable[90] = "RogazionistiRE.Windows.Login";
-            _typeNameTable[91] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[92] = "RogazionistiRE.Windows.Overview";
-            _typeNameTable[93] = "RogazionistiRE.Windows.ReportCards";
-            _typeNameTable[94] = "RogazionistiRE.Windows.Settings";
-            _typeNameTable[95] = "Microsoft.UI.Xaml.Controls.UniformGridLayout";
-            _typeNameTable[96] = "Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification";
-            _typeNameTable[97] = "Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch";
-            _typeNameTable[98] = "Microsoft.UI.Xaml.Controls.AnimatedIcon";
-            _typeNameTable[99] = "Microsoft.UI.Xaml.Controls.IAnimatedVisualSource2";
-            _typeNameTable[100] = "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource";
-            _typeNameTable[101] = "System.Collections.Generic.IReadOnlyDictionary`2<String, Double>";
-            _typeNameTable[102] = "RogazionistiRE.Windows.Students";
-            _typeNameTable[103] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.Data.Student>";
-            _typeNameTable[104] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.Student>";
-            _typeNameTable[105] = "RogazionistiRE.Data.Student";
-            _typeNameTable[106] = "RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson";
-            _typeNameTable[107] = "Microsoft.UI.Xaml.Controls.LinedFlowLayout";
-            _typeNameTable[108] = "Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification";
-            _typeNameTable[109] = "Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch";
-            _typeNameTable[110] = "RogazionistiRE.Windows.Subjects";
-            _typeNameTable[111] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.SubjectJson>";
-            _typeNameTable[112] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubjectJson>";
-            _typeNameTable[113] = "RogazionistiRE.JsonBlueprints.SubjectJson";
-            _typeNameTable[114] = "System.Collections.Generic.List`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>";
-            _typeNameTable[115] = "RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson";
-            _typeNameTable[116] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>";
-            _typeNameTable[117] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>";
-            _typeNameTable[118] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[119] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[32] = "RogazionistiRE.JsonBlueprints.Blueprint";
+            _typeNameTable[33] = "System.DateTime";
+            _typeNameTable[34] = "String";
+            _typeNameTable[35] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.AgendaJson>";
+            _typeNameTable[36] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AgendaJson>";
+            _typeNameTable[37] = "RogazionistiRE.JsonBlueprints.AgendaJson";
+            _typeNameTable[38] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.Data.ObservableHomework>";
+            _typeNameTable[39] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.ObservableHomework>";
+            _typeNameTable[40] = "RogazionistiRE.Data.ObservableHomework";
+            _typeNameTable[41] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.GradeJson>";
+            _typeNameTable[42] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.GradeJson>";
+            _typeNameTable[43] = "RogazionistiRE.JsonBlueprints.GradeJson";
+            _typeNameTable[44] = "System.Collections.Generic.List`1<Object>";
+            _typeNameTable[45] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.NotesJson>";
+            _typeNameTable[46] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.NotesJson>";
+            _typeNameTable[47] = "RogazionistiRE.JsonBlueprints.NotesJson";
+            _typeNameTable[48] = "RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson";
+            _typeNameTable[49] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.AnnotationJson>";
+            _typeNameTable[50] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AnnotationJson>";
+            _typeNameTable[51] = "RogazionistiRE.JsonBlueprints.AnnotationJson";
+            _typeNameTable[52] = "RogazionistiRE.Windows.Annotations";
+            _typeNameTable[53] = "RogazionistiRE.Windows.Comunications";
+            _typeNameTable[54] = "RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog";
+            _typeNameTable[55] = "Microsoft.UI.Xaml.Controls.ContentDialog";
+            _typeNameTable[56] = "Microsoft.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[57] = "RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog";
+            _typeNameTable[58] = "RogazionistiRE.Windows.Grades";
+            _typeNameTable[59] = "Microsoft.UI.Xaml.Controls.TitleBar";
+            _typeNameTable[60] = "Microsoft.UI.Xaml.Controls.IconSource";
+            _typeNameTable[61] = "Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings";
+            _typeNameTable[62] = "Microsoft.UI.Xaml.Controls.NavigationView";
+            _typeNameTable[63] = "System.Collections.Generic.IList`1<Object>";
+            _typeNameTable[64] = "Microsoft.UI.Xaml.Controls.AutoSuggestBox";
+            _typeNameTable[65] = "Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode";
+            _typeNameTable[66] = "Microsoft.UI.Xaml.DataTemplate";
+            _typeNameTable[67] = "Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible";
+            _typeNameTable[68] = "Microsoft.UI.Xaml.Style";
+            _typeNameTable[69] = "Microsoft.UI.Xaml.Controls.StyleSelector";
+            _typeNameTable[70] = "Microsoft.UI.Xaml.Controls.DataTemplateSelector";
+            _typeNameTable[71] = "Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode";
+            _typeNameTable[72] = "Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode";
+            _typeNameTable[73] = "Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus";
+            _typeNameTable[74] = "Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled";
+            _typeNameTable[75] = "Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings";
+            _typeNameTable[76] = "Microsoft.UI.Xaml.Controls.NavigationViewItem";
+            _typeNameTable[77] = "Microsoft.UI.Xaml.Controls.NavigationViewItemBase";
+            _typeNameTable[78] = "Microsoft.UI.Xaml.Controls.IconElement";
+            _typeNameTable[79] = "Microsoft.UI.Xaml.Controls.InfoBadge";
+            _typeNameTable[80] = "Microsoft.UI.Xaml.Controls.ProgressRing";
+            _typeNameTable[81] = "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings";
+            _typeNameTable[82] = "Microsoft.UI.Xaml.Media.AcrylicBrush";
+            _typeNameTable[83] = "Microsoft.UI.Xaml.Media.XamlCompositionBrushBase";
+            _typeNameTable[84] = "Windows.UI.Color";
+            _typeNameTable[85] = "System.Nullable`1<Double>";
+            _typeNameTable[86] = "TimeSpan";
+            _typeNameTable[87] = "RogazionistiRE.Windows.Home";
+            _typeNameTable[88] = "Microsoft.UI.Xaml.Media.MicaBackdrop";
+            _typeNameTable[89] = "Microsoft.UI.Xaml.Media.SystemBackdrop";
+            _typeNameTable[90] = "Microsoft.UI.Composition.SystemBackdrops.MicaKind";
+            _typeNameTable[91] = "RogazionistiRE.Windows.Login";
+            _typeNameTable[92] = "Microsoft.UI.Xaml.Window";
+            _typeNameTable[93] = "RogazionistiRE.Windows.Overview";
+            _typeNameTable[94] = "RogazionistiRE.Windows.ReportCards";
+            _typeNameTable[95] = "RogazionistiRE.Windows.Settings";
+            _typeNameTable[96] = "Microsoft.UI.Xaml.Controls.UniformGridLayout";
+            _typeNameTable[97] = "Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification";
+            _typeNameTable[98] = "Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch";
+            _typeNameTable[99] = "Microsoft.UI.Xaml.Controls.AnimatedIcon";
+            _typeNameTable[100] = "Microsoft.UI.Xaml.Controls.IAnimatedVisualSource2";
+            _typeNameTable[101] = "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource";
+            _typeNameTable[102] = "System.Collections.Generic.IReadOnlyDictionary`2<String, Double>";
+            _typeNameTable[103] = "RogazionistiRE.Windows.Students";
+            _typeNameTable[104] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.Data.Student>";
+            _typeNameTable[105] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.Student>";
+            _typeNameTable[106] = "RogazionistiRE.Data.Student";
+            _typeNameTable[107] = "RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson";
+            _typeNameTable[108] = "Microsoft.UI.Xaml.Controls.LinedFlowLayout";
+            _typeNameTable[109] = "Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification";
+            _typeNameTable[110] = "Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch";
+            _typeNameTable[111] = "RogazionistiRE.Windows.Subjects";
+            _typeNameTable[112] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.SubjectJson>";
+            _typeNameTable[113] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubjectJson>";
+            _typeNameTable[114] = "RogazionistiRE.JsonBlueprints.SubjectJson";
+            _typeNameTable[115] = "System.Collections.Generic.List`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>";
+            _typeNameTable[116] = "RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson";
+            _typeNameTable[117] = "System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>";
+            _typeNameTable[118] = "System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>";
+            _typeNameTable[119] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[120] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[120];
+            _typeTable = new global::System.Type[121];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -381,94 +382,95 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
             _typeTable[29] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.LessonJson>);
             _typeTable[30] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.LessonJson>);
             _typeTable[31] = typeof(global::RogazionistiRE.JsonBlueprints.LessonJson);
-            _typeTable[32] = typeof(global::System.DateTime);
-            _typeTable[33] = typeof(global::System.String);
-            _typeTable[34] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AgendaJson>);
-            _typeTable[35] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AgendaJson>);
-            _typeTable[36] = typeof(global::RogazionistiRE.JsonBlueprints.AgendaJson);
-            _typeTable[37] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.ObservableHomework>);
-            _typeTable[38] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.ObservableHomework>);
-            _typeTable[39] = typeof(global::RogazionistiRE.Data.ObservableHomework);
-            _typeTable[40] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.GradeJson>);
-            _typeTable[41] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.GradeJson>);
-            _typeTable[42] = typeof(global::RogazionistiRE.JsonBlueprints.GradeJson);
-            _typeTable[43] = typeof(global::System.Collections.Generic.List<global::System.Object>);
-            _typeTable[44] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.NotesJson>);
-            _typeTable[45] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.NotesJson>);
-            _typeTable[46] = typeof(global::RogazionistiRE.JsonBlueprints.NotesJson);
-            _typeTable[47] = typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson);
-            _typeTable[48] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>);
-            _typeTable[49] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>);
-            _typeTable[50] = typeof(global::RogazionistiRE.JsonBlueprints.AnnotationJson);
-            _typeTable[51] = typeof(global::RogazionistiRE.Windows.Annotations);
-            _typeTable[52] = typeof(global::RogazionistiRE.Windows.Comunications);
-            _typeTable[53] = typeof(global::RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog);
-            _typeTable[54] = typeof(global::Microsoft.UI.Xaml.Controls.ContentDialog);
-            _typeTable[55] = typeof(global::Microsoft.UI.Xaml.Controls.ContentControl);
-            _typeTable[56] = typeof(global::RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog);
-            _typeTable[57] = typeof(global::RogazionistiRE.Windows.Grades);
-            _typeTable[58] = typeof(global::Microsoft.UI.Xaml.Controls.TitleBar);
-            _typeTable[59] = typeof(global::Microsoft.UI.Xaml.Controls.IconSource);
-            _typeTable[60] = typeof(global::Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings);
-            _typeTable[61] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationView);
-            _typeTable[62] = typeof(global::System.Collections.Generic.IList<global::System.Object>);
-            _typeTable[63] = typeof(global::Microsoft.UI.Xaml.Controls.AutoSuggestBox);
-            _typeTable[64] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode);
-            _typeTable[65] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
-            _typeTable[66] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible);
-            _typeTable[67] = typeof(global::Microsoft.UI.Xaml.Style);
-            _typeTable[68] = typeof(global::Microsoft.UI.Xaml.Controls.StyleSelector);
-            _typeTable[69] = typeof(global::Microsoft.UI.Xaml.Controls.DataTemplateSelector);
-            _typeTable[70] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode);
-            _typeTable[71] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode);
-            _typeTable[72] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus);
-            _typeTable[73] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled);
-            _typeTable[74] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings);
-            _typeTable[75] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem);
-            _typeTable[76] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase);
-            _typeTable[77] = typeof(global::Microsoft.UI.Xaml.Controls.IconElement);
-            _typeTable[78] = typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge);
-            _typeTable[79] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing);
-            _typeTable[80] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings);
-            _typeTable[81] = typeof(global::Microsoft.UI.Xaml.Media.AcrylicBrush);
-            _typeTable[82] = typeof(global::Microsoft.UI.Xaml.Media.XamlCompositionBrushBase);
-            _typeTable[83] = typeof(global::Windows.UI.Color);
-            _typeTable[84] = typeof(global::System.Nullable<global::System.Double>);
-            _typeTable[85] = typeof(global::System.TimeSpan);
-            _typeTable[86] = typeof(global::RogazionistiRE.Windows.Home);
-            _typeTable[87] = typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop);
-            _typeTable[88] = typeof(global::Microsoft.UI.Xaml.Media.SystemBackdrop);
-            _typeTable[89] = typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind);
-            _typeTable[90] = typeof(global::RogazionistiRE.Windows.Login);
-            _typeTable[91] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[92] = typeof(global::RogazionistiRE.Windows.Overview);
-            _typeTable[93] = typeof(global::RogazionistiRE.Windows.ReportCards);
-            _typeTable[94] = typeof(global::RogazionistiRE.Windows.Settings);
-            _typeTable[95] = typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayout);
-            _typeTable[96] = typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification);
-            _typeTable[97] = typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch);
-            _typeTable[98] = typeof(global::Microsoft.UI.Xaml.Controls.AnimatedIcon);
-            _typeTable[99] = typeof(global::Microsoft.UI.Xaml.Controls.IAnimatedVisualSource2);
-            _typeTable[100] = typeof(global::Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource);
-            _typeTable[101] = typeof(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Double>);
-            _typeTable[102] = typeof(global::RogazionistiRE.Windows.Students);
-            _typeTable[103] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.Student>);
-            _typeTable[104] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.Student>);
-            _typeTable[105] = typeof(global::RogazionistiRE.Data.Student);
-            _typeTable[106] = typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson);
-            _typeTable[107] = typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayout);
-            _typeTable[108] = typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification);
-            _typeTable[109] = typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch);
-            _typeTable[110] = typeof(global::RogazionistiRE.Windows.Subjects);
-            _typeTable[111] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubjectJson>);
-            _typeTable[112] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubjectJson>);
-            _typeTable[113] = typeof(global::RogazionistiRE.JsonBlueprints.SubjectJson);
-            _typeTable[114] = typeof(global::System.Collections.Generic.List<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>);
-            _typeTable[115] = typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson);
-            _typeTable[116] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>);
-            _typeTable[117] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>);
-            _typeTable[118] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[119] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[32] = typeof(global::RogazionistiRE.JsonBlueprints.Blueprint);
+            _typeTable[33] = typeof(global::System.DateTime);
+            _typeTable[34] = typeof(global::System.String);
+            _typeTable[35] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AgendaJson>);
+            _typeTable[36] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AgendaJson>);
+            _typeTable[37] = typeof(global::RogazionistiRE.JsonBlueprints.AgendaJson);
+            _typeTable[38] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.ObservableHomework>);
+            _typeTable[39] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.ObservableHomework>);
+            _typeTable[40] = typeof(global::RogazionistiRE.Data.ObservableHomework);
+            _typeTable[41] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.GradeJson>);
+            _typeTable[42] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.GradeJson>);
+            _typeTable[43] = typeof(global::RogazionistiRE.JsonBlueprints.GradeJson);
+            _typeTable[44] = typeof(global::System.Collections.Generic.List<global::System.Object>);
+            _typeTable[45] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.NotesJson>);
+            _typeTable[46] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.NotesJson>);
+            _typeTable[47] = typeof(global::RogazionistiRE.JsonBlueprints.NotesJson);
+            _typeTable[48] = typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson);
+            _typeTable[49] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>);
+            _typeTable[50] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>);
+            _typeTable[51] = typeof(global::RogazionistiRE.JsonBlueprints.AnnotationJson);
+            _typeTable[52] = typeof(global::RogazionistiRE.Windows.Annotations);
+            _typeTable[53] = typeof(global::RogazionistiRE.Windows.Comunications);
+            _typeTable[54] = typeof(global::RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog);
+            _typeTable[55] = typeof(global::Microsoft.UI.Xaml.Controls.ContentDialog);
+            _typeTable[56] = typeof(global::Microsoft.UI.Xaml.Controls.ContentControl);
+            _typeTable[57] = typeof(global::RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog);
+            _typeTable[58] = typeof(global::RogazionistiRE.Windows.Grades);
+            _typeTable[59] = typeof(global::Microsoft.UI.Xaml.Controls.TitleBar);
+            _typeTable[60] = typeof(global::Microsoft.UI.Xaml.Controls.IconSource);
+            _typeTable[61] = typeof(global::Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings);
+            _typeTable[62] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationView);
+            _typeTable[63] = typeof(global::System.Collections.Generic.IList<global::System.Object>);
+            _typeTable[64] = typeof(global::Microsoft.UI.Xaml.Controls.AutoSuggestBox);
+            _typeTable[65] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode);
+            _typeTable[66] = typeof(global::Microsoft.UI.Xaml.DataTemplate);
+            _typeTable[67] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible);
+            _typeTable[68] = typeof(global::Microsoft.UI.Xaml.Style);
+            _typeTable[69] = typeof(global::Microsoft.UI.Xaml.Controls.StyleSelector);
+            _typeTable[70] = typeof(global::Microsoft.UI.Xaml.Controls.DataTemplateSelector);
+            _typeTable[71] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode);
+            _typeTable[72] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode);
+            _typeTable[73] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus);
+            _typeTable[74] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled);
+            _typeTable[75] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings);
+            _typeTable[76] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem);
+            _typeTable[77] = typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase);
+            _typeTable[78] = typeof(global::Microsoft.UI.Xaml.Controls.IconElement);
+            _typeTable[79] = typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge);
+            _typeTable[80] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing);
+            _typeTable[81] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings);
+            _typeTable[82] = typeof(global::Microsoft.UI.Xaml.Media.AcrylicBrush);
+            _typeTable[83] = typeof(global::Microsoft.UI.Xaml.Media.XamlCompositionBrushBase);
+            _typeTable[84] = typeof(global::Windows.UI.Color);
+            _typeTable[85] = typeof(global::System.Nullable<global::System.Double>);
+            _typeTable[86] = typeof(global::System.TimeSpan);
+            _typeTable[87] = typeof(global::RogazionistiRE.Windows.Home);
+            _typeTable[88] = typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop);
+            _typeTable[89] = typeof(global::Microsoft.UI.Xaml.Media.SystemBackdrop);
+            _typeTable[90] = typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind);
+            _typeTable[91] = typeof(global::RogazionistiRE.Windows.Login);
+            _typeTable[92] = typeof(global::Microsoft.UI.Xaml.Window);
+            _typeTable[93] = typeof(global::RogazionistiRE.Windows.Overview);
+            _typeTable[94] = typeof(global::RogazionistiRE.Windows.ReportCards);
+            _typeTable[95] = typeof(global::RogazionistiRE.Windows.Settings);
+            _typeTable[96] = typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayout);
+            _typeTable[97] = typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification);
+            _typeTable[98] = typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch);
+            _typeTable[99] = typeof(global::Microsoft.UI.Xaml.Controls.AnimatedIcon);
+            _typeTable[100] = typeof(global::Microsoft.UI.Xaml.Controls.IAnimatedVisualSource2);
+            _typeTable[101] = typeof(global::Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource);
+            _typeTable[102] = typeof(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Double>);
+            _typeTable[103] = typeof(global::RogazionistiRE.Windows.Students);
+            _typeTable[104] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.Student>);
+            _typeTable[105] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.Student>);
+            _typeTable[106] = typeof(global::RogazionistiRE.Data.Student);
+            _typeTable[107] = typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson);
+            _typeTable[108] = typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayout);
+            _typeTable[109] = typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification);
+            _typeTable[110] = typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch);
+            _typeTable[111] = typeof(global::RogazionistiRE.Windows.Subjects);
+            _typeTable[112] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubjectJson>);
+            _typeTable[113] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubjectJson>);
+            _typeTable[114] = typeof(global::RogazionistiRE.JsonBlueprints.SubjectJson);
+            _typeTable[115] = typeof(global::System.Collections.Generic.List<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>);
+            _typeTable[116] = typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson);
+            _typeTable[117] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>);
+            _typeTable[118] = typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>);
+            _typeTable[119] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[120] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -515,57 +517,58 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
         private object Activate_29_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.LessonJson>(); }
         private object Activate_30_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.LessonJson>(); }
         private object Activate_31_LessonJson() { return new global::RogazionistiRE.JsonBlueprints.LessonJson(); }
-        private object Activate_34_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AgendaJson>(); }
-        private object Activate_35_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AgendaJson>(); }
-        private object Activate_36_AgendaJson() { return new global::RogazionistiRE.JsonBlueprints.AgendaJson(); }
-        private object Activate_37_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.ObservableHomework>(); }
-        private object Activate_38_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.ObservableHomework>(); }
-        private object Activate_40_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.GradeJson>(); }
-        private object Activate_41_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.GradeJson>(); }
-        private object Activate_42_GradeJson() { return new global::RogazionistiRE.JsonBlueprints.GradeJson(); }
-        private object Activate_43_List() { return new global::System.Collections.Generic.List<global::System.Object>(); }
-        private object Activate_44_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.NotesJson>(); }
-        private object Activate_45_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.NotesJson>(); }
-        private object Activate_46_NotesJson() { return new global::RogazionistiRE.JsonBlueprints.NotesJson(); }
-        private object Activate_47_TagJson() { return new global::RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson(); }
-        private object Activate_48_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>(); }
-        private object Activate_49_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>(); }
-        private object Activate_50_AnnotationJson() { return new global::RogazionistiRE.JsonBlueprints.AnnotationJson(); }
-        private object Activate_51_Annotations() { return new global::RogazionistiRE.Windows.Annotations(); }
-        private object Activate_52_Comunications() { return new global::RogazionistiRE.Windows.Comunications(); }
-        private object Activate_53_ChangeLanguageContentDialog() { return new global::RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog(); }
-        private object Activate_56_MoreInfoStudentContentDialog() { return new global::RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog(); }
-        private object Activate_57_Grades() { return new global::RogazionistiRE.Windows.Grades(); }
-        private object Activate_58_TitleBar() { return new global::Microsoft.UI.Xaml.Controls.TitleBar(); }
-        private object Activate_60_TitleBarTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings(); }
-        private object Activate_61_NavigationView() { return new global::Microsoft.UI.Xaml.Controls.NavigationView(); }
-        private object Activate_74_NavigationViewTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings(); }
-        private object Activate_75_NavigationViewItem() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewItem(); }
-        private object Activate_78_InfoBadge() { return new global::Microsoft.UI.Xaml.Controls.InfoBadge(); }
-        private object Activate_79_ProgressRing() { return new global::Microsoft.UI.Xaml.Controls.ProgressRing(); }
-        private object Activate_81_AcrylicBrush() { return new global::Microsoft.UI.Xaml.Media.AcrylicBrush(); }
-        private object Activate_86_Home() { return new global::RogazionistiRE.Windows.Home(); }
-        private object Activate_87_MicaBackdrop() { return new global::Microsoft.UI.Xaml.Media.MicaBackdrop(); }
-        private object Activate_90_Login() { return new global::RogazionistiRE.Windows.Login(); }
-        private object Activate_92_Overview() { return new global::RogazionistiRE.Windows.Overview(); }
-        private object Activate_93_ReportCards() { return new global::RogazionistiRE.Windows.ReportCards(); }
-        private object Activate_94_Settings() { return new global::RogazionistiRE.Windows.Settings(); }
-        private object Activate_95_UniformGridLayout() { return new global::Microsoft.UI.Xaml.Controls.UniformGridLayout(); }
-        private object Activate_98_AnimatedIcon() { return new global::Microsoft.UI.Xaml.Controls.AnimatedIcon(); }
-        private object Activate_100_AnimatedSettingsVisualSource() { return new global::Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource(); }
-        private object Activate_103_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.Student>(); }
-        private object Activate_104_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.Student>(); }
-        private object Activate_106_StudentJson() { return new global::RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson(); }
-        private object Activate_107_LinedFlowLayout() { return new global::Microsoft.UI.Xaml.Controls.LinedFlowLayout(); }
-        private object Activate_110_Subjects() { return new global::RogazionistiRE.Windows.Subjects(); }
-        private object Activate_111_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubjectJson>(); }
-        private object Activate_112_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubjectJson>(); }
-        private object Activate_113_SubjectJson() { return new global::RogazionistiRE.JsonBlueprints.SubjectJson(); }
-        private object Activate_114_List() { return new global::System.Collections.Generic.List<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>(); }
-        private object Activate_115_TeacherJson() { return new global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson(); }
-        private object Activate_116_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>(); }
-        private object Activate_117_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>(); }
-        private object Activate_118_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_35_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AgendaJson>(); }
+        private object Activate_36_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AgendaJson>(); }
+        private object Activate_37_AgendaJson() { return new global::RogazionistiRE.JsonBlueprints.AgendaJson(); }
+        private object Activate_38_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.ObservableHomework>(); }
+        private object Activate_39_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.ObservableHomework>(); }
+        private object Activate_40_ObservableHomework() { return new global::RogazionistiRE.Data.ObservableHomework(); }
+        private object Activate_41_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.GradeJson>(); }
+        private object Activate_42_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.GradeJson>(); }
+        private object Activate_43_GradeJson() { return new global::RogazionistiRE.JsonBlueprints.GradeJson(); }
+        private object Activate_44_List() { return new global::System.Collections.Generic.List<global::System.Object>(); }
+        private object Activate_45_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.NotesJson>(); }
+        private object Activate_46_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.NotesJson>(); }
+        private object Activate_47_NotesJson() { return new global::RogazionistiRE.JsonBlueprints.NotesJson(); }
+        private object Activate_48_TagJson() { return new global::RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson(); }
+        private object Activate_49_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>(); }
+        private object Activate_50_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>(); }
+        private object Activate_51_AnnotationJson() { return new global::RogazionistiRE.JsonBlueprints.AnnotationJson(); }
+        private object Activate_52_Annotations() { return new global::RogazionistiRE.Windows.Annotations(); }
+        private object Activate_53_Comunications() { return new global::RogazionistiRE.Windows.Comunications(); }
+        private object Activate_54_ChangeLanguageContentDialog() { return new global::RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog(); }
+        private object Activate_57_MoreInfoStudentContentDialog() { return new global::RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog(); }
+        private object Activate_58_Grades() { return new global::RogazionistiRE.Windows.Grades(); }
+        private object Activate_59_TitleBar() { return new global::Microsoft.UI.Xaml.Controls.TitleBar(); }
+        private object Activate_61_TitleBarTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings(); }
+        private object Activate_62_NavigationView() { return new global::Microsoft.UI.Xaml.Controls.NavigationView(); }
+        private object Activate_75_NavigationViewTemplateSettings() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings(); }
+        private object Activate_76_NavigationViewItem() { return new global::Microsoft.UI.Xaml.Controls.NavigationViewItem(); }
+        private object Activate_79_InfoBadge() { return new global::Microsoft.UI.Xaml.Controls.InfoBadge(); }
+        private object Activate_80_ProgressRing() { return new global::Microsoft.UI.Xaml.Controls.ProgressRing(); }
+        private object Activate_82_AcrylicBrush() { return new global::Microsoft.UI.Xaml.Media.AcrylicBrush(); }
+        private object Activate_87_Home() { return new global::RogazionistiRE.Windows.Home(); }
+        private object Activate_88_MicaBackdrop() { return new global::Microsoft.UI.Xaml.Media.MicaBackdrop(); }
+        private object Activate_91_Login() { return new global::RogazionistiRE.Windows.Login(); }
+        private object Activate_93_Overview() { return new global::RogazionistiRE.Windows.Overview(); }
+        private object Activate_94_ReportCards() { return new global::RogazionistiRE.Windows.ReportCards(); }
+        private object Activate_95_Settings() { return new global::RogazionistiRE.Windows.Settings(); }
+        private object Activate_96_UniformGridLayout() { return new global::Microsoft.UI.Xaml.Controls.UniformGridLayout(); }
+        private object Activate_99_AnimatedIcon() { return new global::Microsoft.UI.Xaml.Controls.AnimatedIcon(); }
+        private object Activate_101_AnimatedSettingsVisualSource() { return new global::Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource(); }
+        private object Activate_104_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.Student>(); }
+        private object Activate_105_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.Student>(); }
+        private object Activate_107_StudentJson() { return new global::RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson(); }
+        private object Activate_108_LinedFlowLayout() { return new global::Microsoft.UI.Xaml.Controls.LinedFlowLayout(); }
+        private object Activate_111_Subjects() { return new global::RogazionistiRE.Windows.Subjects(); }
+        private object Activate_112_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubjectJson>(); }
+        private object Activate_113_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubjectJson>(); }
+        private object Activate_114_SubjectJson() { return new global::RogazionistiRE.JsonBlueprints.SubjectJson(); }
+        private object Activate_115_List() { return new global::System.Collections.Generic.List<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>(); }
+        private object Activate_116_TeacherJson() { return new global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson(); }
+        private object Activate_117_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>(); }
+        private object Activate_118_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>(); }
+        private object Activate_119_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_Absences() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Absences).TypeHandle);
         private void StaticInitializer_7_Thickness() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Thickness).TypeHandle);
@@ -586,81 +589,82 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
         private void StaticInitializer_29_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.LessonJson>).TypeHandle);
         private void StaticInitializer_30_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.LessonJson>).TypeHandle);
         private void StaticInitializer_31_LessonJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.LessonJson).TypeHandle);
-        private void StaticInitializer_32_DateTime() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.DateTime).TypeHandle);
-        private void StaticInitializer_34_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AgendaJson>).TypeHandle);
-        private void StaticInitializer_35_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AgendaJson>).TypeHandle);
-        private void StaticInitializer_36_AgendaJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.AgendaJson).TypeHandle);
-        private void StaticInitializer_37_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.ObservableHomework>).TypeHandle);
-        private void StaticInitializer_38_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.ObservableHomework>).TypeHandle);
-        private void StaticInitializer_39_ObservableHomework() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Data.ObservableHomework).TypeHandle);
-        private void StaticInitializer_40_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.GradeJson>).TypeHandle);
-        private void StaticInitializer_41_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.GradeJson>).TypeHandle);
-        private void StaticInitializer_42_GradeJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.GradeJson).TypeHandle);
-        private void StaticInitializer_43_List() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.List<global::System.Object>).TypeHandle);
-        private void StaticInitializer_44_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.NotesJson>).TypeHandle);
-        private void StaticInitializer_45_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.NotesJson>).TypeHandle);
-        private void StaticInitializer_46_NotesJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.NotesJson).TypeHandle);
-        private void StaticInitializer_47_TagJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson).TypeHandle);
-        private void StaticInitializer_48_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>).TypeHandle);
-        private void StaticInitializer_49_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>).TypeHandle);
-        private void StaticInitializer_50_AnnotationJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.AnnotationJson).TypeHandle);
-        private void StaticInitializer_51_Annotations() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Annotations).TypeHandle);
-        private void StaticInitializer_52_Comunications() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Comunications).TypeHandle);
-        private void StaticInitializer_53_ChangeLanguageContentDialog() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog).TypeHandle);
-        private void StaticInitializer_56_MoreInfoStudentContentDialog() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog).TypeHandle);
-        private void StaticInitializer_57_Grades() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Grades).TypeHandle);
-        private void StaticInitializer_58_TitleBar() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TitleBar).TypeHandle);
-        private void StaticInitializer_60_TitleBarTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings).TypeHandle);
-        private void StaticInitializer_61_NavigationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationView).TypeHandle);
-        private void StaticInitializer_62_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::System.Object>).TypeHandle);
-        private void StaticInitializer_64_NavigationViewDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode).TypeHandle);
-        private void StaticInitializer_66_NavigationViewBackButtonVisible() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible).TypeHandle);
-        private void StaticInitializer_70_NavigationViewOverflowLabelMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode).TypeHandle);
-        private void StaticInitializer_71_NavigationViewPaneDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode).TypeHandle);
-        private void StaticInitializer_72_NavigationViewSelectionFollowsFocus() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus).TypeHandle);
-        private void StaticInitializer_73_NavigationViewShoulderNavigationEnabled() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled).TypeHandle);
-        private void StaticInitializer_74_NavigationViewTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings).TypeHandle);
-        private void StaticInitializer_75_NavigationViewItem() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem).TypeHandle);
-        private void StaticInitializer_76_NavigationViewItemBase() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase).TypeHandle);
-        private void StaticInitializer_78_InfoBadge() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge).TypeHandle);
-        private void StaticInitializer_79_ProgressRing() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing).TypeHandle);
-        private void StaticInitializer_80_ProgressRingTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings).TypeHandle);
-        private void StaticInitializer_81_AcrylicBrush() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.AcrylicBrush).TypeHandle);
-        private void StaticInitializer_83_Color() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Color).TypeHandle);
-        private void StaticInitializer_84_Nullable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Nullable<global::System.Double>).TypeHandle);
-        private void StaticInitializer_85_TimeSpan() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.TimeSpan).TypeHandle);
-        private void StaticInitializer_86_Home() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Home).TypeHandle);
-        private void StaticInitializer_87_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
-        private void StaticInitializer_89_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
-        private void StaticInitializer_90_Login() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Login).TypeHandle);
-        private void StaticInitializer_92_Overview() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Overview).TypeHandle);
-        private void StaticInitializer_93_ReportCards() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.ReportCards).TypeHandle);
-        private void StaticInitializer_94_Settings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Settings).TypeHandle);
-        private void StaticInitializer_95_UniformGridLayout() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayout).TypeHandle);
-        private void StaticInitializer_96_UniformGridLayoutItemsJustification() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification).TypeHandle);
-        private void StaticInitializer_97_UniformGridLayoutItemsStretch() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch).TypeHandle);
-        private void StaticInitializer_98_AnimatedIcon() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.AnimatedIcon).TypeHandle);
-        private void StaticInitializer_99_IAnimatedVisualSource2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.IAnimatedVisualSource2).TypeHandle);
-        private void StaticInitializer_100_AnimatedSettingsVisualSource() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource).TypeHandle);
-        private void StaticInitializer_101_IReadOnlyDictionary() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Double>).TypeHandle);
-        private void StaticInitializer_102_Students() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Students).TypeHandle);
-        private void StaticInitializer_103_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.Student>).TypeHandle);
-        private void StaticInitializer_104_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.Student>).TypeHandle);
-        private void StaticInitializer_105_Student() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Data.Student).TypeHandle);
-        private void StaticInitializer_106_StudentJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson).TypeHandle);
-        private void StaticInitializer_107_LinedFlowLayout() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayout).TypeHandle);
-        private void StaticInitializer_108_LinedFlowLayoutItemsJustification() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification).TypeHandle);
-        private void StaticInitializer_109_LinedFlowLayoutItemsStretch() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch).TypeHandle);
-        private void StaticInitializer_110_Subjects() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Subjects).TypeHandle);
-        private void StaticInitializer_111_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubjectJson>).TypeHandle);
-        private void StaticInitializer_112_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubjectJson>).TypeHandle);
-        private void StaticInitializer_113_SubjectJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.SubjectJson).TypeHandle);
-        private void StaticInitializer_114_List() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.List<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>).TypeHandle);
-        private void StaticInitializer_115_TeacherJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson).TypeHandle);
-        private void StaticInitializer_116_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>).TypeHandle);
-        private void StaticInitializer_117_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>).TypeHandle);
-        private void StaticInitializer_118_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_119_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_32_Blueprint() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.Blueprint).TypeHandle);
+        private void StaticInitializer_33_DateTime() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.DateTime).TypeHandle);
+        private void StaticInitializer_35_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AgendaJson>).TypeHandle);
+        private void StaticInitializer_36_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AgendaJson>).TypeHandle);
+        private void StaticInitializer_37_AgendaJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.AgendaJson).TypeHandle);
+        private void StaticInitializer_38_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.ObservableHomework>).TypeHandle);
+        private void StaticInitializer_39_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.ObservableHomework>).TypeHandle);
+        private void StaticInitializer_40_ObservableHomework() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Data.ObservableHomework).TypeHandle);
+        private void StaticInitializer_41_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.GradeJson>).TypeHandle);
+        private void StaticInitializer_42_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.GradeJson>).TypeHandle);
+        private void StaticInitializer_43_GradeJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.GradeJson).TypeHandle);
+        private void StaticInitializer_44_List() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.List<global::System.Object>).TypeHandle);
+        private void StaticInitializer_45_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.NotesJson>).TypeHandle);
+        private void StaticInitializer_46_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.NotesJson>).TypeHandle);
+        private void StaticInitializer_47_NotesJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.NotesJson).TypeHandle);
+        private void StaticInitializer_48_TagJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson).TypeHandle);
+        private void StaticInitializer_49_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>).TypeHandle);
+        private void StaticInitializer_50_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>).TypeHandle);
+        private void StaticInitializer_51_AnnotationJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.AnnotationJson).TypeHandle);
+        private void StaticInitializer_52_Annotations() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Annotations).TypeHandle);
+        private void StaticInitializer_53_Comunications() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Comunications).TypeHandle);
+        private void StaticInitializer_54_ChangeLanguageContentDialog() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog).TypeHandle);
+        private void StaticInitializer_57_MoreInfoStudentContentDialog() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog).TypeHandle);
+        private void StaticInitializer_58_Grades() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Grades).TypeHandle);
+        private void StaticInitializer_59_TitleBar() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TitleBar).TypeHandle);
+        private void StaticInitializer_61_TitleBarTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings).TypeHandle);
+        private void StaticInitializer_62_NavigationView() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationView).TypeHandle);
+        private void StaticInitializer_63_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::System.Object>).TypeHandle);
+        private void StaticInitializer_65_NavigationViewDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode).TypeHandle);
+        private void StaticInitializer_67_NavigationViewBackButtonVisible() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible).TypeHandle);
+        private void StaticInitializer_71_NavigationViewOverflowLabelMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode).TypeHandle);
+        private void StaticInitializer_72_NavigationViewPaneDisplayMode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode).TypeHandle);
+        private void StaticInitializer_73_NavigationViewSelectionFollowsFocus() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus).TypeHandle);
+        private void StaticInitializer_74_NavigationViewShoulderNavigationEnabled() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled).TypeHandle);
+        private void StaticInitializer_75_NavigationViewTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings).TypeHandle);
+        private void StaticInitializer_76_NavigationViewItem() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItem).TypeHandle);
+        private void StaticInitializer_77_NavigationViewItemBase() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.NavigationViewItemBase).TypeHandle);
+        private void StaticInitializer_79_InfoBadge() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.InfoBadge).TypeHandle);
+        private void StaticInitializer_80_ProgressRing() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing).TypeHandle);
+        private void StaticInitializer_81_ProgressRingTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings).TypeHandle);
+        private void StaticInitializer_82_AcrylicBrush() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.AcrylicBrush).TypeHandle);
+        private void StaticInitializer_84_Color() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Windows.UI.Color).TypeHandle);
+        private void StaticInitializer_85_Nullable() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Nullable<global::System.Double>).TypeHandle);
+        private void StaticInitializer_86_TimeSpan() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.TimeSpan).TypeHandle);
+        private void StaticInitializer_87_Home() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Home).TypeHandle);
+        private void StaticInitializer_88_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
+        private void StaticInitializer_90_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
+        private void StaticInitializer_91_Login() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Login).TypeHandle);
+        private void StaticInitializer_93_Overview() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Overview).TypeHandle);
+        private void StaticInitializer_94_ReportCards() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.ReportCards).TypeHandle);
+        private void StaticInitializer_95_Settings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Settings).TypeHandle);
+        private void StaticInitializer_96_UniformGridLayout() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayout).TypeHandle);
+        private void StaticInitializer_97_UniformGridLayoutItemsJustification() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification).TypeHandle);
+        private void StaticInitializer_98_UniformGridLayoutItemsStretch() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch).TypeHandle);
+        private void StaticInitializer_99_AnimatedIcon() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.AnimatedIcon).TypeHandle);
+        private void StaticInitializer_100_IAnimatedVisualSource2() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.IAnimatedVisualSource2).TypeHandle);
+        private void StaticInitializer_101_AnimatedSettingsVisualSource() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource).TypeHandle);
+        private void StaticInitializer_102_IReadOnlyDictionary() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Double>).TypeHandle);
+        private void StaticInitializer_103_Students() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Students).TypeHandle);
+        private void StaticInitializer_104_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.Data.Student>).TypeHandle);
+        private void StaticInitializer_105_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.Data.Student>).TypeHandle);
+        private void StaticInitializer_106_Student() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Data.Student).TypeHandle);
+        private void StaticInitializer_107_StudentJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson).TypeHandle);
+        private void StaticInitializer_108_LinedFlowLayout() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayout).TypeHandle);
+        private void StaticInitializer_109_LinedFlowLayoutItemsJustification() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification).TypeHandle);
+        private void StaticInitializer_110_LinedFlowLayoutItemsStretch() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch).TypeHandle);
+        private void StaticInitializer_111_Subjects() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.Windows.Subjects).TypeHandle);
+        private void StaticInitializer_112_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubjectJson>).TypeHandle);
+        private void StaticInitializer_113_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubjectJson>).TypeHandle);
+        private void StaticInitializer_114_SubjectJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.SubjectJson).TypeHandle);
+        private void StaticInitializer_115_List() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.List<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>).TypeHandle);
+        private void StaticInitializer_116_TeacherJson() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson).TypeHandle);
+        private void StaticInitializer_117_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>).TypeHandle);
+        private void StaticInitializer_118_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>).TypeHandle);
+        private void StaticInitializer_119_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_120_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -680,121 +684,121 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
             var newItem = (global::RogazionistiRE.JsonBlueprints.LessonJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_34_ObservableCollection(object instance, object item)
+        private void VectorAdd_35_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.AgendaJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.AgendaJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_35_Collection(object instance, object item)
+        private void VectorAdd_36_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.AgendaJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.AgendaJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_37_ObservableCollection(object instance, object item)
+        private void VectorAdd_38_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.Data.ObservableHomework>)instance;
             var newItem = (global::RogazionistiRE.Data.ObservableHomework)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_38_Collection(object instance, object item)
+        private void VectorAdd_39_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.Data.ObservableHomework>)instance;
             var newItem = (global::RogazionistiRE.Data.ObservableHomework)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_40_ObservableCollection(object instance, object item)
+        private void VectorAdd_41_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.GradeJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.GradeJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_41_Collection(object instance, object item)
+        private void VectorAdd_42_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.GradeJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.GradeJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_43_List(object instance, object item)
+        private void VectorAdd_44_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Object>)instance;
             var newItem = (global::System.Object)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_44_ObservableCollection(object instance, object item)
+        private void VectorAdd_45_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.NotesJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.NotesJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_45_Collection(object instance, object item)
+        private void VectorAdd_46_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.NotesJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.NotesJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_48_ObservableCollection(object instance, object item)
+        private void VectorAdd_49_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.AnnotationJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_49_Collection(object instance, object item)
+        private void VectorAdd_50_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.AnnotationJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.AnnotationJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_62_IList(object instance, object item)
+        private void VectorAdd_63_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Object>)instance;
             var newItem = (global::System.Object)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_103_ObservableCollection(object instance, object item)
+        private void VectorAdd_104_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.Data.Student>)instance;
             var newItem = (global::RogazionistiRE.Data.Student)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_104_Collection(object instance, object item)
+        private void VectorAdd_105_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.Data.Student>)instance;
             var newItem = (global::RogazionistiRE.Data.Student)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_111_ObservableCollection(object instance, object item)
+        private void VectorAdd_112_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.SubjectJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.SubjectJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_112_Collection(object instance, object item)
+        private void VectorAdd_113_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.SubjectJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.SubjectJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_114_List(object instance, object item)
+        private void VectorAdd_115_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_116_ObservableCollection(object instance, object item)
+        private void VectorAdd_117_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_117_Collection(object instance, object item)
+        private void VectorAdd_118_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>)instance;
             var newItem = (global::RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_119_IList(object instance, object item)
+        private void VectorAdd_120_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -893,9 +897,9 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 userType.AddMemberName("ItemsSource");
                 userType.AddMemberName("ItemTemplate");
                 userType.AddMemberName("SelectionMode");
-                userType.AddMemberName("IsItemInvokedEnabled");
                 userType.AddMemberName("Layout");
                 userType.AddMemberName("CurrentItemIndex");
+                userType.AddMemberName("IsItemInvokedEnabled");
                 userType.AddMemberName("ItemTransitionProvider");
                 userType.AddMemberName("ScrollView");
                 userType.AddMemberName("SelectedItem");
@@ -973,8 +977,8 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.VirtualizingLayout"));
                 userType.Activator = Activate_24_StackLayout;
                 userType.StaticInitializer = StaticInitializer_24_StackLayout;
-                userType.AddMemberName("Orientation");
                 userType.AddMemberName("Spacing");
+                userType.AddMemberName("Orientation");
                 xamlType = userType;
                 break;
 
@@ -1029,7 +1033,7 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 break;
 
             case 31:   //  RogazionistiRE.JsonBlueprints.LessonJson
-                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("RogazionistiRE.JsonBlueprints.Blueprint"));
                 userType.Activator = Activate_31_LessonJson;
                 userType.StaticInitializer = StaticInitializer_31_LessonJson;
                 userType.AddMemberName("SubjectID");
@@ -1045,37 +1049,44 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 32:   //  System.DateTime
+            case 32:   //  RogazionistiRE.JsonBlueprints.Blueprint
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.StaticInitializer = StaticInitializer_32_Blueprint;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 33:   //  System.DateTime
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_32_DateTime;
+                userType.StaticInitializer = StaticInitializer_33_DateTime;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 33:   //  String
+            case 34:   //  String
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 34:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.AgendaJson>
+            case 35:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.AgendaJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AgendaJson>"));
-                userType.StaticInitializer = StaticInitializer_34_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_34_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_35_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_35_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 35:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AgendaJson>
+            case 36:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AgendaJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_35_Collection;
-                userType.StaticInitializer = StaticInitializer_35_Collection;
-                userType.CollectionAdd = VectorAdd_35_Collection;
+                userType.Activator = Activate_36_Collection;
+                userType.StaticInitializer = StaticInitializer_36_Collection;
+                userType.CollectionAdd = VectorAdd_36_Collection;
                 xamlType = userType;
                 break;
 
-            case 36:   //  RogazionistiRE.JsonBlueprints.AgendaJson
-                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_36_AgendaJson;
-                userType.StaticInitializer = StaticInitializer_36_AgendaJson;
+            case 37:   //  RogazionistiRE.JsonBlueprints.AgendaJson
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("RogazionistiRE.JsonBlueprints.Blueprint"));
+                userType.Activator = Activate_37_AgendaJson;
+                userType.StaticInitializer = StaticInitializer_37_AgendaJson;
                 userType.AddMemberName("ID");
                 userType.AddMemberName("SubjectID");
                 userType.AddMemberName("New");
@@ -1091,25 +1102,26 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 37:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.Data.ObservableHomework>
+            case 38:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.Data.ObservableHomework>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.ObservableHomework>"));
-                userType.StaticInitializer = StaticInitializer_37_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_37_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_38_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_38_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 38:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.ObservableHomework>
+            case 39:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.ObservableHomework>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_38_Collection;
-                userType.StaticInitializer = StaticInitializer_38_Collection;
-                userType.CollectionAdd = VectorAdd_38_Collection;
+                userType.Activator = Activate_39_Collection;
+                userType.StaticInitializer = StaticInitializer_39_Collection;
+                userType.CollectionAdd = VectorAdd_39_Collection;
                 xamlType = userType;
                 break;
 
-            case 39:   //  RogazionistiRE.Data.ObservableHomework
+            case 40:   //  RogazionistiRE.Data.ObservableHomework
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_39_ObservableHomework;
+                userType.Activator = Activate_40_ObservableHomework;
+                userType.StaticInitializer = StaticInitializer_40_ObservableHomework;
                 userType.AddMemberName("SubjectID");
                 userType.AddMemberName("Date");
                 userType.AddMemberName("Title");
@@ -1128,26 +1140,26 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 40:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.GradeJson>
+            case 41:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.GradeJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.GradeJson>"));
-                userType.StaticInitializer = StaticInitializer_40_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_40_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_41_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_41_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 41:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.GradeJson>
+            case 42:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.GradeJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_41_Collection;
-                userType.StaticInitializer = StaticInitializer_41_Collection;
-                userType.CollectionAdd = VectorAdd_41_Collection;
+                userType.Activator = Activate_42_Collection;
+                userType.StaticInitializer = StaticInitializer_42_Collection;
+                userType.CollectionAdd = VectorAdd_42_Collection;
                 xamlType = userType;
                 break;
 
-            case 42:   //  RogazionistiRE.JsonBlueprints.GradeJson
-                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_42_GradeJson;
-                userType.StaticInitializer = StaticInitializer_42_GradeJson;
+            case 43:   //  RogazionistiRE.JsonBlueprints.GradeJson
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("RogazionistiRE.JsonBlueprints.Blueprint"));
+                userType.Activator = Activate_43_GradeJson;
+                userType.StaticInitializer = StaticInitializer_43_GradeJson;
                 userType.AddMemberName("GradeID");
                 userType.AddMemberName("SubjectID");
                 userType.AddMemberName("Date");
@@ -1178,34 +1190,34 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 43:   //  System.Collections.Generic.List`1<Object>
+            case 44:   //  System.Collections.Generic.List`1<Object>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_43_List;
-                userType.CollectionAdd = VectorAdd_43_List;
+                userType.StaticInitializer = StaticInitializer_44_List;
+                userType.CollectionAdd = VectorAdd_44_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 44:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.NotesJson>
+            case 45:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.NotesJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.NotesJson>"));
-                userType.StaticInitializer = StaticInitializer_44_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_44_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_45_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_45_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 45:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.NotesJson>
+            case 46:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.NotesJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_45_Collection;
-                userType.StaticInitializer = StaticInitializer_45_Collection;
-                userType.CollectionAdd = VectorAdd_45_Collection;
+                userType.Activator = Activate_46_Collection;
+                userType.StaticInitializer = StaticInitializer_46_Collection;
+                userType.CollectionAdd = VectorAdd_46_Collection;
                 xamlType = userType;
                 break;
 
-            case 46:   //  RogazionistiRE.JsonBlueprints.NotesJson
-                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_46_NotesJson;
-                userType.StaticInitializer = StaticInitializer_46_NotesJson;
+            case 47:   //  RogazionistiRE.JsonBlueprints.NotesJson
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("RogazionistiRE.JsonBlueprints.Blueprint"));
+                userType.Activator = Activate_47_NotesJson;
+                userType.StaticInitializer = StaticInitializer_47_NotesJson;
                 userType.AddMemberName("ID");
                 userType.AddMemberName("New");
                 userType.AddMemberName("Date");
@@ -1224,34 +1236,34 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 47:   //  RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson
-                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_47_TagJson;
+            case 48:   //  RogazionistiRE.JsonBlueprints.SubBlueprints.TagJson
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("RogazionistiRE.JsonBlueprints.Blueprint"));
+                userType.StaticInitializer = StaticInitializer_48_TagJson;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 48:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.AnnotationJson>
+            case 49:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.AnnotationJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AnnotationJson>"));
-                userType.StaticInitializer = StaticInitializer_48_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_48_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_49_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_49_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 49:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AnnotationJson>
+            case 50:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.AnnotationJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_49_Collection;
-                userType.StaticInitializer = StaticInitializer_49_Collection;
-                userType.CollectionAdd = VectorAdd_49_Collection;
+                userType.Activator = Activate_50_Collection;
+                userType.StaticInitializer = StaticInitializer_50_Collection;
+                userType.CollectionAdd = VectorAdd_50_Collection;
                 xamlType = userType;
                 break;
 
-            case 50:   //  RogazionistiRE.JsonBlueprints.AnnotationJson
-                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_50_AnnotationJson;
-                userType.StaticInitializer = StaticInitializer_50_AnnotationJson;
+            case 51:   //  RogazionistiRE.JsonBlueprints.AnnotationJson
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("RogazionistiRE.JsonBlueprints.Blueprint"));
+                userType.Activator = Activate_51_AnnotationJson;
+                userType.StaticInitializer = StaticInitializer_51_AnnotationJson;
                 userType.AddMemberName("SubjectID");
                 userType.AddMemberName("Date");
                 userType.AddMemberName("Symbol");
@@ -1267,60 +1279,60 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 51:   //  RogazionistiRE.Windows.Annotations
+            case 52:   //  RogazionistiRE.Windows.Annotations
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_51_Annotations;
-                userType.StaticInitializer = StaticInitializer_51_Annotations;
+                userType.Activator = Activate_52_Annotations;
+                userType.StaticInitializer = StaticInitializer_52_Annotations;
                 userType.AddMemberName("NotesCollection");
                 userType.AddMemberName("AnnotationsCollection");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 52:   //  RogazionistiRE.Windows.Comunications
+            case 53:   //  RogazionistiRE.Windows.Comunications
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_52_Comunications;
-                userType.StaticInitializer = StaticInitializer_52_Comunications;
+                userType.Activator = Activate_53_Comunications;
+                userType.StaticInitializer = StaticInitializer_53_Comunications;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 53:   //  RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog
+            case 54:   //  RogazionistiRE.Windows.ContentDialogs.ChangeLanguageContentDialog
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_53_ChangeLanguageContentDialog;
-                userType.StaticInitializer = StaticInitializer_53_ChangeLanguageContentDialog;
+                userType.Activator = Activate_54_ChangeLanguageContentDialog;
+                userType.StaticInitializer = StaticInitializer_54_ChangeLanguageContentDialog;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 54:   //  Microsoft.UI.Xaml.Controls.ContentDialog
+            case 55:   //  Microsoft.UI.Xaml.Controls.ContentDialog
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 55:   //  Microsoft.UI.Xaml.Controls.ContentControl
+            case 56:   //  Microsoft.UI.Xaml.Controls.ContentControl
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 56:   //  RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog
+            case 57:   //  RogazionistiRE.Windows.ContentDialogs.MoreInfoStudentContentDialog
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_56_MoreInfoStudentContentDialog;
-                userType.StaticInitializer = StaticInitializer_56_MoreInfoStudentContentDialog;
+                userType.Activator = Activate_57_MoreInfoStudentContentDialog;
+                userType.StaticInitializer = StaticInitializer_57_MoreInfoStudentContentDialog;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 57:   //  RogazionistiRE.Windows.Grades
+            case 58:   //  RogazionistiRE.Windows.Grades
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_57_Grades;
-                userType.StaticInitializer = StaticInitializer_57_Grades;
+                userType.Activator = Activate_58_Grades;
+                userType.StaticInitializer = StaticInitializer_58_Grades;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 58:   //  Microsoft.UI.Xaml.Controls.TitleBar
+            case 59:   //  Microsoft.UI.Xaml.Controls.TitleBar
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_58_TitleBar;
-                userType.StaticInitializer = StaticInitializer_58_TitleBar;
+                userType.Activator = Activate_59_TitleBar;
+                userType.StaticInitializer = StaticInitializer_59_TitleBar;
                 userType.SetContentPropertyName("Microsoft.UI.Xaml.Controls.TitleBar.Content");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Title");
@@ -1335,21 +1347,21 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 59:   //  Microsoft.UI.Xaml.Controls.IconSource
+            case 60:   //  Microsoft.UI.Xaml.Controls.IconSource
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 60:   //  Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings
+            case 61:   //  Microsoft.UI.Xaml.Controls.TitleBarTemplateSettings
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_60_TitleBarTemplateSettings;
+                userType.StaticInitializer = StaticInitializer_61_TitleBarTemplateSettings;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 61:   //  Microsoft.UI.Xaml.Controls.NavigationView
+            case 62:   //  Microsoft.UI.Xaml.Controls.NavigationView
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
-                userType.Activator = Activate_61_NavigationView;
-                userType.StaticInitializer = StaticInitializer_61_NavigationView;
+                userType.Activator = Activate_62_NavigationView;
+                userType.StaticInitializer = StaticInitializer_62_NavigationView;
                 userType.AddMemberName("IsBackEnabled");
                 userType.AddMemberName("IsSettingsVisible");
                 userType.AddMemberName("Header");
@@ -1390,63 +1402,63 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 62:   //  System.Collections.Generic.IList`1<Object>
+            case 63:   //  System.Collections.Generic.IList`1<Object>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_62_IList;
-                userType.CollectionAdd = VectorAdd_62_IList;
+                userType.StaticInitializer = StaticInitializer_63_IList;
+                userType.CollectionAdd = VectorAdd_63_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 63:   //  Microsoft.UI.Xaml.Controls.AutoSuggestBox
+            case 64:   //  Microsoft.UI.Xaml.Controls.AutoSuggestBox
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 64:   //  Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode
+            case 65:   //  Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_64_NavigationViewDisplayMode;
+                userType.StaticInitializer = StaticInitializer_65_NavigationViewDisplayMode;
                 userType.AddEnumValue("Minimal", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Minimal);
                 userType.AddEnumValue("Compact", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Compact);
                 userType.AddEnumValue("Expanded", global::Microsoft.UI.Xaml.Controls.NavigationViewDisplayMode.Expanded);
                 xamlType = userType;
                 break;
 
-            case 65:   //  Microsoft.UI.Xaml.DataTemplate
+            case 66:   //  Microsoft.UI.Xaml.DataTemplate
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 66:   //  Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible
+            case 67:   //  Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_66_NavigationViewBackButtonVisible;
+                userType.StaticInitializer = StaticInitializer_67_NavigationViewBackButtonVisible;
                 userType.AddEnumValue("Collapsed", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Collapsed);
                 userType.AddEnumValue("Visible", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Visible);
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.NavigationViewBackButtonVisible.Auto);
                 xamlType = userType;
                 break;
 
-            case 67:   //  Microsoft.UI.Xaml.Style
+            case 68:   //  Microsoft.UI.Xaml.Style
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 68:   //  Microsoft.UI.Xaml.Controls.StyleSelector
+            case 69:   //  Microsoft.UI.Xaml.Controls.StyleSelector
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 69:   //  Microsoft.UI.Xaml.Controls.DataTemplateSelector
+            case 70:   //  Microsoft.UI.Xaml.Controls.DataTemplateSelector
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 70:   //  Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode
+            case 71:   //  Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_70_NavigationViewOverflowLabelMode;
+                userType.StaticInitializer = StaticInitializer_71_NavigationViewOverflowLabelMode;
                 userType.AddEnumValue("MoreLabel", global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel);
                 userType.AddEnumValue("NoLabel", global::Microsoft.UI.Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel);
                 xamlType = userType;
                 break;
 
-            case 71:   //  Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode
+            case 72:   //  Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_71_NavigationViewPaneDisplayMode;
+                userType.StaticInitializer = StaticInitializer_72_NavigationViewPaneDisplayMode;
                 userType.AddEnumValue("Auto", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Auto);
                 userType.AddEnumValue("Left", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Left);
                 userType.AddEnumValue("Top", global::Microsoft.UI.Xaml.Controls.NavigationViewPaneDisplayMode.Top);
@@ -1455,34 +1467,34 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 72:   //  Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus
+            case 73:   //  Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_72_NavigationViewSelectionFollowsFocus;
+                userType.StaticInitializer = StaticInitializer_73_NavigationViewSelectionFollowsFocus;
                 userType.AddEnumValue("Disabled", global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus.Disabled);
                 userType.AddEnumValue("Enabled", global::Microsoft.UI.Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled);
                 xamlType = userType;
                 break;
 
-            case 73:   //  Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled
+            case 74:   //  Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_73_NavigationViewShoulderNavigationEnabled;
+                userType.StaticInitializer = StaticInitializer_74_NavigationViewShoulderNavigationEnabled;
                 userType.AddEnumValue("WhenSelectionFollowsFocus", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus);
                 userType.AddEnumValue("Always", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always);
                 userType.AddEnumValue("Never", global::Microsoft.UI.Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never);
                 xamlType = userType;
                 break;
 
-            case 74:   //  Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings
+            case 75:   //  Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_74_NavigationViewTemplateSettings;
+                userType.StaticInitializer = StaticInitializer_75_NavigationViewTemplateSettings;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 75:   //  Microsoft.UI.Xaml.Controls.NavigationViewItem
+            case 76:   //  Microsoft.UI.Xaml.Controls.NavigationViewItem
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.NavigationViewItemBase"));
-                userType.Activator = Activate_75_NavigationViewItem;
-                userType.StaticInitializer = StaticInitializer_75_NavigationViewItem;
+                userType.Activator = Activate_76_NavigationViewItem;
+                userType.StaticInitializer = StaticInitializer_76_NavigationViewItem;
                 userType.AddMemberName("Icon");
                 userType.AddMemberName("CompactPaneLength");
                 userType.AddMemberName("HasUnrealizedChildren");
@@ -1495,28 +1507,28 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 76:   //  Microsoft.UI.Xaml.Controls.NavigationViewItemBase
+            case 77:   //  Microsoft.UI.Xaml.Controls.NavigationViewItemBase
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ContentControl"));
-                userType.StaticInitializer = StaticInitializer_76_NavigationViewItemBase;
+                userType.StaticInitializer = StaticInitializer_77_NavigationViewItemBase;
                 userType.AddMemberName("IsSelected");
                 xamlType = userType;
                 break;
 
-            case 77:   //  Microsoft.UI.Xaml.Controls.IconElement
+            case 78:   //  Microsoft.UI.Xaml.Controls.IconElement
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 78:   //  Microsoft.UI.Xaml.Controls.InfoBadge
+            case 79:   //  Microsoft.UI.Xaml.Controls.InfoBadge
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.StaticInitializer = StaticInitializer_78_InfoBadge;
+                userType.StaticInitializer = StaticInitializer_79_InfoBadge;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 79:   //  Microsoft.UI.Xaml.Controls.ProgressRing
+            case 80:   //  Microsoft.UI.Xaml.Controls.ProgressRing
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_79_ProgressRing;
-                userType.StaticInitializer = StaticInitializer_79_ProgressRing;
+                userType.Activator = Activate_80_ProgressRing;
+                userType.StaticInitializer = StaticInitializer_80_ProgressRing;
                 userType.AddMemberName("IsActive");
                 userType.AddMemberName("IsIndeterminate");
                 userType.AddMemberName("Maximum");
@@ -1526,17 +1538,17 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 80:   //  Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings
+            case 81:   //  Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.StaticInitializer = StaticInitializer_80_ProgressRingTemplateSettings;
+                userType.StaticInitializer = StaticInitializer_81_ProgressRingTemplateSettings;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 81:   //  Microsoft.UI.Xaml.Media.AcrylicBrush
+            case 82:   //  Microsoft.UI.Xaml.Media.AcrylicBrush
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Media.XamlCompositionBrushBase"));
-                userType.Activator = Activate_81_AcrylicBrush;
-                userType.StaticInitializer = StaticInitializer_81_AcrylicBrush;
+                userType.Activator = Activate_82_AcrylicBrush;
+                userType.StaticInitializer = StaticInitializer_82_AcrylicBrush;
                 userType.AddMemberName("AlwaysUseFallback");
                 userType.AddMemberName("TintOpacity");
                 userType.AddMemberName("TintColor");
@@ -1545,101 +1557,101 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 82:   //  Microsoft.UI.Xaml.Media.XamlCompositionBrushBase
+            case 83:   //  Microsoft.UI.Xaml.Media.XamlCompositionBrushBase
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 83:   //  Windows.UI.Color
+            case 84:   //  Windows.UI.Color
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_83_Color;
+                userType.StaticInitializer = StaticInitializer_84_Color;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 84:   //  System.Nullable`1<Double>
+            case 85:   //  System.Nullable`1<Double>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetBoxedType(GetXamlTypeByName("Double"));
                 userType.BoxInstance = userType.BoxType<global::System.Double>;
-                userType.StaticInitializer = StaticInitializer_84_Nullable;
+                userType.StaticInitializer = StaticInitializer_85_Nullable;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 85:   //  TimeSpan
+            case 86:   //  TimeSpan
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_85_TimeSpan;
+                userType.StaticInitializer = StaticInitializer_86_TimeSpan;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 86:   //  RogazionistiRE.Windows.Home
+            case 87:   //  RogazionistiRE.Windows.Home
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_86_Home;
-                userType.StaticInitializer = StaticInitializer_86_Home;
+                userType.Activator = Activate_87_Home;
+                userType.StaticInitializer = StaticInitializer_87_Home;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 87:   //  Microsoft.UI.Xaml.Media.MicaBackdrop
+            case 88:   //  Microsoft.UI.Xaml.Media.MicaBackdrop
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Media.SystemBackdrop"));
-                userType.Activator = Activate_87_MicaBackdrop;
-                userType.StaticInitializer = StaticInitializer_87_MicaBackdrop;
+                userType.Activator = Activate_88_MicaBackdrop;
+                userType.StaticInitializer = StaticInitializer_88_MicaBackdrop;
                 userType.AddMemberName("Kind");
                 xamlType = userType;
                 break;
 
-            case 88:   //  Microsoft.UI.Xaml.Media.SystemBackdrop
+            case 89:   //  Microsoft.UI.Xaml.Media.SystemBackdrop
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 89:   //  Microsoft.UI.Composition.SystemBackdrops.MicaKind
+            case 90:   //  Microsoft.UI.Composition.SystemBackdrops.MicaKind
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_89_MicaKind;
+                userType.StaticInitializer = StaticInitializer_90_MicaKind;
                 userType.AddEnumValue("Base", global::Microsoft.UI.Composition.SystemBackdrops.MicaKind.Base);
                 userType.AddEnumValue("BaseAlt", global::Microsoft.UI.Composition.SystemBackdrops.MicaKind.BaseAlt);
                 xamlType = userType;
                 break;
 
-            case 90:   //  RogazionistiRE.Windows.Login
+            case 91:   //  RogazionistiRE.Windows.Login
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_90_Login;
-                userType.StaticInitializer = StaticInitializer_90_Login;
+                userType.Activator = Activate_91_Login;
+                userType.StaticInitializer = StaticInitializer_91_Login;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 91:   //  Microsoft.UI.Xaml.Window
+            case 92:   //  Microsoft.UI.Xaml.Window
                 xamlType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 92:   //  RogazionistiRE.Windows.Overview
+            case 93:   //  RogazionistiRE.Windows.Overview
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_92_Overview;
-                userType.StaticInitializer = StaticInitializer_92_Overview;
+                userType.Activator = Activate_93_Overview;
+                userType.StaticInitializer = StaticInitializer_93_Overview;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 93:   //  RogazionistiRE.Windows.ReportCards
+            case 94:   //  RogazionistiRE.Windows.ReportCards
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_93_ReportCards;
-                userType.StaticInitializer = StaticInitializer_93_ReportCards;
+                userType.Activator = Activate_94_ReportCards;
+                userType.StaticInitializer = StaticInitializer_94_ReportCards;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 94:   //  RogazionistiRE.Windows.Settings
+            case 95:   //  RogazionistiRE.Windows.Settings
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_94_Settings;
-                userType.StaticInitializer = StaticInitializer_94_Settings;
+                userType.Activator = Activate_95_Settings;
+                userType.StaticInitializer = StaticInitializer_95_Settings;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 95:   //  Microsoft.UI.Xaml.Controls.UniformGridLayout
+            case 96:   //  Microsoft.UI.Xaml.Controls.UniformGridLayout
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.VirtualizingLayout"));
-                userType.Activator = Activate_95_UniformGridLayout;
-                userType.StaticInitializer = StaticInitializer_95_UniformGridLayout;
+                userType.Activator = Activate_96_UniformGridLayout;
+                userType.StaticInitializer = StaticInitializer_96_UniformGridLayout;
                 userType.AddMemberName("MinItemWidth");
                 userType.AddMemberName("MinColumnSpacing");
                 userType.AddMemberName("MinRowSpacing");
@@ -1651,9 +1663,9 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 96:   //  Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification
+            case 97:   //  Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_96_UniformGridLayoutItemsJustification;
+                userType.StaticInitializer = StaticInitializer_97_UniformGridLayoutItemsJustification;
                 userType.AddEnumValue("Start", global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification.Start);
                 userType.AddEnumValue("Center", global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification.Center);
                 userType.AddEnumValue("End", global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsJustification.End);
@@ -1663,19 +1675,19 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 97:   //  Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch
+            case 98:   //  Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_97_UniformGridLayoutItemsStretch;
+                userType.StaticInitializer = StaticInitializer_98_UniformGridLayoutItemsStretch;
                 userType.AddEnumValue("None", global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch.None);
                 userType.AddEnumValue("Fill", global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch.Fill);
                 userType.AddEnumValue("Uniform", global::Microsoft.UI.Xaml.Controls.UniformGridLayoutItemsStretch.Uniform);
                 xamlType = userType;
                 break;
 
-            case 98:   //  Microsoft.UI.Xaml.Controls.AnimatedIcon
+            case 99:   //  Microsoft.UI.Xaml.Controls.AnimatedIcon
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.IconElement"));
-                userType.Activator = Activate_98_AnimatedIcon;
-                userType.StaticInitializer = StaticInitializer_98_AnimatedIcon;
+                userType.Activator = Activate_99_AnimatedIcon;
+                userType.StaticInitializer = StaticInitializer_99_AnimatedIcon;
                 userType.SetContentPropertyName("Microsoft.UI.Xaml.Controls.AnimatedIcon.Source");
                 userType.AddMemberName("Source");
                 userType.AddMemberName("FallbackIconSource");
@@ -1684,72 +1696,72 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 99:   //  Microsoft.UI.Xaml.Controls.IAnimatedVisualSource2
+            case 100:   //  Microsoft.UI.Xaml.Controls.IAnimatedVisualSource2
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_99_IAnimatedVisualSource2;
+                userType.StaticInitializer = StaticInitializer_100_IAnimatedVisualSource2;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 100:   //  Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource
+            case 101:   //  Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedSettingsVisualSource
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_100_AnimatedSettingsVisualSource;
-                userType.StaticInitializer = StaticInitializer_100_AnimatedSettingsVisualSource;
+                userType.Activator = Activate_101_AnimatedSettingsVisualSource;
+                userType.StaticInitializer = StaticInitializer_101_AnimatedSettingsVisualSource;
                 userType.AddMemberName("Markers");
                 xamlType = userType;
                 break;
 
-            case 101:   //  System.Collections.Generic.IReadOnlyDictionary`2<String, Double>
+            case 102:   //  System.Collections.Generic.IReadOnlyDictionary`2<String, Double>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_101_IReadOnlyDictionary;
+                userType.StaticInitializer = StaticInitializer_102_IReadOnlyDictionary;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 102:   //  RogazionistiRE.Windows.Students
+            case 103:   //  RogazionistiRE.Windows.Students
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.StaticInitializer = StaticInitializer_102_Students;
+                userType.StaticInitializer = StaticInitializer_103_Students;
                 userType.AddMemberName("DisplayedStudents");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 103:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.Data.Student>
+            case 104:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.Data.Student>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.Student>"));
-                userType.StaticInitializer = StaticInitializer_103_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_103_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_104_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_104_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 104:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.Student>
+            case 105:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.Data.Student>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_104_Collection;
-                userType.StaticInitializer = StaticInitializer_104_Collection;
-                userType.CollectionAdd = VectorAdd_104_Collection;
+                userType.Activator = Activate_105_Collection;
+                userType.StaticInitializer = StaticInitializer_105_Collection;
+                userType.CollectionAdd = VectorAdd_105_Collection;
                 xamlType = userType;
                 break;
 
-            case 105:   //  RogazionistiRE.Data.Student
+            case 106:   //  RogazionistiRE.Data.Student
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_105_Student;
+                userType.StaticInitializer = StaticInitializer_106_Student;
                 userType.AddMemberName("_student");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 106:   //  RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson
-                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_106_StudentJson;
+            case 107:   //  RogazionistiRE.JsonBlueprints.SubBlueprints.StudentJson
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("RogazionistiRE.JsonBlueprints.Blueprint"));
+                userType.StaticInitializer = StaticInitializer_107_StudentJson;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 107:   //  Microsoft.UI.Xaml.Controls.LinedFlowLayout
+            case 108:   //  Microsoft.UI.Xaml.Controls.LinedFlowLayout
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.VirtualizingLayout"));
-                userType.Activator = Activate_107_LinedFlowLayout;
-                userType.StaticInitializer = StaticInitializer_107_LinedFlowLayout;
+                userType.Activator = Activate_108_LinedFlowLayout;
+                userType.StaticInitializer = StaticInitializer_108_LinedFlowLayout;
                 userType.AddMemberName("ItemsJustification");
                 userType.AddMemberName("LineSpacing");
                 userType.AddMemberName("MinItemSpacing");
@@ -1761,9 +1773,9 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 108:   //  Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification
+            case 109:   //  Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_108_LinedFlowLayoutItemsJustification;
+                userType.StaticInitializer = StaticInitializer_109_LinedFlowLayoutItemsJustification;
                 userType.AddEnumValue("Start", global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification.Start);
                 userType.AddEnumValue("Center", global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification.Center);
                 userType.AddEnumValue("End", global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsJustification.End);
@@ -1773,43 +1785,43 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 109:   //  Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch
+            case 110:   //  Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_109_LinedFlowLayoutItemsStretch;
+                userType.StaticInitializer = StaticInitializer_110_LinedFlowLayoutItemsStretch;
                 userType.AddEnumValue("None", global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch.None);
                 userType.AddEnumValue("Fill", global::Microsoft.UI.Xaml.Controls.LinedFlowLayoutItemsStretch.Fill);
                 xamlType = userType;
                 break;
 
-            case 110:   //  RogazionistiRE.Windows.Subjects
+            case 111:   //  RogazionistiRE.Windows.Subjects
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_110_Subjects;
-                userType.StaticInitializer = StaticInitializer_110_Subjects;
+                userType.Activator = Activate_111_Subjects;
+                userType.StaticInitializer = StaticInitializer_111_Subjects;
                 userType.AddMemberName("SubjectsCollection");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 111:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.SubjectJson>
+            case 112:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.SubjectJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubjectJson>"));
-                userType.StaticInitializer = StaticInitializer_111_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_111_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_112_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_112_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 112:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubjectJson>
+            case 113:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubjectJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_112_Collection;
-                userType.StaticInitializer = StaticInitializer_112_Collection;
-                userType.CollectionAdd = VectorAdd_112_Collection;
+                userType.Activator = Activate_113_Collection;
+                userType.StaticInitializer = StaticInitializer_113_Collection;
+                userType.CollectionAdd = VectorAdd_113_Collection;
                 xamlType = userType;
                 break;
 
-            case 113:   //  RogazionistiRE.JsonBlueprints.SubjectJson
-                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_113_SubjectJson;
-                userType.StaticInitializer = StaticInitializer_113_SubjectJson;
+            case 114:   //  RogazionistiRE.JsonBlueprints.SubjectJson
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("RogazionistiRE.JsonBlueprints.Blueprint"));
+                userType.Activator = Activate_114_SubjectJson;
+                userType.StaticInitializer = StaticInitializer_114_SubjectJson;
                 userType.AddMemberName("ID");
                 userType.AddMemberName("Description");
                 userType.AddMemberName("SubjectName");
@@ -1820,18 +1832,18 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 114:   //  System.Collections.Generic.List`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>
+            case 115:   //  System.Collections.Generic.List`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_114_List;
-                userType.CollectionAdd = VectorAdd_114_List;
+                userType.StaticInitializer = StaticInitializer_115_List;
+                userType.CollectionAdd = VectorAdd_115_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 115:   //  RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson
-                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_115_TeacherJson;
-                userType.StaticInitializer = StaticInitializer_115_TeacherJson;
+            case 116:   //  RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson
+                userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("RogazionistiRE.JsonBlueprints.Blueprint"));
+                userType.Activator = Activate_116_TeacherJson;
+                userType.StaticInitializer = StaticInitializer_116_TeacherJson;
                 userType.AddMemberName("ID");
                 userType.AddMemberName("Name");
                 userType.AddMemberName("Sorting");
@@ -1841,26 +1853,26 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 116:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>
+            case 117:   //  System.Collections.ObjectModel.ObservableCollection`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>"));
-                userType.StaticInitializer = StaticInitializer_116_ObservableCollection;
-                userType.CollectionAdd = VectorAdd_116_ObservableCollection;
+                userType.StaticInitializer = StaticInitializer_117_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_117_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 117:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>
+            case 118:   //  System.Collections.ObjectModel.Collection`1<RogazionistiRE.JsonBlueprints.SubBlueprints.TeacherJson>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_117_Collection;
-                userType.StaticInitializer = StaticInitializer_117_Collection;
-                userType.CollectionAdd = VectorAdd_117_Collection;
+                userType.Activator = Activate_118_Collection;
+                userType.StaticInitializer = StaticInitializer_118_Collection;
+                userType.CollectionAdd = VectorAdd_118_Collection;
                 xamlType = userType;
                 break;
 
-            case 118:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 119:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_118_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_118_TreeViewNode;
+                userType.Activator = Activate_119_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_119_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -1872,10 +1884,10 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 119:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 120:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_119_IList;
-                userType.CollectionAdd = VectorAdd_119_IList;
+                userType.StaticInitializer = StaticInitializer_120_IList;
+                userType.CollectionAdd = VectorAdd_120_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -2040,30 +2052,30 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
             var that = (global::Microsoft.UI.Xaml.Controls.ItemsView)instance;
             that.SelectionMode = (global::Microsoft.UI.Xaml.Controls.ItemsViewSelectionMode)Value;
         }
-        private object get_10_ItemsView_IsItemInvokedEnabled(object instance)
-        {
-            var that = (global::Microsoft.UI.Xaml.Controls.ItemsView)instance;
-            return that.IsItemInvokedEnabled;
-        }
-        private void set_10_ItemsView_IsItemInvokedEnabled(object instance, object Value)
-        {
-            var that = (global::Microsoft.UI.Xaml.Controls.ItemsView)instance;
-            that.IsItemInvokedEnabled = (global::System.Boolean)Value;
-        }
-        private object get_11_ItemsView_Layout(object instance)
+        private object get_10_ItemsView_Layout(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ItemsView)instance;
             return that.Layout;
         }
-        private void set_11_ItemsView_Layout(object instance, object Value)
+        private void set_10_ItemsView_Layout(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ItemsView)instance;
             that.Layout = (global::Microsoft.UI.Xaml.Controls.Layout)Value;
         }
-        private object get_12_ItemsView_CurrentItemIndex(object instance)
+        private object get_11_ItemsView_CurrentItemIndex(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.ItemsView)instance;
             return that.CurrentItemIndex;
+        }
+        private object get_12_ItemsView_IsItemInvokedEnabled(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ItemsView)instance;
+            return that.IsItemInvokedEnabled;
+        }
+        private void set_12_ItemsView_IsItemInvokedEnabled(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ItemsView)instance;
+            that.IsItemInvokedEnabled = (global::System.Boolean)Value;
         }
         private object get_13_ItemsView_ItemTransitionProvider(object instance)
         {
@@ -2110,25 +2122,25 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
             var that = (global::Microsoft.UI.Xaml.Controls.ItemsView)instance;
             that.VerticalScrollController = (global::Microsoft.UI.Xaml.Controls.Primitives.IScrollController)Value;
         }
-        private object get_19_StackLayout_Orientation(object instance)
-        {
-            var that = (global::Microsoft.UI.Xaml.Controls.StackLayout)instance;
-            return that.Orientation;
-        }
-        private void set_19_StackLayout_Orientation(object instance, object Value)
-        {
-            var that = (global::Microsoft.UI.Xaml.Controls.StackLayout)instance;
-            that.Orientation = (global::Microsoft.UI.Xaml.Controls.Orientation)Value;
-        }
-        private object get_20_StackLayout_Spacing(object instance)
+        private object get_19_StackLayout_Spacing(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.StackLayout)instance;
             return that.Spacing;
         }
-        private void set_20_StackLayout_Spacing(object instance, object Value)
+        private void set_19_StackLayout_Spacing(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.StackLayout)instance;
             that.Spacing = (global::System.Double)Value;
+        }
+        private object get_20_StackLayout_Orientation(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.StackLayout)instance;
+            return that.Orientation;
+        }
+        private void set_20_StackLayout_Orientation(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.StackLayout)instance;
+            that.Orientation = (global::Microsoft.UI.Xaml.Controls.Orientation)Value;
         }
         private object get_21_Layout_IndexBasedLayoutOrientation(object instance)
         {
@@ -4082,26 +4094,26 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlMember.Getter = get_9_ItemsView_SelectionMode;
                 xamlMember.Setter = set_9_ItemsView_SelectionMode;
                 break;
-            case "Microsoft.UI.Xaml.Controls.ItemsView.IsItemInvokedEnabled":
-                userType = (global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ItemsView");
-                xamlMember = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlMember(this, "IsItemInvokedEnabled", "Boolean");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_ItemsView_IsItemInvokedEnabled;
-                xamlMember.Setter = set_10_ItemsView_IsItemInvokedEnabled;
-                break;
             case "Microsoft.UI.Xaml.Controls.ItemsView.Layout":
                 userType = (global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ItemsView");
                 xamlMember = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlMember(this, "Layout", "Microsoft.UI.Xaml.Controls.Layout");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_ItemsView_Layout;
-                xamlMember.Setter = set_11_ItemsView_Layout;
+                xamlMember.Getter = get_10_ItemsView_Layout;
+                xamlMember.Setter = set_10_ItemsView_Layout;
                 break;
             case "Microsoft.UI.Xaml.Controls.ItemsView.CurrentItemIndex":
                 userType = (global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ItemsView");
                 xamlMember = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlMember(this, "CurrentItemIndex", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_ItemsView_CurrentItemIndex;
+                xamlMember.Getter = get_11_ItemsView_CurrentItemIndex;
                 xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.UI.Xaml.Controls.ItemsView.IsItemInvokedEnabled":
+                userType = (global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ItemsView");
+                xamlMember = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlMember(this, "IsItemInvokedEnabled", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_12_ItemsView_IsItemInvokedEnabled;
+                xamlMember.Setter = set_12_ItemsView_IsItemInvokedEnabled;
                 break;
             case "Microsoft.UI.Xaml.Controls.ItemsView.ItemTransitionProvider":
                 userType = (global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ItemsView");
@@ -4144,19 +4156,19 @@ namespace RogazionistiRE.RogazionistiRE_XamlTypeInfo
                 xamlMember.Getter = get_18_ItemsView_VerticalScrollController;
                 xamlMember.Setter = set_18_ItemsView_VerticalScrollController;
                 break;
-            case "Microsoft.UI.Xaml.Controls.StackLayout.Orientation":
-                userType = (global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.StackLayout");
-                xamlMember = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlMember(this, "Orientation", "Microsoft.UI.Xaml.Controls.Orientation");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_19_StackLayout_Orientation;
-                xamlMember.Setter = set_19_StackLayout_Orientation;
-                break;
             case "Microsoft.UI.Xaml.Controls.StackLayout.Spacing":
                 userType = (global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.StackLayout");
                 xamlMember = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlMember(this, "Spacing", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_20_StackLayout_Spacing;
-                xamlMember.Setter = set_20_StackLayout_Spacing;
+                xamlMember.Getter = get_19_StackLayout_Spacing;
+                xamlMember.Setter = set_19_StackLayout_Spacing;
+                break;
+            case "Microsoft.UI.Xaml.Controls.StackLayout.Orientation":
+                userType = (global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.StackLayout");
+                xamlMember = new global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlMember(this, "Orientation", "Microsoft.UI.Xaml.Controls.Orientation");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_20_StackLayout_Orientation;
+                xamlMember.Setter = set_20_StackLayout_Orientation;
                 break;
             case "Microsoft.UI.Xaml.Controls.Layout.IndexBasedLayoutOrientation":
                 userType = (global::RogazionistiRE.RogazionistiRE_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Layout");
